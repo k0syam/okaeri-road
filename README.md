@@ -1,12 +1,12 @@
 # おかえりロード 〜天使とあくまのさんぽ道〜
 
-CCFOLIA（[ccfolia.com](https://ccfolia.com/)）で遊べる、トランプ＋ダイスすごろく形式のチーム対戦ボードゲームです。
+CCFOLIA（[ccfolia.com](https://ccfolia.com/)）だけで完結する、トランプ＋ダイスすごろく形式のチーム対戦ボードゲームです。**現物のトランプは不要**で、カードは「ディーラー役」が秘話（ないしょ話）で管理する仮想デッキで代用します。
 
-NPCを「太らせたいあくま陣営」と「痩せて健康にしたいてんし陣営」に分かれて、NPCが帰宅するまでにゲージを奪い合います。
+NPCを「太らせたいあくま陣営」と「痩せて健康にしたいてんし陣営」に分かれて、分岐すごろくのルートとゲージを奪い合います。
 
-- 対象人数：3〜6人（2チーム対抗）
-- プレイ時間：約30分
-- 必要なもの：CCFOLIAのルーム、トランプ1組、このリポジトリの画像素材
+- 対象人数：3〜6人（2チーム対抗＋中立のディーラー1名を推奨）
+- プレイ時間：約40分
+- 必要なもの：CCFOLIAのルーム、このリポジトリの画像素材（現物のトランプ・サイコロは不要）
 
 詳しいルールは [RULES.md](RULES.md) を参照してください。
 
@@ -16,7 +16,8 @@ NPCを「太らせたいあくま陣営」と「痩せて健康にしたいて�
 2. シーンの背景画像として [`assets/board_route_gauge.png`](assets/board_route_gauge.png) をアップロードする。
 3. [`assets/token_npc.png`](assets/token_npc.png) をNPC用コマとしてシーンに配置する（お好みで [`assets/token_angel.png`](assets/token_angel.png) / [`assets/token_devil.png`](assets/token_devil.png) / [`assets/token_gauge.png`](assets/token_gauge.png) も配置する）。
 4. [`ccfolia/chat_palette.txt`](ccfolia/chat_palette.txt) の内容を各プレイヤーのチャットパレットにコピー＆ペーストする。
-5. [RULES.md](RULES.md) に従ってセットアップし、プレイ開始。
+5. 中立の「ディーラー」役を1名決める（4人以上推奨。3人の場合は少人数ルールを使用）。
+6. [RULES.md](RULES.md) に従ってセットアップし、プレイ開始。
 
 ## リポジトリ構成
 
