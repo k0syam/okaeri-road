@@ -23,8 +23,10 @@ NPCを「太らせたいあくま陣営」と「痩せて健康にしたいて�
 
 ```
 okaeri-road/
-├── README.md              このファイル
+├── README.md               このファイル
 ├── RULES.md                ゲームルール本体
+├── IMPROVEMENT_LOG.md      自動改善ループの作業記録
+├── LICENSE                 ライセンス（CC0 1.0）
 ├── assets/                 CCFOLIA用の画像素材
 │   ├── board_route_gauge.png   すごろくボード＋体調ゲージ（背景画像用）
 │   ├── board_route_gauge.svg   同・編集用SVGソース
@@ -33,8 +35,8 @@ okaeri-road/
 │   ├── token_devil.png         あくま陣営コマ
 │   ├── token_gauge.png         体調ゲージ用マーカー
 │   └── token_*.svg             各コマの編集用SVGソース
-└── ccfolia/
-    └── chat_palette.txt    CCFOLIAチャットパレット用テキスト
+└── ccfolia/                CCFOLIA用のテキスト素材
+    └── chat_palette.txt        CCFOLIAチャットパレット用テキスト
 ```
 
 ## ライセンス
