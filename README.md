@@ -14,7 +14,7 @@ NPCを「太らせたいあくま陣営」と「痩せて健康にしたいて�
 
 1. CCFOLIAでルームを作成し、プレイヤーを招待する。
 2. シーンの背景画像として [`assets/board_route_gauge.png`](assets/board_route_gauge.png) をアップロードする。
-3. [`assets/token_npc.png`](assets/token_npc.png) をNPC用コマとしてシーンに配置する（お好みで [`assets/token_angel.png`](assets/token_angel.png) / [`assets/token_devil.png`](assets/token_devil.png) / [`assets/token_gauge.png`](assets/token_gauge.png) も配置する）。
+3. [`assets/token_npc.png`](assets/token_npc.png) をNPCコマとしてマス「1 スタート」に、[`assets/token_gauge.png`](assets/token_gauge.png) をゲージコマとして体調ゲージの「0」に配置する（お好みで陣営の目印として [`assets/token_angel.png`](assets/token_angel.png) / [`assets/token_devil.png`](assets/token_devil.png) も配置する）。
 4. [`ccfolia/chat_palette.txt`](ccfolia/chat_palette.txt) の内容を各プレイヤーのチャットパレットにコピー＆ペーストする。
 5. 中立の「ディーラー」役を1名決める（4人以上推奨。3人の場合は少人数ルールを使用）。
 6. [RULES.md](RULES.md) に従ってセットアップし、プレイ開始。
