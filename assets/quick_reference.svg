@@ -23,8 +23,8 @@
 <rect x="40" y="290" width="1000" height="220" rx="24" fill="#FFFFFF" stroke="#7A5CC6" stroke-width="3"/>
 <rect x="40" y="290" width="12" height="220" rx="6" fill="#7A5CC6"/>
 <text x="76.0" y="334.0" font-size="26" font-weight="bold" fill="#7A5CC6" text-anchor="start" >カードの出し方（いつも同じ）</text>
-<text x="76.0" y="378.0" font-size="19" font-weight="normal" fill="#3A3550" text-anchor="start" >① 出すカードを陣営で決め、勝負エリアに【裏向き】で置く（出さないなら「パス」）</text>
-<text x="76.0" y="414.0" font-size="19" font-weight="normal" fill="#3A3550" text-anchor="start" >② 手番プレイヤーの「せーの」で、全員のカードを【全体に公開する】</text>
+<text x="76.0" y="378.0" font-size="19" font-weight="normal" fill="#3A3550" text-anchor="start" >① 出すカードを陣営で決めて勝負エリアに【裏向き】で置き、「準備OK」と言う（パスでも同じ）</text>
+<text x="76.0" y="414.0" font-size="19" font-weight="normal" fill="#3A3550" text-anchor="start" >② そろったら手番プレイヤーの「せーの」で【全体に公開する】。置いていない陣営は「パス」</text>
 <text x="76.0" y="450.0" font-size="19" font-weight="normal" fill="#3A3550" text-anchor="start" >③ ゲージを動かし、勝った／通ったカードの J・Q・K 効果を処理</text>
 <text x="76.0" y="486.0" font-size="19" font-weight="normal" fill="#3A3550" text-anchor="start" >④ 使ったカードは捨て札へ。出した人はすぐ1枚補充する</text>
 <rect x="40" y="530" width="1000" height="330" rx="24" fill="#FFFFFF" stroke="#D99A00" stroke-width="3"/>
