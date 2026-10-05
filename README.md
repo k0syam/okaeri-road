@@ -1,23 +1,26 @@
 # おかえりロード 〜天使とあくまのさんぽ道〜
 
-CCFOLIA（[ccfolia.com](https://ccfolia.com/)）だけで完結する、トランプ＋ダイスすごろく形式のチーム対戦ボードゲームです。**現物のトランプは不要**で、カードは「ディーラー役」が秘話（ないしょ話）で管理する仮想デッキで代用します。
+CCFOLIA（[ccfolia.com](https://ccfolia.com/)）だけで完結する、トランプ＋ダイスすごろく形式のチーム対戦ボードゲームです。カードは CCFOLIA 標準の **「トランプのデッキ」** を使うので、現物のトランプもディーラー（進行役）も不要です。
 
-NPCを「太らせたいあくま陣営」と「痩せて健康にしたいてんし陣営」に分かれて、分岐すごろくのルートとゲージを奪い合います。
+NPCを「太らせたいあくま陣営」と「痩せて健康にしたいてんし陣営」に分かれて、分岐すごろくのルートと体調ゲージを奪い合います。カードはいつも **裏向きで置いて「せーの」で公開**。相手のマスにも「横やり」を入れられるので、どのマスでも読み合いが起こります。
 
-- 対象人数：3〜6人（2チーム対抗＋中立のディーラー1名を推奨）
-- プレイ時間：約40分
-- 必要なもの：CCFOLIAのルーム、このリポジトリの画像素材（現物のトランプ・サイコロは不要）
+![ボード](assets/board_route_gauge.png)
 
-詳しいルールは [RULES.md](RULES.md) を参照してください。
+- 対象人数：2〜6人（2チーム対抗。4人推奨）
+- プレイ時間：約30〜40分
+- 必要なもの：CCFOLIAのルーム、このリポジトリの画像素材
+
+詳しいルールは [RULES.md](RULES.md)、初めての人への説明は [3分でわかる遊び方](RULES.md#3分でわかる遊び方インスト用まとめ) を参照してください。
 
 ## クイックスタート（CCFOLIAでの遊び方）
 
 1. CCFOLIAでルームを作成し、プレイヤーを招待する。
-2. シーンの背景画像として [`assets/board_route_gauge.png`](assets/board_route_gauge.png) をアップロードする。
-3. [`assets/token_npc.png`](assets/token_npc.png) をNPCコマとしてマス「1 スタート」に、[`assets/token_gauge.png`](assets/token_gauge.png) をゲージコマとして体調ゲージの「0」に配置する（お好みで陣営の目印として [`assets/token_angel.png`](assets/token_angel.png) / [`assets/token_devil.png`](assets/token_devil.png) も配置する）。
-4. [`ccfolia/chat_palette.txt`](ccfolia/chat_palette.txt) の内容を各プレイヤーのチャットパレットにコピー＆ペーストする。
-5. 中立の「ディーラー」役を1名決める（4人以上推奨。3人の場合は少人数ルールを使用）。
-6. [RULES.md](RULES.md) に従ってセットアップし、プレイ開始。
+2. [`assets/board_route_gauge.png`](assets/board_route_gauge.png) を **前景** に設定し、フィールドの大きさを **横80×縦45** にする（1920×1080pxの画像がぴったり収まる）。
+3. [`assets/token_npc.png`](assets/token_npc.png) をNPCコマとしてマス「1 スタート」に、[`assets/token_gauge.png`](assets/token_gauge.png) をゲージコマとして体調ゲージの「0」に置く（お好みで [`token_angel.png`](assets/token_angel.png) / [`token_devil.png`](assets/token_devil.png) も）。
+4. 盤面メニューの「カードデッキを追加」でトランプのデッキを追加し、ボード右上の「山札」の枠に置く。
+5. 陣営を分け、各陣営の手札が合計10枚になるように「裏向きのまま引く」→「自分だけ見る」で手札を配る（ジョーカーは除外して引き直す）。
+6. [`ccfolia/chat_palette.txt`](ccfolia/chat_palette.txt) を各プレイヤーのチャットパレットにコピーする。お好みで [`assets/quick_reference.png`](assets/quick_reference.png)（早見表）をスクリーンパネルとして置き、陣営ごとのプライベートチャットタブも作る。
+7. [3分でわかる遊び方](RULES.md#3分でわかる遊び方インスト用まとめ) を読み上げて、プレイ開始。
 
 ## リポジトリ構成
 
@@ -27,17 +30,22 @@ okaeri-road/
 ├── RULES.md                ゲームルール本体
 ├── IMPROVEMENT_LOG.md      自動改善ループの作業記録
 ├── LICENSE                 ライセンス（CC0 1.0）
-├── assets/                 CCFOLIA用の画像素材
-│   ├── board_route_gauge.png   すごろくボード＋体調ゲージ（背景画像用）
-│   ├── board_route_gauge.svg   同・編集用SVGソース
+├── assets/                 CCFOLIA用の画像素材（*.svg は編集用ソース）
+│   ├── board_route_gauge.png   ボード＋体調ゲージ＋カード置き場（前景用 1920×1080）
+│   ├── quick_reference.png     インスト用早見表（スクリーンパネル用 1080×1440）
 │   ├── token_npc.png           NPCコマ
 │   ├── token_angel.png         てんし陣営コマ
 │   ├── token_devil.png         あくま陣営コマ
 │   ├── token_gauge.png         体調ゲージ用マーカー
-│   └── token_*.svg             各コマの編集用SVGソース
-└── ccfolia/                CCFOLIA用のテキスト素材
-    └── chat_palette.txt        CCFOLIAチャットパレット用テキスト
+│   └── *.svg                   各画像の編集用SVGソース（tools/ で生成）
+├── ccfolia/                CCFOLIA用のテキスト素材
+│   └── chat_palette.txt        チャットパレット用テキスト
+└── tools/                  素材の生成スクリプト
+    ├── build_assets.py         SVGを生成（色・配置・文言はここで管理）
+    └── render_png.py           SVG→PNG書き出し（Playwright + Chromium）
 ```
+
+素材を修正するときは `tools/build_assets.py` を編集し、`python3 tools/build_assets.py && python3 tools/render_png.py` で SVG と PNG を作り直してください（日本語フォント Noto Sans CJK JP と Noto Color Emoji が必要です）。
 
 ## ライセンス
 
