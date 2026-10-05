@@ -1,5 +1,12 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="200" height="200" viewBox="0 0 200 200" font-family="'Yu Gothic','Hiragino Sans','Meiryo',sans-serif">
-<circle cx="100" cy="100" r="92" fill="#DBEAFE" stroke="#1D4ED8" stroke-width="8"/>
-<text x="100" y="115" text-anchor="middle" font-size="80">😇</text>
-<text x="100" y="175" text-anchor="middle" font-size="24" font-weight="bold" fill="#1D4ED8">てんし</text>
+<svg xmlns="http://www.w3.org/2000/svg" width="200" height="200" viewBox="0 0 200 200" font-family="'Noto Sans CJK JP','Hiragino Sans','Yu Gothic','Meiryo',sans-serif">
+<defs>
+<radialGradient id="g" cx="0.35" cy="0.3" r="0.8">
+  <stop offset="0" stop-color="#FFFFFF"/><stop offset="1" stop-color="#E2EFFB"/>
+</radialGradient>
+</defs>
+<circle cx="100" cy="100" r="92" fill="#2F7FC8"/>
+<circle cx="100" cy="100" r="80" fill="url(#g)"/>
+<text x="100" y="114" text-anchor="middle" font-size="76" font-family="'Noto Color Emoji',sans-serif">😇</text>
+<rect x="44" y="140" width="112" height="34" rx="17" fill="#2F7FC8"/>
+<text x="100" y="164" text-anchor="middle" font-size="20" font-weight="bold" fill="#FFFFFF">てんし</text>
 </svg>
