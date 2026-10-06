@@ -1,322 +1,741 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="1920" height="1080" viewBox="0 0 1920 1080" font-family="'Noto Sans CJK JP','Hiragino Sans','Yu Gothic','Meiryo',sans-serif">
 <defs>
-<filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
-  <feDropShadow dx="0" dy="4" stdDeviation="4" flood-color="#5A4A2A" flood-opacity="0.18"/>
+<filter id="shadow" x="-20%" y="-20%" width="140%" height="150%">
+  <feDropShadow dx="0" dy="5" stdDeviation="3" flood-color="#5A4A2A" flood-opacity="0.22"/>
 </filter>
-<linearGradient id="forkFill" x1="0" y1="0" x2="1" y2="1">
-  <stop offset="0" stop-color="#E2EFFB"/><stop offset="0.49" stop-color="#E2EFFB"/>
-  <stop offset="0.51" stop-color="#FBE3EA"/><stop offset="1" stop-color="#FBE3EA"/>
-</linearGradient>
-<pattern id="dots" width="28" height="28" patternUnits="userSpaceOnUse">
-  <circle cx="4" cy="4" r="1.6" fill="#E9DFCB"/>
+<filter id="soft" x="-20%" y="-20%" width="140%" height="140%">
+  <feDropShadow dx="0" dy="3" stdDeviation="5" flood-color="#5A4A2A" flood-opacity="0.12"/>
+</filter>
+<pattern id="dots" width="26" height="26" patternUnits="userSpaceOnUse">
+  <circle cx="4" cy="4" r="1.5" fill="#EADFC8"/>
 </pattern>
+<pattern id="stripeA" width="12" height="12" patternUnits="userSpaceOnUse" patternTransform="rotate(45)">
+  <rect width="6" height="12" fill="#FFFFFF" opacity="0.35"/>
+</pattern>
+<pattern id="cardback" width="14" height="14" patternUnits="userSpaceOnUse" patternTransform="rotate(45)">
+  <rect width="14" height="14" fill="#EFE7F8"/><rect width="7" height="7" fill="#E3D8F2"/>
+</pattern>
+<linearGradient id="sky" x1="0" y1="0" x2="0" y2="1">
+  <stop offset="0" stop-color="#FDF7EC"/><stop offset="1" stop-color="#F7EEDC"/>
+</linearGradient>
 </defs>
-<rect width="1920" height="1080" fill="#FBF6EC"/>
+<rect width="1920" height="1080" fill="url(#sky)"/>
 <rect width="1920" height="1080" fill="url(#dots)"/>
-<text x="50.0" y="135.0" font-size="46" font-weight="900" fill="#3A3550" text-anchor="start" >おかえりロード</text>
-<text x="54.0" y="173.0" font-size="22" font-weight="bold" fill="#7A7490" text-anchor="start" >〜天使とあくまのさんぽ道〜</text>
-<text x="54.0" y="201.0" font-size="15" font-weight="normal" fill="#7A7490" text-anchor="start" >1d6 で進み、止まったマスでカードを出し合おう</text>
-<polyline points="111.0,287.0 253.0,287.0 395.0,287.0 537.0,287.0" fill="none" stroke="#D8C9AC" stroke-width="44" stroke-linecap="round" stroke-linejoin="round"/>
-<polyline points="111.0,287.0 253.0,287.0 395.0,287.0 537.0,287.0" fill="none" stroke="#E8DCC4" stroke-width="36" stroke-linecap="round" stroke-linejoin="round"/>
-<polyline points="111.0,287.0 253.0,287.0 395.0,287.0 537.0,287.0" fill="none" stroke="#FFFFFF" stroke-width="3" stroke-dasharray="10 12" stroke-linecap="round" opacity="0.9"/>
-<polyline points="537.0,287.0 679.0,153.0 821.0,153.0 963.0,153.0 1105.0,287.0" fill="none" stroke="#D8C9AC" stroke-width="44" stroke-linecap="round" stroke-linejoin="round"/>
-<polyline points="537.0,287.0 679.0,153.0 821.0,153.0 963.0,153.0 1105.0,287.0" fill="none" stroke="#C9DFF4" stroke-width="36" stroke-linecap="round" stroke-linejoin="round"/>
-<polyline points="537.0,287.0 679.0,153.0 821.0,153.0 963.0,153.0 1105.0,287.0" fill="none" stroke="#FFFFFF" stroke-width="3" stroke-dasharray="10 12" stroke-linecap="round" opacity="0.9"/>
-<polyline points="537.0,287.0 679.0,421.0 821.0,421.0 963.0,421.0 1105.0,287.0" fill="none" stroke="#D8C9AC" stroke-width="44" stroke-linecap="round" stroke-linejoin="round"/>
-<polyline points="537.0,287.0 679.0,421.0 821.0,421.0 963.0,421.0 1105.0,287.0" fill="none" stroke="#F5CDD8" stroke-width="36" stroke-linecap="round" stroke-linejoin="round"/>
-<polyline points="537.0,287.0 679.0,421.0 821.0,421.0 963.0,421.0 1105.0,287.0" fill="none" stroke="#FFFFFF" stroke-width="3" stroke-dasharray="10 12" stroke-linecap="round" opacity="0.9"/>
-<polyline points="1105.0,287.0 1247.0,287.0 1247.0,689.0" fill="none" stroke="#D8C9AC" stroke-width="44" stroke-linecap="round" stroke-linejoin="round"/>
-<polyline points="1105.0,287.0 1247.0,287.0 1247.0,689.0" fill="none" stroke="#E8DCC4" stroke-width="36" stroke-linecap="round" stroke-linejoin="round"/>
-<polyline points="1105.0,287.0 1247.0,287.0 1247.0,689.0" fill="none" stroke="#FFFFFF" stroke-width="3" stroke-dasharray="10 12" stroke-linecap="round" opacity="0.9"/>
-<polyline points="1247.0,689.0 1105.0,555.0 963.0,555.0 821.0,555.0 679.0,689.0" fill="none" stroke="#D8C9AC" stroke-width="44" stroke-linecap="round" stroke-linejoin="round"/>
-<polyline points="1247.0,689.0 1105.0,555.0 963.0,555.0 821.0,555.0 679.0,689.0" fill="none" stroke="#C9DFF4" stroke-width="36" stroke-linecap="round" stroke-linejoin="round"/>
-<polyline points="1247.0,689.0 1105.0,555.0 963.0,555.0 821.0,555.0 679.0,689.0" fill="none" stroke="#FFFFFF" stroke-width="3" stroke-dasharray="10 12" stroke-linecap="round" opacity="0.9"/>
-<polyline points="1247.0,689.0 1105.0,823.0 963.0,823.0 821.0,823.0 679.0,689.0" fill="none" stroke="#D8C9AC" stroke-width="44" stroke-linecap="round" stroke-linejoin="round"/>
-<polyline points="1247.0,689.0 1105.0,823.0 963.0,823.0 821.0,823.0 679.0,689.0" fill="none" stroke="#F5CDD8" stroke-width="36" stroke-linecap="round" stroke-linejoin="round"/>
-<polyline points="1247.0,689.0 1105.0,823.0 963.0,823.0 821.0,823.0 679.0,689.0" fill="none" stroke="#FFFFFF" stroke-width="3" stroke-dasharray="10 12" stroke-linecap="round" opacity="0.9"/>
-<polyline points="679.0,689.0 537.0,689.0 395.0,689.0 253.0,689.0 111.0,689.0" fill="none" stroke="#D8C9AC" stroke-width="44" stroke-linecap="round" stroke-linejoin="round"/>
-<polyline points="679.0,689.0 537.0,689.0 395.0,689.0 253.0,689.0 111.0,689.0" fill="none" stroke="#E8DCC4" stroke-width="36" stroke-linecap="round" stroke-linejoin="round"/>
-<polyline points="679.0,689.0 537.0,689.0 395.0,689.0 253.0,689.0 111.0,689.0" fill="none" stroke="#FFFFFF" stroke-width="3" stroke-dasharray="10 12" stroke-linecap="round" opacity="0.9"/>
-<path d="M-7,-9 L6,0 L-7,9" transform="translate(182.0,287.0) rotate(0.0)" fill="none" stroke="#9C8A68" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
-<path d="M-7,-9 L6,0 L-7,9" transform="translate(324.0,287.0) rotate(0.0)" fill="none" stroke="#9C8A68" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
-<path d="M-7,-9 L6,0 L-7,9" transform="translate(466.0,287.0) rotate(0.0)" fill="none" stroke="#9C8A68" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
-<path d="M-7,-9 L6,0 L-7,9" transform="translate(608.0,220.0) rotate(-43.3)" fill="none" stroke="#9C8A68" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
-<path d="M-7,-9 L6,0 L-7,9" transform="translate(750.0,153.0) rotate(0.0)" fill="none" stroke="#9C8A68" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
-<path d="M-7,-9 L6,0 L-7,9" transform="translate(892.0,153.0) rotate(0.0)" fill="none" stroke="#9C8A68" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
-<path d="M-7,-9 L6,0 L-7,9" transform="translate(1034.0,220.0) rotate(43.3)" fill="none" stroke="#9C8A68" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
-<path d="M-7,-9 L6,0 L-7,9" transform="translate(608.0,354.0) rotate(43.3)" fill="none" stroke="#9C8A68" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
-<path d="M-7,-9 L6,0 L-7,9" transform="translate(750.0,421.0) rotate(0.0)" fill="none" stroke="#9C8A68" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
-<path d="M-7,-9 L6,0 L-7,9" transform="translate(892.0,421.0) rotate(0.0)" fill="none" stroke="#9C8A68" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
-<path d="M-7,-9 L6,0 L-7,9" transform="translate(1034.0,354.0) rotate(-43.3)" fill="none" stroke="#9C8A68" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
-<path d="M-7,-9 L6,0 L-7,9" transform="translate(1176.0,287.0) rotate(0.0)" fill="none" stroke="#9C8A68" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
-<path d="M-7,-9 L6,0 L-7,9" transform="translate(1247.0,488.0) rotate(90.0)" fill="none" stroke="#9C8A68" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
-<path d="M-7,-9 L6,0 L-7,9" transform="translate(1176.0,622.0) rotate(-136.7)" fill="none" stroke="#9C8A68" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
-<path d="M-7,-9 L6,0 L-7,9" transform="translate(1034.0,555.0) rotate(180.0)" fill="none" stroke="#9C8A68" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
-<path d="M-7,-9 L6,0 L-7,9" transform="translate(892.0,555.0) rotate(180.0)" fill="none" stroke="#9C8A68" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
-<path d="M-7,-9 L6,0 L-7,9" transform="translate(750.0,622.0) rotate(136.7)" fill="none" stroke="#9C8A68" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
-<path d="M-7,-9 L6,0 L-7,9" transform="translate(1176.0,756.0) rotate(136.7)" fill="none" stroke="#9C8A68" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
-<path d="M-7,-9 L6,0 L-7,9" transform="translate(1034.0,823.0) rotate(180.0)" fill="none" stroke="#9C8A68" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
-<path d="M-7,-9 L6,0 L-7,9" transform="translate(892.0,823.0) rotate(180.0)" fill="none" stroke="#9C8A68" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
-<path d="M-7,-9 L6,0 L-7,9" transform="translate(750.0,756.0) rotate(-136.7)" fill="none" stroke="#9C8A68" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
-<path d="M-7,-9 L6,0 L-7,9" transform="translate(608.0,689.0) rotate(180.0)" fill="none" stroke="#9C8A68" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
-<path d="M-7,-9 L6,0 L-7,9" transform="translate(466.0,689.0) rotate(180.0)" fill="none" stroke="#9C8A68" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
-<path d="M-7,-9 L6,0 L-7,9" transform="translate(324.0,689.0) rotate(180.0)" fill="none" stroke="#9C8A68" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
-<path d="M-7,-9 L6,0 L-7,9" transform="translate(182.0,689.0) rotate(180.0)" fill="none" stroke="#9C8A68" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
-<rect x="50.0" y="226.0" width="122" height="122" rx="20" fill="#E3F4E9" stroke="#3FA66B" stroke-width="4" filter="url(#shadow)"/>
-<rect x="58.0" y="234.0" width="30" height="26" rx="13" fill="#3FA66B"/>
-<text x="73.0" y="253.0" font-size="17" font-weight="bold" fill="#FFFFFF" text-anchor="middle" >1</text>
-<text x="121.0" y="293.0" font-size="40" font-weight="normal" fill="#3A3550" text-anchor="middle" font-family="'Noto Color Emoji',sans-serif">🚶</text>
-<text x="111.0" y="321.0" font-size="18" font-weight="bold" fill="#3A3550" text-anchor="middle" >スタート</text>
-<text x="111.0" y="339.0" font-size="12" font-weight="normal" fill="#7A7490" text-anchor="middle" >おでかけ</text>
-<rect x="192.0" y="226.0" width="122" height="122" rx="20" fill="#EEE8FA" stroke="#7A5CC6" stroke-width="4" filter="url(#shadow)"/>
-<rect x="200.0" y="234.0" width="30" height="26" rx="13" fill="#7A5CC6"/>
-<text x="215.0" y="253.0" font-size="17" font-weight="bold" fill="#FFFFFF" text-anchor="middle" >2</text>
-<text x="263.0" y="293.0" font-size="40" font-weight="normal" fill="#3A3550" text-anchor="middle" font-family="'Noto Color Emoji',sans-serif">❓</text>
-<text x="253.0" y="321.0" font-size="18" font-weight="bold" fill="#3A3550" text-anchor="middle" >どちらでも</text>
-<text x="253.0" y="339.0" font-size="12" font-weight="normal" fill="#7A7490" text-anchor="middle" >コンビニ</text>
-<rect x="334.0" y="226.0" width="122" height="122" rx="20" fill="#F2F1F4" stroke="#A3A1AE" stroke-width="4" filter="url(#shadow)"/>
-<rect x="342.0" y="234.0" width="30" height="26" rx="13" fill="#A3A1AE"/>
-<text x="357.0" y="253.0" font-size="17" font-weight="bold" fill="#FFFFFF" text-anchor="middle" >3</text>
-<text x="405.0" y="293.0" font-size="40" font-weight="normal" fill="#3A3550" text-anchor="middle" font-family="'Noto Color Emoji',sans-serif">➖</text>
-<text x="395.0" y="321.0" font-size="18" font-weight="bold" fill="#3A3550" text-anchor="middle" >素通り</text>
-<text x="395.0" y="339.0" font-size="12" font-weight="normal" fill="#7A7490" text-anchor="middle" >じゅうたくがい</text>
-<rect x="476.0" y="226.0" width="122" height="122" rx="20" fill="url(#forkFill)" stroke="#3A3550" stroke-width="4" filter="url(#shadow)"/>
-<rect x="484.0" y="234.0" width="30" height="26" rx="13" fill="#3A3550"/>
-<text x="499.0" y="253.0" font-size="17" font-weight="bold" fill="#FFFFFF" text-anchor="middle" >4</text>
-<text x="547.0" y="293.0" font-size="40" font-weight="normal" fill="#3A3550" text-anchor="middle" font-family="'Noto Color Emoji',sans-serif">🔀</text>
-<text x="537.0" y="321.0" font-size="18" font-weight="bold" fill="#3A3550" text-anchor="middle" >わかれ道①</text>
-<text x="537.0" y="339.0" font-size="11" font-weight="normal" fill="#7A7490" text-anchor="middle" >赤→健康／黒→誘惑</text>
-<rect x="618.0" y="92.0" width="122" height="122" rx="20" fill="#E2EFFB" stroke="#2F7FC8" stroke-width="4" filter="url(#shadow)"/>
-<rect x="626.0" y="100.0" width="38" height="26" rx="13" fill="#2F7FC8"/>
-<text x="645.0" y="119.0" font-size="17" font-weight="bold" fill="#FFFFFF" text-anchor="middle" >5A</text>
-<text x="689.0" y="159.0" font-size="40" font-weight="normal" fill="#3A3550" text-anchor="middle" font-family="'Noto Color Emoji',sans-serif">😇</text>
-<text x="679.0" y="187.0" font-size="18" font-weight="bold" fill="#3A3550" text-anchor="middle" >健康</text>
-<text x="679.0" y="205.0" font-size="12" font-weight="normal" fill="#7A7490" text-anchor="middle" >こうえん</text>
-<rect x="760.0" y="92.0" width="122" height="122" rx="20" fill="#FFF3D2" stroke="#D99A00" stroke-width="4" filter="url(#shadow)"/>
-<rect x="768.0" y="100.0" width="38" height="26" rx="13" fill="#D99A00"/>
-<text x="787.0" y="119.0" font-size="17" font-weight="bold" fill="#FFFFFF" text-anchor="middle" >6A</text>
-<text x="831.0" y="159.0" font-size="40" font-weight="normal" fill="#3A3550" text-anchor="middle" font-family="'Noto Color Emoji',sans-serif">❗</text>
-<text x="821.0" y="187.0" font-size="18" font-weight="bold" fill="#3A3550" text-anchor="middle" >ハプニング</text>
-<text x="821.0" y="205.0" font-size="12" font-weight="normal" fill="#7A7490" text-anchor="middle" >？？？</text>
-<rect x="902.0" y="92.0" width="122" height="122" rx="20" fill="#E2EFFB" stroke="#2F7FC8" stroke-width="4" filter="url(#shadow)"/>
-<rect x="910.0" y="100.0" width="38" height="26" rx="13" fill="#2F7FC8"/>
-<text x="929.0" y="119.0" font-size="17" font-weight="bold" fill="#FFFFFF" text-anchor="middle" >7A</text>
-<text x="973.0" y="159.0" font-size="40" font-weight="normal" fill="#3A3550" text-anchor="middle" font-family="'Noto Color Emoji',sans-serif">😇</text>
-<text x="963.0" y="187.0" font-size="18" font-weight="bold" fill="#3A3550" text-anchor="middle" >健康</text>
-<text x="963.0" y="205.0" font-size="12" font-weight="normal" fill="#7A7490" text-anchor="middle" >ジム</text>
-<rect x="618.0" y="360.0" width="122" height="122" rx="20" fill="#FBE3EA" stroke="#D0436A" stroke-width="4" filter="url(#shadow)"/>
-<rect x="626.0" y="368.0" width="38" height="26" rx="13" fill="#D0436A"/>
-<text x="645.0" y="387.0" font-size="17" font-weight="bold" fill="#FFFFFF" text-anchor="middle" >5B</text>
-<text x="689.0" y="427.0" font-size="40" font-weight="normal" fill="#3A3550" text-anchor="middle" font-family="'Noto Color Emoji',sans-serif">😈</text>
-<text x="679.0" y="455.0" font-size="18" font-weight="bold" fill="#3A3550" text-anchor="middle" >誘惑</text>
-<text x="679.0" y="473.0" font-size="12" font-weight="normal" fill="#7A7490" text-anchor="middle" >だがしや</text>
-<rect x="760.0" y="360.0" width="122" height="122" rx="20" fill="#FFF3D2" stroke="#D99A00" stroke-width="4" filter="url(#shadow)"/>
-<rect x="768.0" y="368.0" width="38" height="26" rx="13" fill="#D99A00"/>
-<text x="787.0" y="387.0" font-size="17" font-weight="bold" fill="#FFFFFF" text-anchor="middle" >6B</text>
-<text x="831.0" y="427.0" font-size="40" font-weight="normal" fill="#3A3550" text-anchor="middle" font-family="'Noto Color Emoji',sans-serif">❗</text>
-<text x="821.0" y="455.0" font-size="18" font-weight="bold" fill="#3A3550" text-anchor="middle" >ハプニング</text>
-<text x="821.0" y="473.0" font-size="12" font-weight="normal" fill="#7A7490" text-anchor="middle" >？？？</text>
-<rect x="902.0" y="360.0" width="122" height="122" rx="20" fill="#FBE3EA" stroke="#D0436A" stroke-width="4" filter="url(#shadow)"/>
-<rect x="910.0" y="368.0" width="38" height="26" rx="13" fill="#D0436A"/>
-<text x="929.0" y="387.0" font-size="17" font-weight="bold" fill="#FFFFFF" text-anchor="middle" >7B</text>
-<text x="973.0" y="427.0" font-size="40" font-weight="normal" fill="#3A3550" text-anchor="middle" font-family="'Noto Color Emoji',sans-serif">😈</text>
-<text x="963.0" y="455.0" font-size="18" font-weight="bold" fill="#3A3550" text-anchor="middle" >誘惑</text>
-<text x="963.0" y="473.0" font-size="12" font-weight="normal" fill="#7A7490" text-anchor="middle" >ラーメン屋</text>
-<rect x="1044.0" y="226.0" width="122" height="122" rx="20" fill="#EEE8FA" stroke="#7A5CC6" stroke-width="4" filter="url(#shadow)"/>
-<rect x="1052.0" y="234.0" width="30" height="26" rx="13" fill="#7A5CC6"/>
-<text x="1067.0" y="253.0" font-size="17" font-weight="bold" fill="#FFFFFF" text-anchor="middle" >8</text>
-<text x="1115.0" y="293.0" font-size="40" font-weight="normal" fill="#3A3550" text-anchor="middle" font-family="'Noto Color Emoji',sans-serif">❓</text>
-<text x="1105.0" y="321.0" font-size="18" font-weight="bold" fill="#3A3550" text-anchor="middle" >どちらでも</text>
-<text x="1105.0" y="339.0" font-size="12" font-weight="normal" fill="#7A7490" text-anchor="middle" >じはんき（合流）</text>
-<rect x="1186.0" y="226.0" width="122" height="122" rx="20" fill="#F2F1F4" stroke="#A3A1AE" stroke-width="4" filter="url(#shadow)"/>
-<rect x="1194.0" y="234.0" width="30" height="26" rx="13" fill="#A3A1AE"/>
-<text x="1209.0" y="253.0" font-size="17" font-weight="bold" fill="#FFFFFF" text-anchor="middle" >9</text>
-<text x="1257.0" y="293.0" font-size="40" font-weight="normal" fill="#3A3550" text-anchor="middle" font-family="'Noto Color Emoji',sans-serif">➖</text>
-<text x="1247.0" y="321.0" font-size="18" font-weight="bold" fill="#3A3550" text-anchor="middle" >素通り</text>
-<text x="1247.0" y="339.0" font-size="12" font-weight="normal" fill="#7A7490" text-anchor="middle" >じゅうたくがい</text>
-<rect x="1186.0" y="628.0" width="122" height="122" rx="20" fill="url(#forkFill)" stroke="#3A3550" stroke-width="4" filter="url(#shadow)"/>
-<rect x="1194.0" y="636.0" width="38" height="26" rx="13" fill="#3A3550"/>
-<text x="1213.0" y="655.0" font-size="17" font-weight="bold" fill="#FFFFFF" text-anchor="middle" >10</text>
-<text x="1257.0" y="695.0" font-size="40" font-weight="normal" fill="#3A3550" text-anchor="middle" font-family="'Noto Color Emoji',sans-serif">🔀</text>
-<text x="1247.0" y="723.0" font-size="18" font-weight="bold" fill="#3A3550" text-anchor="middle" >わかれ道②</text>
-<text x="1247.0" y="741.0" font-size="11" font-weight="normal" fill="#7A7490" text-anchor="middle" >赤→健康／黒→誘惑</text>
-<rect x="1044.0" y="494.0" width="122" height="122" rx="20" fill="#E2EFFB" stroke="#2F7FC8" stroke-width="4" filter="url(#shadow)"/>
-<rect x="1052.0" y="502.0" width="46" height="26" rx="13" fill="#2F7FC8"/>
-<text x="1075.0" y="521.0" font-size="17" font-weight="bold" fill="#FFFFFF" text-anchor="middle" >11A</text>
-<text x="1115.0" y="561.0" font-size="40" font-weight="normal" fill="#3A3550" text-anchor="middle" font-family="'Noto Color Emoji',sans-serif">😇</text>
-<text x="1105.0" y="589.0" font-size="18" font-weight="bold" fill="#3A3550" text-anchor="middle" >健康</text>
-<text x="1105.0" y="607.0" font-size="12" font-weight="normal" fill="#7A7490" text-anchor="middle" >やおや</text>
-<rect x="902.0" y="494.0" width="122" height="122" rx="20" fill="#EEE8FA" stroke="#7A5CC6" stroke-width="4" filter="url(#shadow)"/>
-<rect x="910.0" y="502.0" width="46" height="26" rx="13" fill="#7A5CC6"/>
-<text x="933.0" y="521.0" font-size="17" font-weight="bold" fill="#FFFFFF" text-anchor="middle" >12A</text>
-<text x="973.0" y="561.0" font-size="40" font-weight="normal" fill="#3A3550" text-anchor="middle" font-family="'Noto Color Emoji',sans-serif">❓</text>
-<text x="963.0" y="589.0" font-size="18" font-weight="bold" fill="#3A3550" text-anchor="middle" >どちらでも</text>
-<text x="963.0" y="607.0" font-size="12" font-weight="normal" fill="#7A7490" text-anchor="middle" >こうえんのベンチ</text>
-<rect x="760.0" y="494.0" width="122" height="122" rx="20" fill="#FFF3D2" stroke="#D99A00" stroke-width="4" filter="url(#shadow)"/>
-<rect x="768.0" y="502.0" width="46" height="26" rx="13" fill="#D99A00"/>
-<text x="791.0" y="521.0" font-size="17" font-weight="bold" fill="#FFFFFF" text-anchor="middle" >13A</text>
-<text x="831.0" y="561.0" font-size="40" font-weight="normal" fill="#3A3550" text-anchor="middle" font-family="'Noto Color Emoji',sans-serif">❗</text>
-<text x="821.0" y="589.0" font-size="18" font-weight="bold" fill="#3A3550" text-anchor="middle" >ハプニング</text>
-<text x="821.0" y="607.0" font-size="12" font-weight="normal" fill="#7A7490" text-anchor="middle" >？？？</text>
-<rect x="1044.0" y="762.0" width="122" height="122" rx="20" fill="#FBE3EA" stroke="#D0436A" stroke-width="4" filter="url(#shadow)"/>
-<rect x="1052.0" y="770.0" width="46" height="26" rx="13" fill="#D0436A"/>
-<text x="1075.0" y="789.0" font-size="17" font-weight="bold" fill="#FFFFFF" text-anchor="middle" >11B</text>
-<text x="1115.0" y="829.0" font-size="40" font-weight="normal" fill="#3A3550" text-anchor="middle" font-family="'Noto Color Emoji',sans-serif">😈</text>
-<text x="1105.0" y="857.0" font-size="18" font-weight="bold" fill="#3A3550" text-anchor="middle" >誘惑</text>
-<text x="1105.0" y="875.0" font-size="12" font-weight="normal" fill="#7A7490" text-anchor="middle" >ファストフード</text>
-<rect x="902.0" y="762.0" width="122" height="122" rx="20" fill="#EEE8FA" stroke="#7A5CC6" stroke-width="4" filter="url(#shadow)"/>
-<rect x="910.0" y="770.0" width="46" height="26" rx="13" fill="#7A5CC6"/>
-<text x="933.0" y="789.0" font-size="17" font-weight="bold" fill="#FFFFFF" text-anchor="middle" >12B</text>
-<text x="973.0" y="829.0" font-size="40" font-weight="normal" fill="#3A3550" text-anchor="middle" font-family="'Noto Color Emoji',sans-serif">❓</text>
-<text x="963.0" y="857.0" font-size="18" font-weight="bold" fill="#3A3550" text-anchor="middle" >どちらでも</text>
-<text x="963.0" y="875.0" font-size="12" font-weight="normal" fill="#7A7490" text-anchor="middle" >屋台</text>
-<rect x="760.0" y="762.0" width="122" height="122" rx="20" fill="#FFF3D2" stroke="#D99A00" stroke-width="4" filter="url(#shadow)"/>
-<rect x="768.0" y="770.0" width="46" height="26" rx="13" fill="#D99A00"/>
-<text x="791.0" y="789.0" font-size="17" font-weight="bold" fill="#FFFFFF" text-anchor="middle" >13B</text>
-<text x="831.0" y="829.0" font-size="40" font-weight="normal" fill="#3A3550" text-anchor="middle" font-family="'Noto Color Emoji',sans-serif">❗</text>
-<text x="821.0" y="857.0" font-size="18" font-weight="bold" fill="#3A3550" text-anchor="middle" >ハプニング</text>
-<text x="821.0" y="875.0" font-size="12" font-weight="normal" fill="#7A7490" text-anchor="middle" >？？？</text>
-<rect x="618.0" y="628.0" width="122" height="122" rx="20" fill="#EEE8FA" stroke="#7A5CC6" stroke-width="4" filter="url(#shadow)"/>
-<rect x="626.0" y="636.0" width="38" height="26" rx="13" fill="#7A5CC6"/>
-<text x="645.0" y="655.0" font-size="17" font-weight="bold" fill="#FFFFFF" text-anchor="middle" >14</text>
-<text x="689.0" y="695.0" font-size="40" font-weight="normal" fill="#3A3550" text-anchor="middle" font-family="'Noto Color Emoji',sans-serif">❓</text>
-<text x="679.0" y="723.0" font-size="18" font-weight="bold" fill="#3A3550" text-anchor="middle" >どちらでも</text>
-<text x="679.0" y="741.0" font-size="12" font-weight="normal" fill="#7A7490" text-anchor="middle" >コンビニ（合流）</text>
-<rect x="476.0" y="628.0" width="122" height="122" rx="20" fill="#FBE3EA" stroke="#D0436A" stroke-width="4" filter="url(#shadow)"/>
-<rect x="484.0" y="636.0" width="38" height="26" rx="13" fill="#D0436A"/>
-<text x="503.0" y="655.0" font-size="17" font-weight="bold" fill="#FFFFFF" text-anchor="middle" >15</text>
-<text x="547.0" y="695.0" font-size="40" font-weight="normal" fill="#3A3550" text-anchor="middle" font-family="'Noto Color Emoji',sans-serif">😈</text>
-<text x="537.0" y="723.0" font-size="18" font-weight="bold" fill="#3A3550" text-anchor="middle" >誘惑</text>
-<text x="537.0" y="741.0" font-size="12" font-weight="normal" fill="#7A7490" text-anchor="middle" >ケーキ屋</text>
-<rect x="334.0" y="628.0" width="122" height="122" rx="20" fill="#E2EFFB" stroke="#2F7FC8" stroke-width="4" filter="url(#shadow)"/>
-<rect x="342.0" y="636.0" width="38" height="26" rx="13" fill="#2F7FC8"/>
-<text x="361.0" y="655.0" font-size="17" font-weight="bold" fill="#FFFFFF" text-anchor="middle" >16</text>
-<text x="405.0" y="695.0" font-size="40" font-weight="normal" fill="#3A3550" text-anchor="middle" font-family="'Noto Color Emoji',sans-serif">😇</text>
-<text x="395.0" y="723.0" font-size="18" font-weight="bold" fill="#3A3550" text-anchor="middle" >健康</text>
-<text x="395.0" y="741.0" font-size="12" font-weight="normal" fill="#7A7490" text-anchor="middle" >こうえん</text>
-<rect x="192.0" y="628.0" width="122" height="122" rx="20" fill="#FFF3D2" stroke="#D99A00" stroke-width="4" filter="url(#shadow)"/>
-<rect x="200.0" y="636.0" width="38" height="26" rx="13" fill="#D99A00"/>
-<text x="219.0" y="655.0" font-size="17" font-weight="bold" fill="#FFFFFF" text-anchor="middle" >17</text>
-<text x="263.0" y="695.0" font-size="40" font-weight="normal" fill="#3A3550" text-anchor="middle" font-family="'Noto Color Emoji',sans-serif">❗</text>
-<text x="253.0" y="723.0" font-size="18" font-weight="bold" fill="#3A3550" text-anchor="middle" >ハプニング</text>
-<text x="253.0" y="741.0" font-size="12" font-weight="normal" fill="#7A7490" text-anchor="middle" >？？？</text>
-<rect x="50.0" y="628.0" width="122" height="122" rx="20" fill="#FDEBD6" stroke="#E07B1F" stroke-width="4" filter="url(#shadow)"/>
-<rect x="58.0" y="636.0" width="38" height="26" rx="13" fill="#E07B1F"/>
-<text x="77.0" y="655.0" font-size="17" font-weight="bold" fill="#FFFFFF" text-anchor="middle" >18</text>
-<text x="121.0" y="695.0" font-size="40" font-weight="normal" fill="#3A3550" text-anchor="middle" font-family="'Noto Color Emoji',sans-serif">🏠</text>
-<text x="111.0" y="723.0" font-size="18" font-weight="bold" fill="#3A3550" text-anchor="middle" >ゴール</text>
-<text x="111.0" y="741.0" font-size="12" font-weight="normal" fill="#7A7490" text-anchor="middle" >おうち</text>
-<rect x="50.0" y="366.0" width="548" height="244" rx="20" fill="#FFFFFF" fill-opacity="0.75" stroke="#E2D6BE" stroke-width="2"/>
-<text x="72.0" y="402.0" font-size="19" font-weight="bold" fill="#3A3550" text-anchor="start" >マスの種類</text>
-<rect x="72.0" y="420.0" width="40" height="40" rx="10" fill="#E2EFFB" stroke="#2F7FC8" stroke-width="3"/>
-<text x="92.0" y="449.0" font-size="22" font-weight="normal" fill="#3A3550" text-anchor="middle" font-family="'Noto Color Emoji',sans-serif">😇</text>
-<text x="124.0" y="437.0" font-size="15" font-weight="bold" fill="#3A3550" text-anchor="start" >健康</text>
-<text x="124.0" y="456.0" font-size="12" font-weight="normal" fill="#7A7490" text-anchor="start" >てんしが出す／あくまは横やり</text>
-<rect x="72.0" y="472.0" width="40" height="40" rx="10" fill="#FBE3EA" stroke="#D0436A" stroke-width="3"/>
-<text x="92.0" y="501.0" font-size="22" font-weight="normal" fill="#3A3550" text-anchor="middle" font-family="'Noto Color Emoji',sans-serif">😈</text>
-<text x="124.0" y="489.0" font-size="15" font-weight="bold" fill="#3A3550" text-anchor="start" >誘惑</text>
-<text x="124.0" y="508.0" font-size="12" font-weight="normal" fill="#7A7490" text-anchor="start" >あくまが出す／てんしは横やり</text>
-<rect x="72.0" y="524.0" width="40" height="40" rx="10" fill="#EEE8FA" stroke="#7A5CC6" stroke-width="3"/>
-<text x="92.0" y="553.0" font-size="22" font-weight="normal" fill="#3A3550" text-anchor="middle" font-family="'Noto Color Emoji',sans-serif">❓</text>
-<text x="124.0" y="541.0" font-size="15" font-weight="bold" fill="#3A3550" text-anchor="start" >どちらでも</text>
-<text x="124.0" y="560.0" font-size="12" font-weight="normal" fill="#7A7490" text-anchor="start" >両陣営でカード勝負</text>
-<rect x="340.0" y="420.0" width="40" height="40" rx="10" fill="url(#forkFill)" stroke="#3A3550" stroke-width="3"/>
-<text x="360.0" y="449.0" font-size="22" font-weight="normal" fill="#3A3550" text-anchor="middle" font-family="'Noto Color Emoji',sans-serif">🔀</text>
-<text x="392.0" y="437.0" font-size="15" font-weight="bold" fill="#3A3550" text-anchor="start" >わかれ道</text>
-<text x="392.0" y="456.0" font-size="12" font-weight="normal" fill="#7A7490" text-anchor="start" >カード勝負＋色でレーン決定</text>
-<rect x="340.0" y="472.0" width="40" height="40" rx="10" fill="#FFF3D2" stroke="#D99A00" stroke-width="3"/>
-<text x="360.0" y="501.0" font-size="22" font-weight="normal" fill="#3A3550" text-anchor="middle" font-family="'Noto Color Emoji',sans-serif">❗</text>
-<text x="392.0" y="489.0" font-size="15" font-weight="bold" fill="#3A3550" text-anchor="start" >ハプニング</text>
-<text x="392.0" y="508.0" font-size="12" font-weight="normal" fill="#7A7490" text-anchor="start" >1d6 でハプニング表</text>
-<rect x="340.0" y="524.0" width="40" height="40" rx="10" fill="#F2F1F4" stroke="#A3A1AE" stroke-width="3"/>
-<text x="360.0" y="553.0" font-size="22" font-weight="normal" fill="#3A3550" text-anchor="middle" font-family="'Noto Color Emoji',sans-serif">➖</text>
-<text x="392.0" y="541.0" font-size="15" font-weight="bold" fill="#3A3550" text-anchor="start" >素通り</text>
-<text x="392.0" y="560.0" font-size="12" font-weight="normal" fill="#7A7490" text-anchor="start" >何も起こらない</text>
-<line x1="72.0" y1="588.0" x2="112.0" y2="588.0" stroke="#C9DFF4" stroke-width="14" stroke-linecap="round"/>
-<text x="124.0" y="594.0" font-size="14" font-weight="bold" fill="#2F7FC8" text-anchor="start" >健康レーン（赤 ♥♦ で勝つと）</text>
-<line x1="340.0" y1="588.0" x2="380.0" y2="588.0" stroke="#F5CDD8" stroke-width="14" stroke-linecap="round"/>
-<text x="392.0" y="594.0" font-size="14" font-weight="bold" fill="#D0436A" text-anchor="start" >誘惑レーン（黒 ♠♣ で勝つと）</text>
-<rect x="50.0" y="766.0" width="678" height="114" rx="20" fill="#FFFFFF" fill-opacity="0.75" stroke="#E2D6BE" stroke-width="2"/>
-<text x="72.0" y="800.0" font-size="19" font-weight="bold" fill="#3A3550" text-anchor="start" >手番の流れ</text>
-<text x="72.0" y="832.0" font-size="15" font-weight="normal" fill="#3A3550" text-anchor="start" >① 1d6 で NPC を進める</text>
-<text x="72.0" y="862.0" font-size="15" font-weight="normal" fill="#3A3550" text-anchor="start" >② 止まったマスを処理する</text>
-<text x="411.0" y="832.0" font-size="15" font-weight="normal" fill="#3A3550" text-anchor="start" >③ 使ったカードを捨てて補充</text>
-<text x="411.0" y="862.0" font-size="15" font-weight="normal" fill="#3A3550" text-anchor="start" >④ 相手陣営に手番を渡す</text>
-<text x="50.0" y="934.0" font-size="22" font-weight="bold" fill="#3A3550" text-anchor="start" >体調ゲージ</text>
-<text x="180.0" y="934.0" font-size="14" font-weight="normal" fill="#7A7490" text-anchor="start" >ゲームの開始時は 0。ゴールした瞬間の位置で勝敗が決まる</text>
-<rect x="50" y="950" width="60" height="66" fill="#E0819B" stroke="#FFFFFF" stroke-width="3"/>
-<text x="80.0" y="991.0" font-size="22" font-weight="bold" fill="#FFFFFF" text-anchor="middle" >-10</text>
-<rect x="110" y="950" width="60" height="66" fill="#E28BA3" stroke="#FFFFFF" stroke-width="3"/>
-<text x="140.0" y="991.0" font-size="22" font-weight="bold" fill="#FFFFFF" text-anchor="middle" >-9</text>
-<rect x="170" y="950" width="60" height="66" fill="#E596AC" stroke="#FFFFFF" stroke-width="3"/>
-<text x="200.0" y="991.0" font-size="22" font-weight="bold" fill="#FFFFFF" text-anchor="middle" >-8</text>
-<rect x="230" y="950" width="60" height="66" fill="#E7A0B4" stroke="#FFFFFF" stroke-width="3"/>
-<text x="260.0" y="991.0" font-size="22" font-weight="bold" fill="#FFFFFF" text-anchor="middle" >-7</text>
-<rect x="290" y="950" width="60" height="66" fill="#EAAABC" stroke="#FFFFFF" stroke-width="3"/>
-<text x="320.0" y="991.0" font-size="22" font-weight="bold" fill="#FFFFFF" text-anchor="middle" >-6</text>
-<rect x="350" y="950" width="60" height="66" fill="#ECB5C4" stroke="#FFFFFF" stroke-width="3"/>
-<text x="380.0" y="991.0" font-size="22" font-weight="bold" fill="#3A3550" text-anchor="middle" >-5</text>
-<rect x="410" y="950" width="60" height="66" fill="#EFBFCC" stroke="#FFFFFF" stroke-width="3"/>
-<text x="440.0" y="991.0" font-size="22" font-weight="bold" fill="#3A3550" text-anchor="middle" >-4</text>
-<rect x="470" y="950" width="60" height="66" fill="#F2C9D5" stroke="#FFFFFF" stroke-width="3"/>
-<text x="500.0" y="991.0" font-size="22" font-weight="bold" fill="#3A3550" text-anchor="middle" >-3</text>
-<rect x="530" y="950" width="60" height="66" fill="#F4D4DD" stroke="#FFFFFF" stroke-width="3"/>
-<text x="560.0" y="991.0" font-size="22" font-weight="bold" fill="#3A3550" text-anchor="middle" >-2</text>
-<rect x="590" y="950" width="60" height="66" fill="#F7DEE5" stroke="#FFFFFF" stroke-width="3"/>
-<text x="620.0" y="991.0" font-size="22" font-weight="bold" fill="#3A3550" text-anchor="middle" >-1</text>
-<rect x="650" y="950" width="60" height="66" fill="#FFFFFF" stroke="#FFFFFF" stroke-width="3"/>
-<text x="680.0" y="991.0" font-size="26" font-weight="bold" fill="#3A3550" text-anchor="middle" >0</text>
-<rect x="710" y="950" width="60" height="66" fill="#DBE9F5" stroke="#FFFFFF" stroke-width="3"/>
-<text x="740.0" y="991.0" font-size="22" font-weight="bold" fill="#3A3550" text-anchor="middle" >+1</text>
-<rect x="770" y="950" width="60" height="66" fill="#CFE2F2" stroke="#FFFFFF" stroke-width="3"/>
-<text x="800.0" y="991.0" font-size="22" font-weight="bold" fill="#3A3550" text-anchor="middle" >+2</text>
-<rect x="830" y="950" width="60" height="66" fill="#C4DBEF" stroke="#FFFFFF" stroke-width="3"/>
-<text x="860.0" y="991.0" font-size="22" font-weight="bold" fill="#3A3550" text-anchor="middle" >+3</text>
-<rect x="890" y="950" width="60" height="66" fill="#B8D3EC" stroke="#FFFFFF" stroke-width="3"/>
-<text x="920.0" y="991.0" font-size="22" font-weight="bold" fill="#3A3550" text-anchor="middle" >+4</text>
-<rect x="950" y="950" width="60" height="66" fill="#ADCCE9" stroke="#FFFFFF" stroke-width="3"/>
-<text x="980.0" y="991.0" font-size="22" font-weight="bold" fill="#3A3550" text-anchor="middle" >+5</text>
-<rect x="1010" y="950" width="60" height="66" fill="#A1C5E6" stroke="#FFFFFF" stroke-width="3"/>
-<text x="1040.0" y="991.0" font-size="22" font-weight="bold" fill="#FFFFFF" text-anchor="middle" >+6</text>
-<rect x="1070" y="950" width="60" height="66" fill="#96BEE3" stroke="#FFFFFF" stroke-width="3"/>
-<text x="1100.0" y="991.0" font-size="22" font-weight="bold" fill="#FFFFFF" text-anchor="middle" >+7</text>
-<rect x="1130" y="950" width="60" height="66" fill="#8BB7E0" stroke="#FFFFFF" stroke-width="3"/>
-<text x="1160.0" y="991.0" font-size="22" font-weight="bold" fill="#FFFFFF" text-anchor="middle" >+8</text>
-<rect x="1190" y="950" width="60" height="66" fill="#7FB0DD" stroke="#FFFFFF" stroke-width="3"/>
-<text x="1220.0" y="991.0" font-size="22" font-weight="bold" fill="#FFFFFF" text-anchor="middle" >+9</text>
-<rect x="1250" y="950" width="60" height="66" fill="#74A9DA" stroke="#FFFFFF" stroke-width="3"/>
-<text x="1280.0" y="991.0" font-size="22" font-weight="bold" fill="#FFFFFF" text-anchor="middle" >+10</text>
-<rect x="50" y="950" width="1260" height="66" rx="6" fill="none" stroke="#D8C9AC" stroke-width="3"/>
-<rect x="650" y="946" width="60" height="74" rx="6" fill="none" stroke="#3A3550" stroke-width="4"/>
-<text x="50.0" y="1042.0" font-size="17" font-weight="bold" fill="#D0436A" text-anchor="start" >😈 −1以下：あくま陣営の勝ち</text>
-<text x="680.0" y="1042.0" font-size="15" font-weight="normal" fill="#7A7490" text-anchor="middle" >0：気まぐれ判定（1d6 奇数てんし／偶数あくま）</text>
-<text x="1310.0" y="1042.0" font-size="17" font-weight="bold" fill="#2F7FC8" text-anchor="end" >てんし陣営の勝ち：+1以上 😇</text>
-<rect x="1352" y="24" width="544" height="1032" rx="28" fill="#FFFFFF" fill-opacity="0.7" stroke="#E2D6BE" stroke-width="2"/>
-<text x="1380.0" y="70.0" font-size="22" font-weight="bold" fill="#3A3550" text-anchor="start" >カード置き場</text>
-<text x="1868.0" y="70.0" font-size="13" font-weight="normal" fill="#7A7490" text-anchor="end" >※枠の大きさは目安</text>
-<rect x="1389.0" y="94" width="132" height="176" rx="12" fill="#FFFFFF" fill-opacity="0.6" stroke="#3A3550" stroke-width="3" />
-<text x="1455.0" y="188.0" font-size="18" font-weight="bold" fill="#3A3550" text-anchor="middle" >山札</text>
-<text x="1455.0" y="210.0" font-size="12" font-weight="normal" fill="#7A7490" text-anchor="middle" >トランプのデッキ</text>
-<rect x="1558.0" y="94" width="132" height="176" rx="12" fill="#FFFFFF" fill-opacity="0.6" stroke="#7A7490" stroke-width="3" stroke-dasharray="9 7"/>
-<text x="1624.0" y="188.0" font-size="18" font-weight="bold" fill="#7A7490" text-anchor="middle" >捨て札</text>
-<text x="1624.0" y="210.0" font-size="12" font-weight="normal" fill="#7A7490" text-anchor="middle" >表向きで置く</text>
-<rect x="1727.0" y="94" width="132" height="176" rx="12" fill="#FFFFFF" fill-opacity="0.6" stroke="#7A7490" stroke-width="3" stroke-dasharray="9 7"/>
-<text x="1793.0" y="188.0" font-size="18" font-weight="bold" fill="#7A7490" text-anchor="middle" >除外</text>
-<text x="1793.0" y="210.0" font-size="12" font-weight="normal" fill="#7A7490" text-anchor="middle" >ジョーカー</text>
-<rect x="1368" y="300" width="512" height="276" rx="20" fill="#F6F2FB"/>
-<text x="1624.0" y="336.0" font-size="22" font-weight="bold" fill="#7A5CC6" text-anchor="middle" >勝負エリア</text>
-<text x="1624.0" y="360.0" font-size="14" font-weight="normal" fill="#7A7490" text-anchor="middle" >裏向きで置いて「せーの」で公開</text>
-<rect x="1408" y="376" width="150" height="186" rx="12" fill="#FFFFFF" fill-opacity="0.6" stroke="#2F7FC8" stroke-width="3" stroke-dasharray="9 7"/>
-<text x="1483.0" y="475.0" font-size="18" font-weight="bold" fill="#2F7FC8" text-anchor="middle" >てんし</text>
-<text x="1483.0" y="497.0" font-size="12" font-weight="normal" fill="#7A7490" text-anchor="middle" >😇 健康マスでは主役</text>
-<rect x="1690" y="376" width="150" height="186" rx="12" fill="#FFFFFF" fill-opacity="0.6" stroke="#D0436A" stroke-width="3" stroke-dasharray="9 7"/>
-<text x="1765.0" y="475.0" font-size="18" font-weight="bold" fill="#D0436A" text-anchor="middle" >あくま</text>
-<text x="1765.0" y="497.0" font-size="12" font-weight="normal" fill="#7A7490" text-anchor="middle" >😈 誘惑マスでは主役</text>
-<text x="1624.0" y="479.0" font-size="30" font-weight="bold" fill="#7A5CC6" text-anchor="middle" >VS</text>
-<rect x="1368" y="602" width="512" height="214" rx="12" fill="#FFFFFF" fill-opacity="0.6" stroke="#2F7FC8" stroke-width="3" stroke-dasharray="9 7"/>
-<text x="1624.0" y="715.0" font-size="18" font-weight="bold" fill="#2F7FC8" text-anchor="middle" >てんし陣営の手札</text>
-<text x="1624.0" y="737.0" font-size="12" font-weight="normal" fill="#7A7490" text-anchor="middle" >裏向きで置き「自分だけ見る」</text>
-<rect x="1368" y="834" width="512" height="214" rx="12" fill="#FFFFFF" fill-opacity="0.6" stroke="#D0436A" stroke-width="3" stroke-dasharray="9 7"/>
-<text x="1624.0" y="947.0" font-size="18" font-weight="bold" fill="#D0436A" text-anchor="middle" >あくま陣営の手札</text>
-<text x="1624.0" y="969.0" font-size="12" font-weight="normal" fill="#7A7490" text-anchor="middle" >裏向きで置き「自分だけ見る」</text>
+<g transform="translate(940,300) scale(1.0)" opacity="0.9"><path d="M-40,10 Q-40,-8 -22,-8 Q-16,-26 4,-22 Q20,-34 34,-16 Q52,-14 50,6 Q50,14 40,14 L-32,14 Q-40,14 -40,10 Z" fill="#FFFFFF" stroke="#E6D7B8" stroke-width="3"/></g>
+<g transform="translate(1080,220) scale(0.7)" opacity="0.9"><path d="M-40,10 Q-40,-8 -22,-8 Q-16,-26 4,-22 Q20,-34 34,-16 Q52,-14 50,6 Q50,14 40,14 L-32,14 Q-40,14 -40,10 Z" fill="#FFFFFF" stroke="#E6D7B8" stroke-width="3"/></g>
+<g transform="translate(360,640) scale(0.6)" opacity="0.9"><path d="M-40,10 Q-40,-8 -22,-8 Q-16,-26 4,-22 Q20,-34 34,-16 Q52,-14 50,6 Q50,14 40,14 L-32,14 Q-40,14 -40,10 Z" fill="#FFFFFF" stroke="#E6D7B8" stroke-width="3"/></g>
+<path d="M990,425 Q992,413 996,425 M1000,425 Q1002,409 1005,425 M1007,425 Q1011,415 1013,425" fill="none" stroke="#9FCF8E" stroke-width="3" stroke-linecap="round"/>
+<path d="M860,160 Q862,148 866,160 M870,160 Q872,144 875,160 M877,160 Q881,150 883,160" fill="none" stroke="#9FCF8E" stroke-width="3" stroke-linecap="round"/>
+<path d="M1180,860 Q1182,848 1186,860 M1190,860 Q1192,844 1195,860 M1197,860 Q1201,850 1203,860" fill="none" stroke="#9FCF8E" stroke-width="3" stroke-linecap="round"/>
+<path d="M610,905 Q612,893 616,905 M620,905 Q622,889 625,905 M627,905 Q631,895 633,905" fill="none" stroke="#9FCF8E" stroke-width="3" stroke-linecap="round"/>
+<path d="M1290,280 Q1292,268 1296,280 M1300,280 Q1302,264 1305,280 M1307,280 Q1311,270 1313,280" fill="none" stroke="#9FCF8E" stroke-width="3" stroke-linecap="round"/>
+<polyline points="110.0,286.0 252.0,286.0 394.0,286.0 536.0,286.0" fill="none" stroke="#D6C29C" stroke-width="50" stroke-linecap="round" stroke-linejoin="round"/>
+<polyline points="110.0,286.0 252.0,286.0 394.0,286.0 536.0,286.0" fill="none" stroke="#EADBBE" stroke-width="40" stroke-linecap="round" stroke-linejoin="round"/>
+<polyline points="110.0,286.0 252.0,286.0 394.0,286.0 536.0,286.0" fill="none" stroke="#FFFFFF" stroke-width="4" stroke-dasharray="12 12" stroke-linecap="round" opacity="0.9"/>
+<polyline points="536.0,286.0 678.0,152.0 820.0,152.0 962.0,152.0 1104.0,286.0" fill="none" stroke="#D6C29C" stroke-width="50" stroke-linecap="round" stroke-linejoin="round"/>
+<polyline points="536.0,286.0 678.0,152.0 820.0,152.0 962.0,152.0 1104.0,286.0" fill="none" stroke="#BFDCF6" stroke-width="40" stroke-linecap="round" stroke-linejoin="round"/>
+<polyline points="536.0,286.0 678.0,152.0 820.0,152.0 962.0,152.0 1104.0,286.0" fill="none" stroke="#FFFFFF" stroke-width="4" stroke-dasharray="12 12" stroke-linecap="round" opacity="0.9"/>
+<polyline points="536.0,286.0 678.0,420.0 820.0,420.0 962.0,420.0 1104.0,286.0" fill="none" stroke="#D6C29C" stroke-width="50" stroke-linecap="round" stroke-linejoin="round"/>
+<polyline points="536.0,286.0 678.0,420.0 820.0,420.0 962.0,420.0 1104.0,286.0" fill="none" stroke="#F8C9D6" stroke-width="40" stroke-linecap="round" stroke-linejoin="round"/>
+<polyline points="536.0,286.0 678.0,420.0 820.0,420.0 962.0,420.0 1104.0,286.0" fill="none" stroke="#FFFFFF" stroke-width="4" stroke-dasharray="12 12" stroke-linecap="round" opacity="0.9"/>
+<polyline points="1104.0,286.0 1246.0,286.0 1246.0,688.0" fill="none" stroke="#D6C29C" stroke-width="50" stroke-linecap="round" stroke-linejoin="round"/>
+<polyline points="1104.0,286.0 1246.0,286.0 1246.0,688.0" fill="none" stroke="#EADBBE" stroke-width="40" stroke-linecap="round" stroke-linejoin="round"/>
+<polyline points="1104.0,286.0 1246.0,286.0 1246.0,688.0" fill="none" stroke="#FFFFFF" stroke-width="4" stroke-dasharray="12 12" stroke-linecap="round" opacity="0.9"/>
+<polyline points="1246.0,688.0 1104.0,554.0 962.0,554.0 820.0,554.0 678.0,688.0" fill="none" stroke="#D6C29C" stroke-width="50" stroke-linecap="round" stroke-linejoin="round"/>
+<polyline points="1246.0,688.0 1104.0,554.0 962.0,554.0 820.0,554.0 678.0,688.0" fill="none" stroke="#BFDCF6" stroke-width="40" stroke-linecap="round" stroke-linejoin="round"/>
+<polyline points="1246.0,688.0 1104.0,554.0 962.0,554.0 820.0,554.0 678.0,688.0" fill="none" stroke="#FFFFFF" stroke-width="4" stroke-dasharray="12 12" stroke-linecap="round" opacity="0.9"/>
+<polyline points="1246.0,688.0 1104.0,822.0 962.0,822.0 820.0,822.0 678.0,688.0" fill="none" stroke="#D6C29C" stroke-width="50" stroke-linecap="round" stroke-linejoin="round"/>
+<polyline points="1246.0,688.0 1104.0,822.0 962.0,822.0 820.0,822.0 678.0,688.0" fill="none" stroke="#F8C9D6" stroke-width="40" stroke-linecap="round" stroke-linejoin="round"/>
+<polyline points="1246.0,688.0 1104.0,822.0 962.0,822.0 820.0,822.0 678.0,688.0" fill="none" stroke="#FFFFFF" stroke-width="4" stroke-dasharray="12 12" stroke-linecap="round" opacity="0.9"/>
+<polyline points="678.0,688.0 536.0,688.0 394.0,688.0 252.0,688.0 110.0,688.0" fill="none" stroke="#D6C29C" stroke-width="50" stroke-linecap="round" stroke-linejoin="round"/>
+<polyline points="678.0,688.0 536.0,688.0 394.0,688.0 252.0,688.0 110.0,688.0" fill="none" stroke="#EADBBE" stroke-width="40" stroke-linecap="round" stroke-linejoin="round"/>
+<polyline points="678.0,688.0 536.0,688.0 394.0,688.0 252.0,688.0 110.0,688.0" fill="none" stroke="#FFFFFF" stroke-width="4" stroke-dasharray="12 12" stroke-linecap="round" opacity="0.9"/>
+<g transform="translate(181.0,286.0) rotate(0.0)"><circle r="13" fill="#FFFFFF" stroke="#C9B38A" stroke-width="2.5"/><path d="M-4,-6 L4,0 L-4,6" fill="none" stroke="#9C8A68" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/></g>
+<g transform="translate(323.0,286.0) rotate(0.0)"><circle r="13" fill="#FFFFFF" stroke="#C9B38A" stroke-width="2.5"/><path d="M-4,-6 L4,0 L-4,6" fill="none" stroke="#9C8A68" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/></g>
+<g transform="translate(465.0,286.0) rotate(0.0)"><circle r="13" fill="#FFFFFF" stroke="#C9B38A" stroke-width="2.5"/><path d="M-4,-6 L4,0 L-4,6" fill="none" stroke="#9C8A68" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/></g>
+<g transform="translate(607.0,219.0) rotate(-43.3)"><circle r="13" fill="#FFFFFF" stroke="#C9B38A" stroke-width="2.5"/><path d="M-4,-6 L4,0 L-4,6" fill="none" stroke="#9C8A68" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/></g>
+<g transform="translate(749.0,152.0) rotate(0.0)"><circle r="13" fill="#FFFFFF" stroke="#C9B38A" stroke-width="2.5"/><path d="M-4,-6 L4,0 L-4,6" fill="none" stroke="#9C8A68" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/></g>
+<g transform="translate(891.0,152.0) rotate(0.0)"><circle r="13" fill="#FFFFFF" stroke="#C9B38A" stroke-width="2.5"/><path d="M-4,-6 L4,0 L-4,6" fill="none" stroke="#9C8A68" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/></g>
+<g transform="translate(1033.0,219.0) rotate(43.3)"><circle r="13" fill="#FFFFFF" stroke="#C9B38A" stroke-width="2.5"/><path d="M-4,-6 L4,0 L-4,6" fill="none" stroke="#9C8A68" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/></g>
+<g transform="translate(607.0,353.0) rotate(43.3)"><circle r="13" fill="#FFFFFF" stroke="#C9B38A" stroke-width="2.5"/><path d="M-4,-6 L4,0 L-4,6" fill="none" stroke="#9C8A68" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/></g>
+<g transform="translate(749.0,420.0) rotate(0.0)"><circle r="13" fill="#FFFFFF" stroke="#C9B38A" stroke-width="2.5"/><path d="M-4,-6 L4,0 L-4,6" fill="none" stroke="#9C8A68" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/></g>
+<g transform="translate(891.0,420.0) rotate(0.0)"><circle r="13" fill="#FFFFFF" stroke="#C9B38A" stroke-width="2.5"/><path d="M-4,-6 L4,0 L-4,6" fill="none" stroke="#9C8A68" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/></g>
+<g transform="translate(1033.0,353.0) rotate(-43.3)"><circle r="13" fill="#FFFFFF" stroke="#C9B38A" stroke-width="2.5"/><path d="M-4,-6 L4,0 L-4,6" fill="none" stroke="#9C8A68" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/></g>
+<g transform="translate(1175.0,286.0) rotate(0.0)"><circle r="13" fill="#FFFFFF" stroke="#C9B38A" stroke-width="2.5"/><path d="M-4,-6 L4,0 L-4,6" fill="none" stroke="#9C8A68" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/></g>
+<g transform="translate(1246.0,487.0) rotate(90.0)"><circle r="13" fill="#FFFFFF" stroke="#C9B38A" stroke-width="2.5"/><path d="M-4,-6 L4,0 L-4,6" fill="none" stroke="#9C8A68" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/></g>
+<g transform="translate(1175.0,621.0) rotate(-136.7)"><circle r="13" fill="#FFFFFF" stroke="#C9B38A" stroke-width="2.5"/><path d="M-4,-6 L4,0 L-4,6" fill="none" stroke="#9C8A68" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/></g>
+<g transform="translate(1033.0,554.0) rotate(180.0)"><circle r="13" fill="#FFFFFF" stroke="#C9B38A" stroke-width="2.5"/><path d="M-4,-6 L4,0 L-4,6" fill="none" stroke="#9C8A68" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/></g>
+<g transform="translate(891.0,554.0) rotate(180.0)"><circle r="13" fill="#FFFFFF" stroke="#C9B38A" stroke-width="2.5"/><path d="M-4,-6 L4,0 L-4,6" fill="none" stroke="#9C8A68" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/></g>
+<g transform="translate(749.0,621.0) rotate(136.7)"><circle r="13" fill="#FFFFFF" stroke="#C9B38A" stroke-width="2.5"/><path d="M-4,-6 L4,0 L-4,6" fill="none" stroke="#9C8A68" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/></g>
+<g transform="translate(1175.0,755.0) rotate(136.7)"><circle r="13" fill="#FFFFFF" stroke="#C9B38A" stroke-width="2.5"/><path d="M-4,-6 L4,0 L-4,6" fill="none" stroke="#9C8A68" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/></g>
+<g transform="translate(1033.0,822.0) rotate(180.0)"><circle r="13" fill="#FFFFFF" stroke="#C9B38A" stroke-width="2.5"/><path d="M-4,-6 L4,0 L-4,6" fill="none" stroke="#9C8A68" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/></g>
+<g transform="translate(891.0,822.0) rotate(180.0)"><circle r="13" fill="#FFFFFF" stroke="#C9B38A" stroke-width="2.5"/><path d="M-4,-6 L4,0 L-4,6" fill="none" stroke="#9C8A68" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/></g>
+<g transform="translate(749.0,755.0) rotate(-136.7)"><circle r="13" fill="#FFFFFF" stroke="#C9B38A" stroke-width="2.5"/><path d="M-4,-6 L4,0 L-4,6" fill="none" stroke="#9C8A68" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/></g>
+<g transform="translate(607.0,688.0) rotate(180.0)"><circle r="13" fill="#FFFFFF" stroke="#C9B38A" stroke-width="2.5"/><path d="M-4,-6 L4,0 L-4,6" fill="none" stroke="#9C8A68" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/></g>
+<g transform="translate(465.0,688.0) rotate(180.0)"><circle r="13" fill="#FFFFFF" stroke="#C9B38A" stroke-width="2.5"/><path d="M-4,-6 L4,0 L-4,6" fill="none" stroke="#9C8A68" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/></g>
+<g transform="translate(323.0,688.0) rotate(180.0)"><circle r="13" fill="#FFFFFF" stroke="#C9B38A" stroke-width="2.5"/><path d="M-4,-6 L4,0 L-4,6" fill="none" stroke="#9C8A68" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/></g>
+<g transform="translate(181.0,688.0) rotate(180.0)"><circle r="13" fill="#FFFFFF" stroke="#C9B38A" stroke-width="2.5"/><path d="M-4,-6 L4,0 L-4,6" fill="none" stroke="#9C8A68" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/></g>
+<g filter="url(#shadow)"><rect x="48.0" y="224.0" width="124" height="124" rx="18" fill="#FFFDF8"/></g>
+<path d="M48.0,256.0 L48.0,242.0 Q48.0,224.0 66.0,224.0 L154.0,224.0 Q172.0,224.0 172.0,242.0 L172.0,256.0 Z" fill="#3FA66B"/>
+<rect x="48.0" y="224.0" width="124" height="124" rx="18" fill="none" stroke="#3FA66B" stroke-width="4"/>
+<rect x="54.0" y="229.0" width="26" height="22" rx="11" fill="#FFFFFF"/>
+<text x="67.0" y="246.0" font-size="16" font-weight="900" fill="#3FA66B" text-anchor="middle" >1</text>
+<text x="163.0" y="246.0" font-size="14" font-weight="900" fill="#FFFFFF" text-anchor="end" >スタート</text>
+<g transform="translate(81.0,261.0) scale(0.9062)">
+<path d="M7 44 L8 28 Q9 24 13 24 L22 24 Q24 31 31 32 L44 34 Q57 36 57 45 L57 47 L7 47 Z" fill="#F07A5A" stroke="#3A3550" stroke-width="3.2" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M22 24 Q24 31 31 32" fill="none" stroke="#3A3550" stroke-width="3.2" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M14 30 L20 30 M15 36 L23 36" fill="none" stroke="#FFFFFF" stroke-width="2.6" stroke-linecap="round"/>
+<rect x="5" y="45" width="54" height="8" rx="4" fill="#FFFFFF" stroke="#3A3550" stroke-width="3.2" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M40 40 Q46 39 52 41" fill="none" stroke="#FFFFFF" stroke-width="2.4" stroke-linecap="round"/></g>
+<text x="110.0" y="338.0" font-size="13" font-weight="bold" fill="#3A3550" text-anchor="middle" >おでかけ</text>
+<g filter="url(#shadow)"><rect x="190.0" y="224.0" width="124" height="124" rx="18" fill="#FFFDF8"/></g>
+<path d="M190.0,256.0 L190.0,242.0 Q190.0,224.0 208.0,224.0 L296.0,224.0 Q314.0,224.0 314.0,242.0 L314.0,256.0 Z" fill="#7A5CC6"/>
+<rect x="190.0" y="224.0" width="124" height="124" rx="18" fill="none" stroke="#7A5CC6" stroke-width="4"/>
+<rect x="196.0" y="229.0" width="26" height="22" rx="11" fill="#FFFFFF"/>
+<text x="209.0" y="246.0" font-size="16" font-weight="900" fill="#7A5CC6" text-anchor="middle" >2</text>
+<text x="305.0" y="246.0" font-size="13" font-weight="900" fill="#FFFFFF" text-anchor="end" >カード勝負</text>
+<g transform="translate(223.0,261.0) scale(0.9062)">
+<rect x="9" y="22" width="46" height="34" rx="3" fill="#FFFFFF" stroke="#3A3550" stroke-width="3.2" stroke-linejoin="round" stroke-linecap="round"/>
+<rect x="9" y="14" width="46" height="11" rx="3" fill="#56B07C" stroke="#3A3550" stroke-width="3.2" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M17 14 L17 25 M27 14 L27 25 M37 14 L37 25 M47 14 L47 25" stroke="#FFFFFF" stroke-width="3"/>
+<rect x="9" y="14" width="46" height="11" rx="3" fill="none" stroke="#3A3550" stroke-width="3.2" stroke-linejoin="round" stroke-linecap="round"/>
+<rect x="14" y="31" width="20" height="16" rx="2" fill="#BFE3F7" stroke="#3A3550" stroke-width="3.2" stroke-linejoin="round" stroke-linecap="round"/>
+<rect x="39" y="31" width="11" height="25" rx="2" fill="#E8F5FC" stroke="#3A3550" stroke-width="3.2" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M17 44 L23 35" stroke="#FFFFFF" stroke-width="2.5" stroke-linecap="round"/></g>
+<text x="252.0" y="338.0" font-size="13" font-weight="bold" fill="#3A3550" text-anchor="middle" >コンビニ</text>
+<g filter="url(#shadow)"><rect x="332.0" y="224.0" width="124" height="124" rx="18" fill="#FFFDF8"/></g>
+<path d="M332.0,256.0 L332.0,242.0 Q332.0,224.0 350.0,224.0 L438.0,224.0 Q456.0,224.0 456.0,242.0 L456.0,256.0 Z" fill="#A9A5B8"/>
+<rect x="332.0" y="224.0" width="124" height="124" rx="18" fill="none" stroke="#A9A5B8" stroke-width="4"/>
+<rect x="338.0" y="229.0" width="26" height="22" rx="11" fill="#FFFFFF"/>
+<text x="351.0" y="246.0" font-size="16" font-weight="900" fill="#A9A5B8" text-anchor="middle" >3</text>
+<text x="447.0" y="246.0" font-size="14" font-weight="900" fill="#FFFFFF" text-anchor="end" >素通り</text>
+<g transform="translate(365.0,261.0) scale(0.9062)">
+<path d="M36 32 L36 54 L58 54 L58 32" fill="#EAF2FF" stroke="#3A3550" stroke-width="3.2" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M32 34 L47 20 L62 34" fill="#7AA6E0" stroke="#3A3550" stroke-width="3.2" stroke-linejoin="round" stroke-linecap="round"/>
+<rect x="44" y="41" width="7" height="13" rx="1.5" fill="#7AA6E0" stroke="#3A3550" stroke-width="3.2" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M6 30 L6 54 L32 54 L32 30" fill="#FFF3DD" stroke="#3A3550" stroke-width="3.2" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M2 32 L19 15 L36 32" fill="#F0A35A" stroke="#3A3550" stroke-width="3.2" stroke-linejoin="round" stroke-linecap="round"/>
+<rect x="12" y="38" width="8" height="8" rx="1.5" fill="#FFE59A" stroke="#3A3550" stroke-width="3.2" stroke-linejoin="round" stroke-linecap="round"/>
+<rect x="22" y="40" width="6" height="14" rx="1.5" fill="#B9705A" stroke="#3A3550" stroke-width="3.2" stroke-linejoin="round" stroke-linecap="round"/></g>
+<text x="394.0" y="338.0" font-size="11" font-weight="bold" fill="#3A3550" text-anchor="middle" >じゅうたくがい</text>
+<g filter="url(#shadow)"><rect x="474.0" y="224.0" width="124" height="124" rx="18" fill="#FFFDF8"/></g>
+<path d="M474.0,256.0 L474.0,242.0 Q474.0,224.0 492.0,224.0 L580.0,224.0 Q598.0,224.0 598.0,242.0 L598.0,256.0 Z" fill="#3A3550"/>
+<rect x="474.0" y="224.0" width="124" height="124" rx="18" fill="none" stroke="#3A3550" stroke-width="4"/>
+<rect x="480.0" y="229.0" width="26" height="22" rx="11" fill="#FFFFFF"/>
+<text x="493.0" y="246.0" font-size="16" font-weight="900" fill="#3A3550" text-anchor="middle" >4</text>
+<text x="589.0" y="246.0" font-size="13" font-weight="900" fill="#FFFFFF" text-anchor="end" >わかれ道①</text>
+<g transform="translate(507.0,261.0) scale(0.9062)">
+<rect x="29" y="8" width="6" height="52" rx="2" fill="#A86E4A" stroke="#3A3550" stroke-width="3.2" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M10 12 L46 12 L56 20 L46 28 L10 28 Z" fill="#5B9BE0" stroke="#3A3550" stroke-width="3.2" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M54 32 L18 32 L8 40 L18 48 L54 48 Z" fill="#EE6D8E" stroke="#3A3550" stroke-width="3.2" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M17 20 L39 20" stroke="#FFFFFF" stroke-width="3" stroke-linecap="round"/>
+<path d="M25 40 L47 40" stroke="#FFFFFF" stroke-width="3" stroke-linecap="round"/>
+<path d="M18 60 L46 60" stroke="#3A3550" stroke-width="3.2" stroke-linejoin="round" stroke-linecap="round"/></g>
+<text x="536.0" y="338.0" font-size="11" font-weight="bold" fill="#3A3550" text-anchor="middle" >赤→健康 黒→誘惑</text>
+<g filter="url(#shadow)"><rect x="616.0" y="90.0" width="124" height="124" rx="18" fill="#FFFDF8"/></g>
+<path d="M616.0,122.0 L616.0,108.0 Q616.0,90.0 634.0,90.0 L722.0,90.0 Q740.0,90.0 740.0,108.0 L740.0,122.0 Z" fill="#2F7FC8"/>
+<rect x="616.0" y="122.0" width="124" height="74" fill="#E2EFFB"/>
+<path d="M616.0,196.0 L740.0,196.0 L740.0,196.0 Q740.0,214.0 722.0,214.0 L634.0,214.0 Q616.0,214.0 616.0,196.0 Z" fill="#E2EFFB"/>
+<rect x="616.0" y="90.0" width="124" height="124" rx="18" fill="none" stroke="#2F7FC8" stroke-width="4"/>
+<rect x="622.0" y="95.0" width="34" height="22" rx="11" fill="#FFFFFF"/>
+<text x="639.0" y="112.0" font-size="16" font-weight="900" fill="#2F7FC8" text-anchor="middle" >5A</text>
+<text x="662.0" y="113.0" font-size="16" font-weight="900" fill="#FFFFFF" text-anchor="start" >健康</text>
+<g transform="translate(698.0,84.0) scale(0.6250)">
+<ellipse cx="32" cy="9" rx="13" ry="4.2" fill="none" stroke="#F2C230" stroke-width="4"/>
+<ellipse cx="32" cy="9" rx="13" ry="4.2" fill="none" stroke="#FFF2B0" stroke-width="1.4"/>
+<circle cx="32" cy="36" r="20" fill="#FFE3CC" stroke="#3A3550" stroke-width="3.2" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M13 32 Q14 16 32 16 Q50 16 51 32 Q46 24 40 25 Q36 20 30 24 Q22 21 13 32 Z" fill="#FFD66B" stroke="#3A3550" stroke-width="3.2" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M22 37 Q25 34 28 37 M36 37 Q39 34 42 37" fill="none" stroke="#3A3550" stroke-width="3.2" stroke-linejoin="round" stroke-linecap="round"/>
+<ellipse cx="20" cy="43" rx="3.6" ry="2.4" fill="#FFAFC0"/><ellipse cx="44" cy="43" rx="3.6" ry="2.4" fill="#FFAFC0"/>
+<path d="M28 44 Q32 48 36 44" fill="none" stroke="#3A3550" stroke-width="3.2" stroke-linejoin="round" stroke-linecap="round"/></g>
+<g transform="translate(649.0,127.0) scale(0.9062)">
+<rect x="28" y="38" width="8" height="18" rx="2" fill="#A86E4A" stroke="#3A3550" stroke-width="3.2" stroke-linejoin="round" stroke-linecap="round"/>
+<circle cx="22" cy="30" r="12" fill="#6CC070" stroke="#3A3550" stroke-width="3.2" stroke-linejoin="round" stroke-linecap="round"/>
+<circle cx="42" cy="30" r="12" fill="#6CC070" stroke="#3A3550" stroke-width="3.2" stroke-linejoin="round" stroke-linecap="round"/>
+<circle cx="32" cy="20" r="13" fill="#7BCF7E" stroke="#3A3550" stroke-width="3.2" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M25 22 Q28 16 34 15" fill="none" stroke="#FFFFFF" stroke-width="2.6" stroke-linecap="round" opacity="0.8"/>
+<path d="M10 56 L54 56" stroke="#3A3550" stroke-width="3.2" stroke-linejoin="round" stroke-linecap="round"/>
+<circle cx="45" cy="52" r="3" fill="#F7A6C2" stroke="none"/><circle cx="17" cy="52" r="3" fill="#FFE07A" stroke="none"/></g>
+<text x="678.0" y="204.0" font-size="13" font-weight="bold" fill="#3A3550" text-anchor="middle" >こうえん</text>
+<circle cx="734.0" cy="206.0" r="15" fill="#FFFFFF" stroke="#3A3550" stroke-width="2.6"/><text x="734.0" y="212.3" text-anchor="middle" font-size="20" font-weight="bold" fill="#3A3550" font-family="'DejaVu Sans',sans-serif">♣</text>
+<g filter="url(#shadow)"><rect x="758.0" y="90.0" width="124" height="124" rx="18" fill="#FFFDF8"/></g>
+<path d="M758.0,122.0 L758.0,108.0 Q758.0,90.0 776.0,90.0 L864.0,90.0 Q882.0,90.0 882.0,108.0 L882.0,122.0 Z" fill="#F2B825"/>
+<rect x="758.0" y="90.0" width="124" height="124" rx="18" fill="none" stroke="#F2B825" stroke-width="4"/>
+<rect x="764.0" y="95.0" width="34" height="22" rx="11" fill="#FFFFFF"/>
+<text x="781.0" y="112.0" font-size="16" font-weight="900" fill="#3A3550" text-anchor="middle" >6A</text>
+<text x="873.0" y="112.0" font-size="13" font-weight="900" fill="#3A3550" text-anchor="end" >ハプニング</text>
+<g transform="translate(791.0,127.0) scale(0.9062)">
+<polygon points="32.0,3.0 39.7,13.5 52.5,11.5 50.5,24.3 61.0,32.0 50.5,39.7 52.5,52.5 39.7,50.5 32.0,61.0 24.3,50.5 11.5,52.5 13.5,39.7 3.0,32.0 13.5,24.3 11.5,11.5 24.3,13.5" fill="#FFD23F" stroke="#3A3550" stroke-width="3.2" stroke-linejoin="round" stroke-linecap="round"/>
+<rect x="28.5" y="15" width="7" height="21" rx="3.5" fill="#3A3550"/>
+<circle cx="32" cy="44" r="4.2" fill="#3A3550"/></g>
+<text x="820.0" y="204.0" font-size="13" font-weight="bold" fill="#3A3550" text-anchor="middle" >？？？</text>
+<g filter="url(#shadow)"><rect x="900.0" y="90.0" width="124" height="124" rx="18" fill="#FFFDF8"/></g>
+<path d="M900.0,122.0 L900.0,108.0 Q900.0,90.0 918.0,90.0 L1006.0,90.0 Q1024.0,90.0 1024.0,108.0 L1024.0,122.0 Z" fill="#2F7FC8"/>
+<rect x="900.0" y="122.0" width="124" height="74" fill="#E2EFFB"/>
+<path d="M900.0,196.0 L1024.0,196.0 L1024.0,196.0 Q1024.0,214.0 1006.0,214.0 L918.0,214.0 Q900.0,214.0 900.0,196.0 Z" fill="#E2EFFB"/>
+<rect x="900.0" y="90.0" width="124" height="124" rx="18" fill="none" stroke="#2F7FC8" stroke-width="4"/>
+<rect x="906.0" y="95.0" width="34" height="22" rx="11" fill="#FFFFFF"/>
+<text x="923.0" y="112.0" font-size="16" font-weight="900" fill="#2F7FC8" text-anchor="middle" >7A</text>
+<text x="946.0" y="113.0" font-size="16" font-weight="900" fill="#FFFFFF" text-anchor="start" >健康</text>
+<g transform="translate(982.0,84.0) scale(0.6250)">
+<ellipse cx="32" cy="9" rx="13" ry="4.2" fill="none" stroke="#F2C230" stroke-width="4"/>
+<ellipse cx="32" cy="9" rx="13" ry="4.2" fill="none" stroke="#FFF2B0" stroke-width="1.4"/>
+<circle cx="32" cy="36" r="20" fill="#FFE3CC" stroke="#3A3550" stroke-width="3.2" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M13 32 Q14 16 32 16 Q50 16 51 32 Q46 24 40 25 Q36 20 30 24 Q22 21 13 32 Z" fill="#FFD66B" stroke="#3A3550" stroke-width="3.2" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M22 37 Q25 34 28 37 M36 37 Q39 34 42 37" fill="none" stroke="#3A3550" stroke-width="3.2" stroke-linejoin="round" stroke-linecap="round"/>
+<ellipse cx="20" cy="43" rx="3.6" ry="2.4" fill="#FFAFC0"/><ellipse cx="44" cy="43" rx="3.6" ry="2.4" fill="#FFAFC0"/>
+<path d="M28 44 Q32 48 36 44" fill="none" stroke="#3A3550" stroke-width="3.2" stroke-linejoin="round" stroke-linecap="round"/></g>
+<g transform="translate(933.0,127.0) scale(0.9062)">
+<rect x="16" y="29" width="32" height="6" rx="3" fill="#C9CCD6" stroke="#3A3550" stroke-width="3.2" stroke-linejoin="round" stroke-linecap="round"/>
+<rect x="8" y="18" width="9" height="28" rx="3" fill="#4C79C8" stroke="#3A3550" stroke-width="3.2" stroke-linejoin="round" stroke-linecap="round"/>
+<rect x="47" y="18" width="9" height="28" rx="3" fill="#4C79C8" stroke="#3A3550" stroke-width="3.2" stroke-linejoin="round" stroke-linecap="round"/>
+<rect x="3" y="23" width="6" height="18" rx="2.5" fill="#6E95D8" stroke="#3A3550" stroke-width="3.2" stroke-linejoin="round" stroke-linecap="round"/>
+<rect x="55" y="23" width="6" height="18" rx="2.5" fill="#6E95D8" stroke="#3A3550" stroke-width="3.2" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M11 22 L11 30 M50 22 L50 30" stroke="#FFFFFF" stroke-width="2.4" stroke-linecap="round" opacity="0.8"/>
+<path d="M24 12 L26 8 M32 11 L32 6 M40 12 L38 8" stroke="#3A3550" stroke-width="3.2" stroke-linejoin="round" stroke-linecap="round" fill="none"/></g>
+<text x="962.0" y="204.0" font-size="13" font-weight="bold" fill="#3A3550" text-anchor="middle" >ジム</text>
+<circle cx="1018.0" cy="206.0" r="15" fill="#FFFFFF" stroke="#3A3550" stroke-width="2.6"/><text x="1018.0" y="212.3" text-anchor="middle" font-size="20" font-weight="bold" fill="#3A3550" font-family="'DejaVu Sans',sans-serif">♠</text>
+<g filter="url(#shadow)"><rect x="616.0" y="358.0" width="124" height="124" rx="18" fill="#FFFDF8"/></g>
+<path d="M616.0,390.0 L616.0,376.0 Q616.0,358.0 634.0,358.0 L722.0,358.0 Q740.0,358.0 740.0,376.0 L740.0,390.0 Z" fill="#D0436A"/>
+<rect x="616.0" y="390.0" width="124" height="74" fill="#FBE3EA"/>
+<path d="M616.0,464.0 L740.0,464.0 L740.0,464.0 Q740.0,482.0 722.0,482.0 L634.0,482.0 Q616.0,482.0 616.0,464.0 Z" fill="#FBE3EA"/>
+<rect x="616.0" y="358.0" width="124" height="124" rx="18" fill="none" stroke="#D0436A" stroke-width="4"/>
+<rect x="622.0" y="363.0" width="34" height="22" rx="11" fill="#FFFFFF"/>
+<text x="639.0" y="380.0" font-size="16" font-weight="900" fill="#D0436A" text-anchor="middle" >5B</text>
+<text x="662.0" y="381.0" font-size="16" font-weight="900" fill="#FFFFFF" text-anchor="start" >誘惑</text>
+<g transform="translate(698.0,352.0) scale(0.6250)">
+<path d="M17 24 L12 7 L26 18 Z" fill="#7B3FA0" stroke="#3A3550" stroke-width="3.2" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M47 24 L52 7 L38 18 Z" fill="#7B3FA0" stroke="#3A3550" stroke-width="3.2" stroke-linejoin="round" stroke-linecap="round"/>
+<circle cx="32" cy="36" r="20" fill="#C9A3F0" stroke="#3A3550" stroke-width="3.2" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M14 30 Q20 18 32 18 Q44 18 50 30 Q42 25 32 27 Q22 25 14 30 Z" fill="#7B3FA0" stroke="#3A3550" stroke-width="3.2" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M20 33 L28 36 M44 33 L36 36" stroke="#3A3550" stroke-width="3.2" stroke-linejoin="round" stroke-linecap="round" fill="none"/>
+<circle cx="25" cy="39" r="2.4" fill="#3A3550"/><circle cx="39" cy="39" r="2.4" fill="#3A3550"/>
+<ellipse cx="19" cy="45" rx="3.4" ry="2.2" fill="#F48FB1"/><ellipse cx="45" cy="45" rx="3.4" ry="2.2" fill="#F48FB1"/>
+<path d="M25 46 Q32 52 39 46" fill="none" stroke="#3A3550" stroke-width="3.2" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M35 48 L36.5 52 L38 47.5" fill="#FFFFFF" stroke="#3A3550" stroke-width="1.6" stroke-linejoin="round"/></g>
+<g transform="translate(649.0,395.0) scale(0.9062)">
+<path d="M18 32 L5 21 L8 32 L5 43 Z" fill="#7FD3E8" stroke="#3A3550" stroke-width="3.2" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M46 32 L59 21 L56 32 L59 43 Z" fill="#7FD3E8" stroke="#3A3550" stroke-width="3.2" stroke-linejoin="round" stroke-linecap="round"/>
+<ellipse cx="32" cy="32" rx="16" ry="13" fill="#FF8DB3" stroke="#3A3550" stroke-width="3.2" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M22 24 Q30 32 24 41 M32 20 Q40 30 33 44 M41 22 Q47 30 43 40" fill="none" stroke="#FFFFFF" stroke-width="3" stroke-linecap="round"/>
+<ellipse cx="32" cy="32" rx="16" ry="13" fill="none" stroke="#3A3550" stroke-width="3.2" stroke-linejoin="round" stroke-linecap="round"/></g>
+<text x="678.0" y="472.0" font-size="13" font-weight="bold" fill="#3A3550" text-anchor="middle" >だがしや</text>
+<circle cx="734.0" cy="474.0" r="15" fill="#FFFFFF" stroke="#3A3550" stroke-width="2.6"/><text x="734.0" y="480.3" text-anchor="middle" font-size="20" font-weight="bold" fill="#E0344F" font-family="'DejaVu Sans',sans-serif">♦</text>
+<g filter="url(#shadow)"><rect x="758.0" y="358.0" width="124" height="124" rx="18" fill="#FFFDF8"/></g>
+<path d="M758.0,390.0 L758.0,376.0 Q758.0,358.0 776.0,358.0 L864.0,358.0 Q882.0,358.0 882.0,376.0 L882.0,390.0 Z" fill="#F2B825"/>
+<rect x="758.0" y="358.0" width="124" height="124" rx="18" fill="none" stroke="#F2B825" stroke-width="4"/>
+<rect x="764.0" y="363.0" width="34" height="22" rx="11" fill="#FFFFFF"/>
+<text x="781.0" y="380.0" font-size="16" font-weight="900" fill="#3A3550" text-anchor="middle" >6B</text>
+<text x="873.0" y="380.0" font-size="13" font-weight="900" fill="#3A3550" text-anchor="end" >ハプニング</text>
+<g transform="translate(791.0,395.0) scale(0.9062)">
+<polygon points="32.0,3.0 39.7,13.5 52.5,11.5 50.5,24.3 61.0,32.0 50.5,39.7 52.5,52.5 39.7,50.5 32.0,61.0 24.3,50.5 11.5,52.5 13.5,39.7 3.0,32.0 13.5,24.3 11.5,11.5 24.3,13.5" fill="#FFD23F" stroke="#3A3550" stroke-width="3.2" stroke-linejoin="round" stroke-linecap="round"/>
+<rect x="28.5" y="15" width="7" height="21" rx="3.5" fill="#3A3550"/>
+<circle cx="32" cy="44" r="4.2" fill="#3A3550"/></g>
+<text x="820.0" y="472.0" font-size="13" font-weight="bold" fill="#3A3550" text-anchor="middle" >？？？</text>
+<g filter="url(#shadow)"><rect x="900.0" y="358.0" width="124" height="124" rx="18" fill="#FFFDF8"/></g>
+<path d="M900.0,390.0 L900.0,376.0 Q900.0,358.0 918.0,358.0 L1006.0,358.0 Q1024.0,358.0 1024.0,376.0 L1024.0,390.0 Z" fill="#D0436A"/>
+<rect x="900.0" y="390.0" width="124" height="74" fill="#FBE3EA"/>
+<path d="M900.0,464.0 L1024.0,464.0 L1024.0,464.0 Q1024.0,482.0 1006.0,482.0 L918.0,482.0 Q900.0,482.0 900.0,464.0 Z" fill="#FBE3EA"/>
+<rect x="900.0" y="358.0" width="124" height="124" rx="18" fill="none" stroke="#D0436A" stroke-width="4"/>
+<rect x="906.0" y="363.0" width="34" height="22" rx="11" fill="#FFFFFF"/>
+<text x="923.0" y="380.0" font-size="16" font-weight="900" fill="#D0436A" text-anchor="middle" >7B</text>
+<text x="946.0" y="381.0" font-size="16" font-weight="900" fill="#FFFFFF" text-anchor="start" >誘惑</text>
+<g transform="translate(982.0,352.0) scale(0.6250)">
+<path d="M17 24 L12 7 L26 18 Z" fill="#7B3FA0" stroke="#3A3550" stroke-width="3.2" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M47 24 L52 7 L38 18 Z" fill="#7B3FA0" stroke="#3A3550" stroke-width="3.2" stroke-linejoin="round" stroke-linecap="round"/>
+<circle cx="32" cy="36" r="20" fill="#C9A3F0" stroke="#3A3550" stroke-width="3.2" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M14 30 Q20 18 32 18 Q44 18 50 30 Q42 25 32 27 Q22 25 14 30 Z" fill="#7B3FA0" stroke="#3A3550" stroke-width="3.2" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M20 33 L28 36 M44 33 L36 36" stroke="#3A3550" stroke-width="3.2" stroke-linejoin="round" stroke-linecap="round" fill="none"/>
+<circle cx="25" cy="39" r="2.4" fill="#3A3550"/><circle cx="39" cy="39" r="2.4" fill="#3A3550"/>
+<ellipse cx="19" cy="45" rx="3.4" ry="2.2" fill="#F48FB1"/><ellipse cx="45" cy="45" rx="3.4" ry="2.2" fill="#F48FB1"/>
+<path d="M25 46 Q32 52 39 46" fill="none" stroke="#3A3550" stroke-width="3.2" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M35 48 L36.5 52 L38 47.5" fill="#FFFFFF" stroke="#3A3550" stroke-width="1.6" stroke-linejoin="round"/></g>
+<g transform="translate(933.0,395.0) scale(0.9062)">
+<path d="M20 6 L28 30 M28 5 L33 30" stroke="#C9935E" stroke-width="3.4" stroke-linecap="round"/>
+<path d="M8 30 L56 30 Q55 50 32 53 Q9 50 8 30 Z" fill="#E9504A" stroke="#3A3550" stroke-width="3.2" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M14 38 L20 34 L26 38 L32 34 L38 38 L44 34 L50 38" fill="none" stroke="#FFFFFF" stroke-width="2.4" stroke-linejoin="round"/>
+<ellipse cx="32" cy="30" rx="24" ry="5" fill="#F9D27A" stroke="#3A3550" stroke-width="3.2" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M17 30 Q20 27 23 30 Q26 33 29 30 Q32 27 35 30 Q38 33 41 30 Q44 27 47 30" fill="none" stroke="#E0A93C" stroke-width="2"/>
+<circle cx="42" cy="28" r="4" fill="#FFFFFF" stroke="#3A3550" stroke-width="3.2" stroke-linejoin="round" stroke-linecap="round"/><circle cx="42" cy="28" r="1.6" fill="#F7A6C2"/>
+<rect x="24" y="53" width="16" height="5" rx="2" fill="#E9504A" stroke="#3A3550" stroke-width="3.2" stroke-linejoin="round" stroke-linecap="round"/></g>
+<text x="962.0" y="472.0" font-size="13" font-weight="bold" fill="#3A3550" text-anchor="middle" >ラーメン屋</text>
+<circle cx="1018.0" cy="474.0" r="15" fill="#FFFFFF" stroke="#3A3550" stroke-width="2.6"/><text x="1018.0" y="480.3" text-anchor="middle" font-size="20" font-weight="bold" fill="#3A3550" font-family="'DejaVu Sans',sans-serif">♠</text>
+<g filter="url(#shadow)"><rect x="1042.0" y="224.0" width="124" height="124" rx="18" fill="#FFFDF8"/></g>
+<path d="M1042.0,256.0 L1042.0,242.0 Q1042.0,224.0 1060.0,224.0 L1148.0,224.0 Q1166.0,224.0 1166.0,242.0 L1166.0,256.0 Z" fill="#7A5CC6"/>
+<rect x="1042.0" y="224.0" width="124" height="124" rx="18" fill="none" stroke="#7A5CC6" stroke-width="4"/>
+<rect x="1048.0" y="229.0" width="26" height="22" rx="11" fill="#FFFFFF"/>
+<text x="1061.0" y="246.0" font-size="16" font-weight="900" fill="#7A5CC6" text-anchor="middle" >8</text>
+<text x="1080.0" y="247.0" font-size="16" font-weight="900" fill="#FFFFFF" text-anchor="start" >大勝負</text>
+<g transform="translate(1075.0,261.0) scale(0.9062)">
+<rect x="14" y="5" width="36" height="54" rx="4" fill="#EF5E5E" stroke="#3A3550" stroke-width="3.2" stroke-linejoin="round" stroke-linecap="round"/>
+<rect x="19" y="10" width="26" height="24" rx="2" fill="#E8F5FC" stroke="#3A3550" stroke-width="3.2" stroke-linejoin="round" stroke-linecap="round"/>
+<rect x="22" y="14" width="5" height="9" rx="1.5" fill="#56B07C"/><rect x="29.5" y="14" width="5" height="9" rx="1.5" fill="#F0A35A"/><rect x="37" y="14" width="5" height="9" rx="1.5" fill="#4C79C8"/>
+<path d="M21 26 L43 26" stroke="#3A3550" stroke-width="2"/>
+<circle cx="24" cy="30" r="1.5" fill="#3A3550"/><circle cx="32" cy="30" r="1.5" fill="#3A3550"/><circle cx="40" cy="30" r="1.5" fill="#3A3550"/>
+<rect x="19" y="45" width="26" height="8" rx="2" fill="#5A2E3E" stroke="#3A3550" stroke-width="3.2" stroke-linejoin="round" stroke-linecap="round"/>
+<rect x="41" y="37" width="4" height="5" rx="1" fill="#FFE07A" stroke="none"/></g>
+<text x="1104.0" y="338.0" font-size="11" font-weight="bold" fill="#3A3550" text-anchor="middle" >じはんき（合流）</text>
+<polygon points="1162.0,202.0 1171.5,215.0 1186.7,220.0 1177.3,233.0 1177.3,249.0 1162.0,244.1 1146.7,249.0 1146.7,233.0 1137.3,220.0 1152.5,215.0" fill="#FFC531" stroke="#3A3550" stroke-width="2.6" stroke-linejoin="round"/><text x="1162.0" y="233.5" text-anchor="middle" font-size="18" font-weight="900" fill="#3A3550">×2</text>
+<g filter="url(#shadow)"><rect x="1184.0" y="224.0" width="124" height="124" rx="18" fill="#FFFDF8"/></g>
+<path d="M1184.0,256.0 L1184.0,242.0 Q1184.0,224.0 1202.0,224.0 L1290.0,224.0 Q1308.0,224.0 1308.0,242.0 L1308.0,256.0 Z" fill="#A9A5B8"/>
+<rect x="1184.0" y="224.0" width="124" height="124" rx="18" fill="none" stroke="#A9A5B8" stroke-width="4"/>
+<rect x="1190.0" y="229.0" width="26" height="22" rx="11" fill="#FFFFFF"/>
+<text x="1203.0" y="246.0" font-size="16" font-weight="900" fill="#A9A5B8" text-anchor="middle" >9</text>
+<text x="1299.0" y="246.0" font-size="14" font-weight="900" fill="#FFFFFF" text-anchor="end" >素通り</text>
+<g transform="translate(1217.0,261.0) scale(0.9062)">
+<path d="M36 32 L36 54 L58 54 L58 32" fill="#EAF2FF" stroke="#3A3550" stroke-width="3.2" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M32 34 L47 20 L62 34" fill="#7AA6E0" stroke="#3A3550" stroke-width="3.2" stroke-linejoin="round" stroke-linecap="round"/>
+<rect x="44" y="41" width="7" height="13" rx="1.5" fill="#7AA6E0" stroke="#3A3550" stroke-width="3.2" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M6 30 L6 54 L32 54 L32 30" fill="#FFF3DD" stroke="#3A3550" stroke-width="3.2" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M2 32 L19 15 L36 32" fill="#F0A35A" stroke="#3A3550" stroke-width="3.2" stroke-linejoin="round" stroke-linecap="round"/>
+<rect x="12" y="38" width="8" height="8" rx="1.5" fill="#FFE59A" stroke="#3A3550" stroke-width="3.2" stroke-linejoin="round" stroke-linecap="round"/>
+<rect x="22" y="40" width="6" height="14" rx="1.5" fill="#B9705A" stroke="#3A3550" stroke-width="3.2" stroke-linejoin="round" stroke-linecap="round"/></g>
+<text x="1246.0" y="338.0" font-size="11" font-weight="bold" fill="#3A3550" text-anchor="middle" >じゅうたくがい</text>
+<g filter="url(#shadow)"><rect x="1184.0" y="626.0" width="124" height="124" rx="18" fill="#FFFDF8"/></g>
+<path d="M1184.0,658.0 L1184.0,644.0 Q1184.0,626.0 1202.0,626.0 L1290.0,626.0 Q1308.0,626.0 1308.0,644.0 L1308.0,658.0 Z" fill="#3A3550"/>
+<rect x="1184.0" y="626.0" width="124" height="124" rx="18" fill="none" stroke="#3A3550" stroke-width="4"/>
+<rect x="1190.0" y="631.0" width="34" height="22" rx="11" fill="#FFFFFF"/>
+<text x="1207.0" y="648.0" font-size="16" font-weight="900" fill="#3A3550" text-anchor="middle" >10</text>
+<text x="1299.0" y="648.0" font-size="13" font-weight="900" fill="#FFFFFF" text-anchor="end" >わかれ道②</text>
+<g transform="translate(1217.0,663.0) scale(0.9062)">
+<rect x="29" y="8" width="6" height="52" rx="2" fill="#A86E4A" stroke="#3A3550" stroke-width="3.2" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M10 12 L46 12 L56 20 L46 28 L10 28 Z" fill="#5B9BE0" stroke="#3A3550" stroke-width="3.2" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M54 32 L18 32 L8 40 L18 48 L54 48 Z" fill="#EE6D8E" stroke="#3A3550" stroke-width="3.2" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M17 20 L39 20" stroke="#FFFFFF" stroke-width="3" stroke-linecap="round"/>
+<path d="M25 40 L47 40" stroke="#FFFFFF" stroke-width="3" stroke-linecap="round"/>
+<path d="M18 60 L46 60" stroke="#3A3550" stroke-width="3.2" stroke-linejoin="round" stroke-linecap="round"/></g>
+<text x="1246.0" y="740.0" font-size="11" font-weight="bold" fill="#3A3550" text-anchor="middle" >赤→健康 黒→誘惑</text>
+<g filter="url(#shadow)"><rect x="1042.0" y="492.0" width="124" height="124" rx="18" fill="#FFFDF8"/></g>
+<path d="M1042.0,524.0 L1042.0,510.0 Q1042.0,492.0 1060.0,492.0 L1148.0,492.0 Q1166.0,492.0 1166.0,510.0 L1166.0,524.0 Z" fill="#2F7FC8"/>
+<rect x="1042.0" y="524.0" width="124" height="74" fill="#E2EFFB"/>
+<path d="M1042.0,598.0 L1166.0,598.0 L1166.0,598.0 Q1166.0,616.0 1148.0,616.0 L1060.0,616.0 Q1042.0,616.0 1042.0,598.0 Z" fill="#E2EFFB"/>
+<rect x="1042.0" y="492.0" width="124" height="124" rx="18" fill="none" stroke="#2F7FC8" stroke-width="4"/>
+<rect x="1048.0" y="497.0" width="42" height="22" rx="11" fill="#FFFFFF"/>
+<text x="1069.0" y="514.0" font-size="16" font-weight="900" fill="#2F7FC8" text-anchor="middle" >11A</text>
+<text x="1096.0" y="515.0" font-size="16" font-weight="900" fill="#FFFFFF" text-anchor="start" >健康</text>
+<g transform="translate(1124.0,486.0) scale(0.6250)">
+<ellipse cx="32" cy="9" rx="13" ry="4.2" fill="none" stroke="#F2C230" stroke-width="4"/>
+<ellipse cx="32" cy="9" rx="13" ry="4.2" fill="none" stroke="#FFF2B0" stroke-width="1.4"/>
+<circle cx="32" cy="36" r="20" fill="#FFE3CC" stroke="#3A3550" stroke-width="3.2" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M13 32 Q14 16 32 16 Q50 16 51 32 Q46 24 40 25 Q36 20 30 24 Q22 21 13 32 Z" fill="#FFD66B" stroke="#3A3550" stroke-width="3.2" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M22 37 Q25 34 28 37 M36 37 Q39 34 42 37" fill="none" stroke="#3A3550" stroke-width="3.2" stroke-linejoin="round" stroke-linecap="round"/>
+<ellipse cx="20" cy="43" rx="3.6" ry="2.4" fill="#FFAFC0"/><ellipse cx="44" cy="43" rx="3.6" ry="2.4" fill="#FFAFC0"/>
+<path d="M28 44 Q32 48 36 44" fill="none" stroke="#3A3550" stroke-width="3.2" stroke-linejoin="round" stroke-linecap="round"/></g>
+<g transform="translate(1075.0,529.0) scale(0.9062)">
+<path d="M30 16 Q22 6 18 10 Q24 14 27 19 M34 16 Q38 4 44 7 Q38 12 36 19 M32 16 Q31 6 32 3" fill="#6CC070" stroke="#3A3550" stroke-width="3.2" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M22 20 Q32 14 42 20 Q40 38 32 60 Q24 38 22 20 Z" fill="#F58A2E" stroke="#3A3550" stroke-width="3.2" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M26 28 L31 29 M28 38 L33 38 M30 47 L34 46" stroke="#3A3550" stroke-width="2.4" stroke-linecap="round"/>
+<path d="M36 24 Q37 30 35 36" fill="none" stroke="#FFFFFF" stroke-width="2.6" stroke-linecap="round" opacity="0.8"/></g>
+<text x="1104.0" y="606.0" font-size="13" font-weight="bold" fill="#3A3550" text-anchor="middle" >やおや</text>
+<circle cx="1160.0" cy="608.0" r="15" fill="#FFFFFF" stroke="#3A3550" stroke-width="2.6"/><text x="1160.0" y="614.3" text-anchor="middle" font-size="20" font-weight="bold" fill="#E0344F" font-family="'DejaVu Sans',sans-serif">♦</text>
+<g filter="url(#shadow)"><rect x="900.0" y="492.0" width="124" height="124" rx="18" fill="#FFFDF8"/></g>
+<path d="M900.0,524.0 L900.0,510.0 Q900.0,492.0 918.0,492.0 L1006.0,492.0 Q1024.0,492.0 1024.0,510.0 L1024.0,524.0 Z" fill="#7A5CC6"/>
+<rect x="900.0" y="492.0" width="124" height="124" rx="18" fill="none" stroke="#7A5CC6" stroke-width="4"/>
+<rect x="906.0" y="497.0" width="42" height="22" rx="11" fill="#FFFFFF"/>
+<text x="927.0" y="514.0" font-size="16" font-weight="900" fill="#7A5CC6" text-anchor="middle" >12A</text>
+<text x="1015.0" y="514.0" font-size="13" font-weight="900" fill="#FFFFFF" text-anchor="end" >カード勝負</text>
+<g transform="translate(933.0,529.0) scale(0.9062)">
+<path d="M13 40 L13 54 M51 40 L51 54" stroke="#3A3550" stroke-width="3.2" stroke-linejoin="round" stroke-linecap="round" fill="none"/>
+<rect x="6" y="14" width="52" height="8" rx="3" fill="#C98A55" stroke="#3A3550" stroke-width="3.2" stroke-linejoin="round" stroke-linecap="round"/>
+<rect x="6" y="24" width="52" height="8" rx="3" fill="#C98A55" stroke="#3A3550" stroke-width="3.2" stroke-linejoin="round" stroke-linecap="round"/>
+<rect x="4" y="35" width="56" height="8" rx="3" fill="#B87745" stroke="#3A3550" stroke-width="3.2" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M14 32 L14 35 M50 32 L50 35" stroke="#3A3550" stroke-width="3.2" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M18 50 Q22 46 26 50" fill="none" stroke="#6CC070" stroke-width="3" stroke-linecap="round"/>
+<path d="M40 52 Q43 48 46 52" fill="none" stroke="#6CC070" stroke-width="3" stroke-linecap="round"/></g>
+<text x="962.0" y="606.0" font-size="11" font-weight="bold" fill="#3A3550" text-anchor="middle" >こうえんのベンチ</text>
+<g filter="url(#shadow)"><rect x="758.0" y="492.0" width="124" height="124" rx="18" fill="#FFFDF8"/></g>
+<path d="M758.0,524.0 L758.0,510.0 Q758.0,492.0 776.0,492.0 L864.0,492.0 Q882.0,492.0 882.0,510.0 L882.0,524.0 Z" fill="#F2B825"/>
+<rect x="758.0" y="492.0" width="124" height="124" rx="18" fill="none" stroke="#F2B825" stroke-width="4"/>
+<rect x="764.0" y="497.0" width="42" height="22" rx="11" fill="#FFFFFF"/>
+<text x="785.0" y="514.0" font-size="16" font-weight="900" fill="#3A3550" text-anchor="middle" >13A</text>
+<text x="873.0" y="514.0" font-size="13" font-weight="900" fill="#3A3550" text-anchor="end" >ハプニング</text>
+<g transform="translate(791.0,529.0) scale(0.9062)">
+<polygon points="32.0,3.0 39.7,13.5 52.5,11.5 50.5,24.3 61.0,32.0 50.5,39.7 52.5,52.5 39.7,50.5 32.0,61.0 24.3,50.5 11.5,52.5 13.5,39.7 3.0,32.0 13.5,24.3 11.5,11.5 24.3,13.5" fill="#FFD23F" stroke="#3A3550" stroke-width="3.2" stroke-linejoin="round" stroke-linecap="round"/>
+<rect x="28.5" y="15" width="7" height="21" rx="3.5" fill="#3A3550"/>
+<circle cx="32" cy="44" r="4.2" fill="#3A3550"/></g>
+<text x="820.0" y="606.0" font-size="13" font-weight="bold" fill="#3A3550" text-anchor="middle" >？？？</text>
+<g filter="url(#shadow)"><rect x="1042.0" y="760.0" width="124" height="124" rx="18" fill="#FFFDF8"/></g>
+<path d="M1042.0,792.0 L1042.0,778.0 Q1042.0,760.0 1060.0,760.0 L1148.0,760.0 Q1166.0,760.0 1166.0,778.0 L1166.0,792.0 Z" fill="#D0436A"/>
+<rect x="1042.0" y="792.0" width="124" height="74" fill="#FBE3EA"/>
+<path d="M1042.0,866.0 L1166.0,866.0 L1166.0,866.0 Q1166.0,884.0 1148.0,884.0 L1060.0,884.0 Q1042.0,884.0 1042.0,866.0 Z" fill="#FBE3EA"/>
+<rect x="1042.0" y="760.0" width="124" height="124" rx="18" fill="none" stroke="#D0436A" stroke-width="4"/>
+<rect x="1048.0" y="765.0" width="42" height="22" rx="11" fill="#FFFFFF"/>
+<text x="1069.0" y="782.0" font-size="16" font-weight="900" fill="#D0436A" text-anchor="middle" >11B</text>
+<text x="1096.0" y="783.0" font-size="16" font-weight="900" fill="#FFFFFF" text-anchor="start" >誘惑</text>
+<g transform="translate(1124.0,754.0) scale(0.6250)">
+<path d="M17 24 L12 7 L26 18 Z" fill="#7B3FA0" stroke="#3A3550" stroke-width="3.2" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M47 24 L52 7 L38 18 Z" fill="#7B3FA0" stroke="#3A3550" stroke-width="3.2" stroke-linejoin="round" stroke-linecap="round"/>
+<circle cx="32" cy="36" r="20" fill="#C9A3F0" stroke="#3A3550" stroke-width="3.2" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M14 30 Q20 18 32 18 Q44 18 50 30 Q42 25 32 27 Q22 25 14 30 Z" fill="#7B3FA0" stroke="#3A3550" stroke-width="3.2" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M20 33 L28 36 M44 33 L36 36" stroke="#3A3550" stroke-width="3.2" stroke-linejoin="round" stroke-linecap="round" fill="none"/>
+<circle cx="25" cy="39" r="2.4" fill="#3A3550"/><circle cx="39" cy="39" r="2.4" fill="#3A3550"/>
+<ellipse cx="19" cy="45" rx="3.4" ry="2.2" fill="#F48FB1"/><ellipse cx="45" cy="45" rx="3.4" ry="2.2" fill="#F48FB1"/>
+<path d="M25 46 Q32 52 39 46" fill="none" stroke="#3A3550" stroke-width="3.2" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M35 48 L36.5 52 L38 47.5" fill="#FFFFFF" stroke="#3A3550" stroke-width="1.6" stroke-linejoin="round"/></g>
+<g transform="translate(1075.0,797.0) scale(0.9062)">
+<path d="M9 28 Q10 10 32 10 Q54 10 55 28 Z" fill="#F2B35B" stroke="#3A3550" stroke-width="3.2" stroke-linejoin="round" stroke-linecap="round"/>
+<ellipse cx="24" cy="18" rx="1.6" ry="1" fill="#FFFFFF"/><ellipse cx="33" cy="15" rx="1.6" ry="1" fill="#FFFFFF"/><ellipse cx="41" cy="20" rx="1.6" ry="1" fill="#FFFFFF"/><ellipse cx="29" cy="23" rx="1.6" ry="1" fill="#FFFFFF"/>
+<path d="M7 30 L13 34 L19 30 L25 34 L31 30 L37 34 L43 30 L49 34 L57 30" fill="#7BCF7E" stroke="#3A3550" stroke-width="3.2" stroke-linejoin="round" stroke-linecap="round"/>
+<rect x="7" y="33" width="50" height="9" rx="4.5" fill="#8A4B33" stroke="#3A3550" stroke-width="3.2" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M9 42 L55 42 L52 47 L12 47 Z" fill="#FFD84E" stroke="#3A3550" stroke-width="3.2" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M9 47 L55 47 Q55 55 46 55 L18 55 Q9 55 9 47 Z" fill="#F2B35B" stroke="#3A3550" stroke-width="3.2" stroke-linejoin="round" stroke-linecap="round"/></g>
+<text x="1104.0" y="874.0" font-size="11" font-weight="bold" fill="#3A3550" text-anchor="middle" >ファストフード</text>
+<circle cx="1160.0" cy="876.0" r="15" fill="#FFFFFF" stroke="#3A3550" stroke-width="2.6"/><text x="1160.0" y="882.3" text-anchor="middle" font-size="20" font-weight="bold" fill="#3A3550" font-family="'DejaVu Sans',sans-serif">♣</text>
+<g filter="url(#shadow)"><rect x="900.0" y="760.0" width="124" height="124" rx="18" fill="#FFFDF8"/></g>
+<path d="M900.0,792.0 L900.0,778.0 Q900.0,760.0 918.0,760.0 L1006.0,760.0 Q1024.0,760.0 1024.0,778.0 L1024.0,792.0 Z" fill="#7A5CC6"/>
+<rect x="900.0" y="760.0" width="124" height="124" rx="18" fill="none" stroke="#7A5CC6" stroke-width="4"/>
+<rect x="906.0" y="765.0" width="42" height="22" rx="11" fill="#FFFFFF"/>
+<text x="927.0" y="782.0" font-size="16" font-weight="900" fill="#7A5CC6" text-anchor="middle" >12B</text>
+<text x="1015.0" y="782.0" font-size="13" font-weight="900" fill="#FFFFFF" text-anchor="end" >カード勝負</text>
+<g transform="translate(933.0,797.0) scale(0.9062)">
+<path d="M32 3 L32 9" stroke="#3A3550" stroke-width="3.2" stroke-linejoin="round" stroke-linecap="round"/>
+<rect x="21" y="8" width="22" height="6" rx="2" fill="#3A3550"/>
+<ellipse cx="32" cy="32" rx="19" ry="20" fill="#EF5E5E" stroke="#3A3550" stroke-width="3.2" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M14 26 Q32 30 50 26 M13 34 Q32 38 51 34 M16 42 Q32 45 48 42" fill="none" stroke="#C23F45" stroke-width="2"/>
+<ellipse cx="32" cy="32" rx="19" ry="20" fill="none" stroke="#3A3550" stroke-width="3.2" stroke-linejoin="round" stroke-linecap="round"/>
+<rect x="21" y="50" width="22" height="6" rx="2" fill="#3A3550"/>
+<path d="M28 56 L28 62 M32 56 L32 62 M36 56 L36 62" stroke="#FFD84E" stroke-width="2.4" stroke-linecap="round"/>
+<path d="M22 22 Q24 16 30 15" fill="none" stroke="#FFFFFF" stroke-width="2.6" stroke-linecap="round" opacity="0.7"/></g>
+<text x="962.0" y="874.0" font-size="13" font-weight="bold" fill="#3A3550" text-anchor="middle" >屋台</text>
+<g filter="url(#shadow)"><rect x="758.0" y="760.0" width="124" height="124" rx="18" fill="#FFFDF8"/></g>
+<path d="M758.0,792.0 L758.0,778.0 Q758.0,760.0 776.0,760.0 L864.0,760.0 Q882.0,760.0 882.0,778.0 L882.0,792.0 Z" fill="#F2B825"/>
+<rect x="758.0" y="760.0" width="124" height="124" rx="18" fill="none" stroke="#F2B825" stroke-width="4"/>
+<rect x="764.0" y="765.0" width="42" height="22" rx="11" fill="#FFFFFF"/>
+<text x="785.0" y="782.0" font-size="16" font-weight="900" fill="#3A3550" text-anchor="middle" >13B</text>
+<text x="873.0" y="782.0" font-size="13" font-weight="900" fill="#3A3550" text-anchor="end" >ハプニング</text>
+<g transform="translate(791.0,797.0) scale(0.9062)">
+<polygon points="32.0,3.0 39.7,13.5 52.5,11.5 50.5,24.3 61.0,32.0 50.5,39.7 52.5,52.5 39.7,50.5 32.0,61.0 24.3,50.5 11.5,52.5 13.5,39.7 3.0,32.0 13.5,24.3 11.5,11.5 24.3,13.5" fill="#FFD23F" stroke="#3A3550" stroke-width="3.2" stroke-linejoin="round" stroke-linecap="round"/>
+<rect x="28.5" y="15" width="7" height="21" rx="3.5" fill="#3A3550"/>
+<circle cx="32" cy="44" r="4.2" fill="#3A3550"/></g>
+<text x="820.0" y="874.0" font-size="13" font-weight="bold" fill="#3A3550" text-anchor="middle" >？？？</text>
+<g filter="url(#shadow)"><rect x="616.0" y="626.0" width="124" height="124" rx="18" fill="#FFFDF8"/></g>
+<path d="M616.0,658.0 L616.0,644.0 Q616.0,626.0 634.0,626.0 L722.0,626.0 Q740.0,626.0 740.0,644.0 L740.0,658.0 Z" fill="#7A5CC6"/>
+<rect x="616.0" y="626.0" width="124" height="124" rx="18" fill="none" stroke="#7A5CC6" stroke-width="4"/>
+<rect x="622.0" y="631.0" width="34" height="22" rx="11" fill="#FFFFFF"/>
+<text x="639.0" y="648.0" font-size="16" font-weight="900" fill="#7A5CC6" text-anchor="middle" >14</text>
+<text x="662.0" y="649.0" font-size="16" font-weight="900" fill="#FFFFFF" text-anchor="start" >大勝負</text>
+<g transform="translate(649.0,663.0) scale(0.9062)">
+<rect x="9" y="22" width="46" height="34" rx="3" fill="#FFFFFF" stroke="#3A3550" stroke-width="3.2" stroke-linejoin="round" stroke-linecap="round"/>
+<rect x="9" y="14" width="46" height="11" rx="3" fill="#56B07C" stroke="#3A3550" stroke-width="3.2" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M17 14 L17 25 M27 14 L27 25 M37 14 L37 25 M47 14 L47 25" stroke="#FFFFFF" stroke-width="3"/>
+<rect x="9" y="14" width="46" height="11" rx="3" fill="none" stroke="#3A3550" stroke-width="3.2" stroke-linejoin="round" stroke-linecap="round"/>
+<rect x="14" y="31" width="20" height="16" rx="2" fill="#BFE3F7" stroke="#3A3550" stroke-width="3.2" stroke-linejoin="round" stroke-linecap="round"/>
+<rect x="39" y="31" width="11" height="25" rx="2" fill="#E8F5FC" stroke="#3A3550" stroke-width="3.2" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M17 44 L23 35" stroke="#FFFFFF" stroke-width="2.5" stroke-linecap="round"/></g>
+<text x="678.0" y="740.0" font-size="11" font-weight="bold" fill="#3A3550" text-anchor="middle" >コンビニ（合流）</text>
+<polygon points="736.0,604.0 745.5,617.0 760.7,622.0 751.3,635.0 751.3,651.0 736.0,646.1 720.7,651.0 720.7,635.0 711.3,622.0 726.5,617.0" fill="#FFC531" stroke="#3A3550" stroke-width="2.6" stroke-linejoin="round"/><text x="736.0" y="635.5" text-anchor="middle" font-size="18" font-weight="900" fill="#3A3550">×2</text>
+<g filter="url(#shadow)"><rect x="474.0" y="626.0" width="124" height="124" rx="18" fill="#FFFDF8"/></g>
+<path d="M474.0,658.0 L474.0,644.0 Q474.0,626.0 492.0,626.0 L580.0,626.0 Q598.0,626.0 598.0,644.0 L598.0,658.0 Z" fill="#D0436A"/>
+<rect x="474.0" y="658.0" width="124" height="74" fill="#FBE3EA"/>
+<path d="M474.0,732.0 L598.0,732.0 L598.0,732.0 Q598.0,750.0 580.0,750.0 L492.0,750.0 Q474.0,750.0 474.0,732.0 Z" fill="#FBE3EA"/>
+<rect x="474.0" y="626.0" width="124" height="124" rx="18" fill="none" stroke="#D0436A" stroke-width="4"/>
+<rect x="480.0" y="631.0" width="34" height="22" rx="11" fill="#FFFFFF"/>
+<text x="497.0" y="648.0" font-size="16" font-weight="900" fill="#D0436A" text-anchor="middle" >15</text>
+<text x="520.0" y="649.0" font-size="16" font-weight="900" fill="#FFFFFF" text-anchor="start" >誘惑</text>
+<g transform="translate(556.0,620.0) scale(0.6250)">
+<path d="M17 24 L12 7 L26 18 Z" fill="#7B3FA0" stroke="#3A3550" stroke-width="3.2" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M47 24 L52 7 L38 18 Z" fill="#7B3FA0" stroke="#3A3550" stroke-width="3.2" stroke-linejoin="round" stroke-linecap="round"/>
+<circle cx="32" cy="36" r="20" fill="#C9A3F0" stroke="#3A3550" stroke-width="3.2" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M14 30 Q20 18 32 18 Q44 18 50 30 Q42 25 32 27 Q22 25 14 30 Z" fill="#7B3FA0" stroke="#3A3550" stroke-width="3.2" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M20 33 L28 36 M44 33 L36 36" stroke="#3A3550" stroke-width="3.2" stroke-linejoin="round" stroke-linecap="round" fill="none"/>
+<circle cx="25" cy="39" r="2.4" fill="#3A3550"/><circle cx="39" cy="39" r="2.4" fill="#3A3550"/>
+<ellipse cx="19" cy="45" rx="3.4" ry="2.2" fill="#F48FB1"/><ellipse cx="45" cy="45" rx="3.4" ry="2.2" fill="#F48FB1"/>
+<path d="M25 46 Q32 52 39 46" fill="none" stroke="#3A3550" stroke-width="3.2" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M35 48 L36.5 52 L38 47.5" fill="#FFFFFF" stroke="#3A3550" stroke-width="1.6" stroke-linejoin="round"/></g>
+<g transform="translate(507.0,663.0) scale(0.9062)">
+<path d="M8 34 L44 22 L56 30 L56 50 L20 58 L8 50 Z" fill="#FFF6E8" stroke="#3A3550" stroke-width="3.2" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M8 34 L20 42 L56 30" fill="none" stroke="#3A3550" stroke-width="3.2" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M20 42 L20 58" stroke="#3A3550" stroke-width="3.2" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M8 42 L20 50 M8 46 L20 54" stroke="#F7A6C2" stroke-width="3"/>
+<path d="M20 50 L56 39" stroke="#F7A6C2" stroke-width="3"/>
+<path d="M8 34 L44 22 L56 30 L20 42 Z" fill="#FFFFFF" stroke="#3A3550" stroke-width="3.2" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M36 17 Q30 15 31 22 Q32 28 37 28 Q42 28 43 22 Q44 15 38 17 Z" fill="#EF4E6A" stroke="#3A3550" stroke-width="3.2" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M36 16 L35 12 M38 16 L41 13" stroke="#56B07C" stroke-width="2.6" stroke-linecap="round"/></g>
+<text x="536.0" y="740.0" font-size="13" font-weight="bold" fill="#3A3550" text-anchor="middle" >ケーキ屋</text>
+<circle cx="592.0" cy="742.0" r="15" fill="#FFFFFF" stroke="#3A3550" stroke-width="2.6"/><text x="592.0" y="748.3" text-anchor="middle" font-size="20" font-weight="bold" fill="#E0344F" font-family="'DejaVu Sans',sans-serif">♥</text>
+<g filter="url(#shadow)"><rect x="332.0" y="626.0" width="124" height="124" rx="18" fill="#FFFDF8"/></g>
+<path d="M332.0,658.0 L332.0,644.0 Q332.0,626.0 350.0,626.0 L438.0,626.0 Q456.0,626.0 456.0,644.0 L456.0,658.0 Z" fill="#2F7FC8"/>
+<rect x="332.0" y="658.0" width="124" height="74" fill="#E2EFFB"/>
+<path d="M332.0,732.0 L456.0,732.0 L456.0,732.0 Q456.0,750.0 438.0,750.0 L350.0,750.0 Q332.0,750.0 332.0,732.0 Z" fill="#E2EFFB"/>
+<rect x="332.0" y="626.0" width="124" height="124" rx="18" fill="none" stroke="#2F7FC8" stroke-width="4"/>
+<rect x="338.0" y="631.0" width="34" height="22" rx="11" fill="#FFFFFF"/>
+<text x="355.0" y="648.0" font-size="16" font-weight="900" fill="#2F7FC8" text-anchor="middle" >16</text>
+<text x="378.0" y="649.0" font-size="16" font-weight="900" fill="#FFFFFF" text-anchor="start" >健康</text>
+<g transform="translate(414.0,620.0) scale(0.6250)">
+<ellipse cx="32" cy="9" rx="13" ry="4.2" fill="none" stroke="#F2C230" stroke-width="4"/>
+<ellipse cx="32" cy="9" rx="13" ry="4.2" fill="none" stroke="#FFF2B0" stroke-width="1.4"/>
+<circle cx="32" cy="36" r="20" fill="#FFE3CC" stroke="#3A3550" stroke-width="3.2" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M13 32 Q14 16 32 16 Q50 16 51 32 Q46 24 40 25 Q36 20 30 24 Q22 21 13 32 Z" fill="#FFD66B" stroke="#3A3550" stroke-width="3.2" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M22 37 Q25 34 28 37 M36 37 Q39 34 42 37" fill="none" stroke="#3A3550" stroke-width="3.2" stroke-linejoin="round" stroke-linecap="round"/>
+<ellipse cx="20" cy="43" rx="3.6" ry="2.4" fill="#FFAFC0"/><ellipse cx="44" cy="43" rx="3.6" ry="2.4" fill="#FFAFC0"/>
+<path d="M28 44 Q32 48 36 44" fill="none" stroke="#3A3550" stroke-width="3.2" stroke-linejoin="round" stroke-linecap="round"/></g>
+<g transform="translate(365.0,663.0) scale(0.9062)">
+<rect x="28" y="38" width="8" height="18" rx="2" fill="#A86E4A" stroke="#3A3550" stroke-width="3.2" stroke-linejoin="round" stroke-linecap="round"/>
+<circle cx="22" cy="30" r="12" fill="#6CC070" stroke="#3A3550" stroke-width="3.2" stroke-linejoin="round" stroke-linecap="round"/>
+<circle cx="42" cy="30" r="12" fill="#6CC070" stroke="#3A3550" stroke-width="3.2" stroke-linejoin="round" stroke-linecap="round"/>
+<circle cx="32" cy="20" r="13" fill="#7BCF7E" stroke="#3A3550" stroke-width="3.2" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M25 22 Q28 16 34 15" fill="none" stroke="#FFFFFF" stroke-width="2.6" stroke-linecap="round" opacity="0.8"/>
+<path d="M10 56 L54 56" stroke="#3A3550" stroke-width="3.2" stroke-linejoin="round" stroke-linecap="round"/>
+<circle cx="45" cy="52" r="3" fill="#F7A6C2" stroke="none"/><circle cx="17" cy="52" r="3" fill="#FFE07A" stroke="none"/></g>
+<text x="394.0" y="740.0" font-size="13" font-weight="bold" fill="#3A3550" text-anchor="middle" >こうえん</text>
+<circle cx="450.0" cy="742.0" r="15" fill="#FFFFFF" stroke="#3A3550" stroke-width="2.6"/><text x="450.0" y="748.3" text-anchor="middle" font-size="20" font-weight="bold" fill="#E0344F" font-family="'DejaVu Sans',sans-serif">♥</text>
+<g filter="url(#shadow)"><rect x="190.0" y="626.0" width="124" height="124" rx="18" fill="#FFFDF8"/></g>
+<path d="M190.0,658.0 L190.0,644.0 Q190.0,626.0 208.0,626.0 L296.0,626.0 Q314.0,626.0 314.0,644.0 L314.0,658.0 Z" fill="#F2B825"/>
+<rect x="190.0" y="626.0" width="124" height="124" rx="18" fill="none" stroke="#F2B825" stroke-width="4"/>
+<rect x="196.0" y="631.0" width="34" height="22" rx="11" fill="#FFFFFF"/>
+<text x="213.0" y="648.0" font-size="16" font-weight="900" fill="#3A3550" text-anchor="middle" >17</text>
+<text x="305.0" y="648.0" font-size="13" font-weight="900" fill="#3A3550" text-anchor="end" >ハプニング</text>
+<g transform="translate(223.0,663.0) scale(0.9062)">
+<polygon points="32.0,3.0 39.7,13.5 52.5,11.5 50.5,24.3 61.0,32.0 50.5,39.7 52.5,52.5 39.7,50.5 32.0,61.0 24.3,50.5 11.5,52.5 13.5,39.7 3.0,32.0 13.5,24.3 11.5,11.5 24.3,13.5" fill="#FFD23F" stroke="#3A3550" stroke-width="3.2" stroke-linejoin="round" stroke-linecap="round"/>
+<rect x="28.5" y="15" width="7" height="21" rx="3.5" fill="#3A3550"/>
+<circle cx="32" cy="44" r="4.2" fill="#3A3550"/></g>
+<text x="252.0" y="740.0" font-size="13" font-weight="bold" fill="#3A3550" text-anchor="middle" >？？？</text>
+<g filter="url(#shadow)"><rect x="48.0" y="626.0" width="124" height="124" rx="18" fill="#FFFDF8"/></g>
+<path d="M48.0,658.0 L48.0,644.0 Q48.0,626.0 66.0,626.0 L154.0,626.0 Q172.0,626.0 172.0,644.0 L172.0,658.0 Z" fill="#E9744A"/>
+<rect x="48.0" y="626.0" width="124" height="124" rx="18" fill="none" stroke="#E9744A" stroke-width="4"/>
+<rect x="54.0" y="631.0" width="34" height="22" rx="11" fill="#FFFFFF"/>
+<text x="71.0" y="648.0" font-size="16" font-weight="900" fill="#E9744A" text-anchor="middle" >18</text>
+<text x="163.0" y="648.0" font-size="14" font-weight="900" fill="#FFFFFF" text-anchor="end" >ゴール</text>
+<g transform="translate(81.0,663.0) scale(0.9062)">
+<rect x="40" y="10" width="7" height="14" fill="#B9705A" stroke="#3A3550" stroke-width="3.2" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M14 30 L14 55 L50 55 L50 30" fill="#FFF1DC" stroke="#3A3550" stroke-width="3.2" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M6 32 L32 9 L58 32" fill="#E9744A" stroke="#3A3550" stroke-width="3.2" stroke-linejoin="round" stroke-linecap="round"/>
+<rect x="26" y="38" width="12" height="17" rx="2" fill="#9A6248" stroke="#3A3550" stroke-width="3.2" stroke-linejoin="round" stroke-linecap="round"/>
+<circle cx="35" cy="47" r="1.4" fill="#FFE07A"/>
+<rect x="17" y="35" width="7" height="7" rx="1.5" fill="#FFE59A" stroke="#3A3550" stroke-width="3.2" stroke-linejoin="round" stroke-linecap="round"/>
+<rect x="41" y="35" width="7" height="7" rx="1.5" fill="#FFE59A" stroke="#3A3550" stroke-width="3.2" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M32 27 C29 23 24 26 28 30 L32 33 L36 30 C40 26 35 23 32 27 Z" fill="#F25C82" stroke="none"/></g>
+<text x="110.0" y="740.0" font-size="13" font-weight="bold" fill="#3A3550" text-anchor="middle" >おうち</text>
+<text x="54.0" y="149.0" font-size="56" font-weight="900" text-anchor="start" fill="#3A3550" stroke="#3A3550" stroke-width="7" stroke-linejoin="round" paint-order="stroke">おかえりロード</text>
+<text x="50.0" y="144.0" font-size="56" font-weight="900" text-anchor="start" fill="#FFFFFF" stroke="#3A3550" stroke-width="6" stroke-linejoin="round" paint-order="stroke">おかえりロード</text>
+<ellipse cx="80.0" cy="92.0" rx="20" ry="6" fill="none" stroke="#F2C230" stroke-width="5"/>
+<path d="M54.0,160.0 L422.0,160.0 L410.0,177.0 L422.0,194.0 L54.0,194.0 L66.0,177.0 Z" fill="#7A5CC6" stroke="#3A3550" stroke-width="3" stroke-linejoin="round"/>
+<text x="238.0" y="184.0" font-size="18" font-weight="900" fill="#FFFFFF" text-anchor="middle" >〜天使とあくまのさんぽ道〜</text>
+<g transform="translate(465.0,101.0) scale(1.1562)">
+<path d="M15 30 Q6 22 1 26 Q0 34 4 38 Q2 44 8 46 Q9 51 16 48 Z" fill="#FFFFFF" stroke="#3A3550" stroke-width="3.2" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M5 33 Q9 35 13 34 M8 41 Q12 42 15 40" fill="none" stroke="#C9D6EA" stroke-width="2" stroke-linecap="round"/>
+<path d="M49 30 Q58 22 63 26 Q64 34 60 38 Q62 44 56 46 Q55 51 48 48 Z" fill="#FFFFFF" stroke="#3A3550" stroke-width="3.2" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M59 33 Q55 35 51 34 M56 41 Q52 42 49 40" fill="none" stroke="#C9D6EA" stroke-width="2" stroke-linecap="round"/>
+<ellipse cx="32" cy="9" rx="13" ry="4.2" fill="none" stroke="#F2C230" stroke-width="4"/>
+<ellipse cx="32" cy="9" rx="13" ry="4.2" fill="none" stroke="#FFF2B0" stroke-width="1.4"/>
+<circle cx="32" cy="36" r="20" fill="#FFE3CC" stroke="#3A3550" stroke-width="3.2" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M13 32 Q14 16 32 16 Q50 16 51 32 Q46 24 40 25 Q36 20 30 24 Q22 21 13 32 Z" fill="#FFD66B" stroke="#3A3550" stroke-width="3.2" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M22 37 Q25 34 28 37 M36 37 Q39 34 42 37" fill="none" stroke="#3A3550" stroke-width="3.2" stroke-linejoin="round" stroke-linecap="round"/>
+<ellipse cx="20" cy="43" rx="3.6" ry="2.4" fill="#FFAFC0"/><ellipse cx="44" cy="43" rx="3.6" ry="2.4" fill="#FFAFC0"/>
+<path d="M28 44 Q32 48 36 44" fill="none" stroke="#3A3550" stroke-width="3.2" stroke-linejoin="round" stroke-linecap="round"/></g>
+<g transform="translate(538.0,120.0) scale(1.0000)">
+<path d="M48 48 Q60 50 58 38" fill="none" stroke="#3A3550" stroke-width="3.2" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M58 38 L53 36 L59 31 L62 37 Z" fill="#7B3FA0" stroke="#3A3550" stroke-width="3.2" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M17 24 L12 7 L26 18 Z" fill="#7B3FA0" stroke="#3A3550" stroke-width="3.2" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M47 24 L52 7 L38 18 Z" fill="#7B3FA0" stroke="#3A3550" stroke-width="3.2" stroke-linejoin="round" stroke-linecap="round"/>
+<circle cx="32" cy="36" r="20" fill="#C9A3F0" stroke="#3A3550" stroke-width="3.2" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M14 30 Q20 18 32 18 Q44 18 50 30 Q42 25 32 27 Q22 25 14 30 Z" fill="#7B3FA0" stroke="#3A3550" stroke-width="3.2" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M20 33 L28 36 M44 33 L36 36" stroke="#3A3550" stroke-width="3.2" stroke-linejoin="round" stroke-linecap="round" fill="none"/>
+<circle cx="25" cy="39" r="2.4" fill="#3A3550"/><circle cx="39" cy="39" r="2.4" fill="#3A3550"/>
+<ellipse cx="19" cy="45" rx="3.4" ry="2.2" fill="#F48FB1"/><ellipse cx="45" cy="45" rx="3.4" ry="2.2" fill="#F48FB1"/>
+<path d="M25 46 Q32 52 39 46" fill="none" stroke="#3A3550" stroke-width="3.2" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M35 48 L36.5 52 L38 47.5" fill="#FFFFFF" stroke="#3A3550" stroke-width="1.6" stroke-linejoin="round"/></g>
+<g filter="url(#soft)"><rect x="48.0" y="374.0" width="550" height="234" rx="22" fill="#FFFFFF" fill-opacity="0.92"/></g>
+<rect x="48.0" y="374.0" width="550" height="234" rx="22" fill="none" stroke="#E6D7B8" stroke-width="2"/>
+<rect x="66.0" y="360.0" width="170" height="30" rx="15" fill="#7A5CC6"/>
+<text x="81.0" y="382.0" font-size="18" font-weight="900" fill="#FFFFFF" text-anchor="start" >ボードのしかけ</text>
+<circle cx="92.0" cy="426.0" r="17" fill="#FFFFFF" stroke="#3A3550" stroke-width="2.6"/><text x="92.0" y="433.1" text-anchor="middle" font-size="22" font-weight="bold" fill="#E0344F" font-family="'DejaVu Sans',sans-serif">♥</text>
+<text x="124.0" y="423.0" font-size="16" font-weight="900" fill="#3A3550" text-anchor="start" >お気に入りスート +3</text>
+<text x="124.0" y="444.0" font-size="11.5" font-weight="normal" fill="#77708C" text-anchor="start" >主役がお店の好きなスートで通すと+3</text>
+<polygon points="363.0,404.0 371.0,415.0 383.9,419.2 376.0,430.2 375.9,443.8 363.0,439.6 350.1,443.8 350.0,430.2 342.1,419.2 355.0,415.0" fill="#FFC531" stroke="#3A3550" stroke-width="2.6" stroke-linejoin="round"/><text x="363.0" y="431.5" text-anchor="middle" font-size="15" font-weight="900" fill="#3A3550">×2</text>
+<text x="395.0" y="423.0" font-size="16" font-weight="900" fill="#3A3550" text-anchor="start" >大勝負マス ×2</text>
+<text x="395.0" y="444.0" font-size="11.5" font-weight="normal" fill="#77708C" text-anchor="start" >合流マスの勝負はゲージの動きが2倍</text>
+<g transform="translate(85.3,496.0) rotate(-12) scale(0.95)"><rect x="-13" y="-18" width="26" height="36" rx="4" fill="#FFFFFF" stroke="#3A3550" stroke-width="2.4"/><text x="0" y="2" text-anchor="middle" font-size="15" font-weight="900" fill="#3A3550">7</text><text x="0" y="14" text-anchor="middle" font-size="10" fill="#3A3550" font-family="'DejaVu Sans'">♠</text></g><g transform="translate(98.7,496.0) rotate(10) scale(0.95)"><rect x="-13" y="-18" width="26" height="36" rx="4" fill="#FFFFFF" stroke="#3A3550" stroke-width="2.4"/><text x="0" y="2" text-anchor="middle" font-size="15" font-weight="900" fill="#E0344F">7</text><text x="0" y="14" text-anchor="middle" font-size="10" fill="#E0344F" font-family="'DejaVu Sans'">♥</text></g>
+<text x="124.0" y="493.0" font-size="16" font-weight="900" fill="#3A3550" text-anchor="start" >ペア出し</text>
+<text x="124.0" y="514.0" font-size="11.5" font-weight="normal" fill="#77708C" text-anchor="start" >同じ数字2枚を1組で出すと合計の数字</text>
+<g transform="translate(363.0,496.0) scale(1.0)"><path d="M-8,18 L-8,-18" stroke="#3A3550" stroke-width="3" stroke-linecap="round"/><path d="M-8,-18 L16,-12 L-8,-4 Z" fill="#FF8A3D" stroke="#3A3550" stroke-width="2.4" stroke-linejoin="round"/><text x="10" y="16" text-anchor="middle" font-size="14" font-weight="900" fill="#3A3550">+2</text></g>
+<text x="395.0" y="493.0" font-size="16" font-weight="900" fill="#3A3550" text-anchor="start" >がんばれゾーン +2</text>
+<text x="395.0" y="514.0" font-size="11.5" font-weight="normal" fill="#77708C" text-anchor="start" >ゲージが相手側に6以上なら数字+2</text>
+<line x1="74.0" y1="582.0" x2="110.0" y2="582.0" stroke="#BFDCF6" stroke-width="16" stroke-linecap="round"/>
+<text x="122.0" y="587.0" font-size="13.5" font-weight="bold" fill="#2F7FC8" text-anchor="start" >健康レーン：赤（♥♦）で勝つと</text>
+<line x1="331.0" y1="582.0" x2="367.0" y2="582.0" stroke="#F8C9D6" stroke-width="16" stroke-linecap="round"/>
+<text x="379.0" y="587.0" font-size="13.5" font-weight="bold" fill="#D0436A" text-anchor="start" >誘惑レーン：黒（♠♣）で勝つと</text>
+<g filter="url(#soft)"><rect x="48.0" y="778.0" width="678" height="106" rx="22" fill="#FFFFFF" fill-opacity="0.92"/></g>
+<rect x="48.0" y="778.0" width="678" height="106" rx="22" fill="none" stroke="#E6D7B8" stroke-width="2"/>
+<rect x="66.0" y="764.0" width="130" height="30" rx="15" fill="#3FA66B"/>
+<text x="81.0" y="786.0" font-size="18" font-weight="900" fill="#FFFFFF" text-anchor="start" >手番の流れ</text>
+<text x="74.0" y="822.0" font-size="15" font-weight="bold" fill="#3A3550" text-anchor="start" >① 1d6 で NPC を進める</text>
+<text x="407.0" y="822.0" font-size="15" font-weight="bold" fill="#3A3550" text-anchor="start" >② 止まったマスでカードを出す</text>
+<text x="74.0" y="854.0" font-size="15" font-weight="bold" fill="#3A3550" text-anchor="start" >③ 裏向きで置いて「せーの」で公開</text>
+<text x="407.0" y="854.0" font-size="15" font-weight="bold" fill="#3A3550" text-anchor="start" >④ 使った分を補充して交代</text>
+<text x="48.0" y="912.0" font-size="22" font-weight="900" fill="#3A3550" text-anchor="start" >体調ゲージ</text>
+<text x="170.0" y="912.0" font-size="14" font-weight="normal" fill="#77708C" text-anchor="start" >スタートは 0。ゴールした瞬間の位置で勝敗が決まる</text>
+<rect x="106" y="952" width="1146" height="72" rx="14" fill="#FFFFFF" stroke="#3A3550" stroke-width="3"/>
+<rect x="112" y="958" width="54" height="60" rx="9" fill="#DE7B97"/>
+<rect x="112" y="958" width="54" height="60" rx="9" fill="url(#stripeA)"/>
+<text x="139.0" y="996.0" font-size="21" font-weight="900" fill="#FFFFFF" text-anchor="middle" >−10</text>
+<rect x="166" y="958" width="54" height="60" rx="0" fill="#E187A0"/>
+<rect x="166" y="958" width="54" height="60" rx="0" fill="url(#stripeA)"/>
+<line x1="166" y1="964" x2="166" y2="1012" stroke="#FFFFFF" stroke-width="2"/>
+<text x="193.0" y="996.0" font-size="21" font-weight="900" fill="#FFFFFF" text-anchor="middle" >−9</text>
+<rect x="220" y="958" width="54" height="60" rx="0" fill="#E492A9"/>
+<rect x="220" y="958" width="54" height="60" rx="0" fill="url(#stripeA)"/>
+<line x1="220" y1="964" x2="220" y2="1012" stroke="#FFFFFF" stroke-width="2"/>
+<text x="247.0" y="996.0" font-size="21" font-weight="900" fill="#FFFFFF" text-anchor="middle" >−8</text>
+<rect x="274" y="958" width="54" height="60" rx="0" fill="#E79DB2"/>
+<rect x="274" y="958" width="54" height="60" rx="0" fill="url(#stripeA)"/>
+<line x1="274" y1="964" x2="274" y2="1012" stroke="#FFFFFF" stroke-width="2"/>
+<text x="301.0" y="996.0" font-size="21" font-weight="900" fill="#FFFFFF" text-anchor="middle" >−7</text>
+<rect x="328" y="958" width="54" height="60" rx="0" fill="#E9A9BA"/>
+<rect x="328" y="958" width="54" height="60" rx="0" fill="url(#stripeA)"/>
+<line x1="328" y1="964" x2="328" y2="1012" stroke="#FFFFFF" stroke-width="2"/>
+<text x="355.0" y="996.0" font-size="21" font-weight="900" fill="#FFFFFF" text-anchor="middle" >−6</text>
+<rect x="382" y="958" width="54" height="60" rx="0" fill="#ECB4C3"/>
+<line x1="382" y1="964" x2="382" y2="1012" stroke="#FFFFFF" stroke-width="2"/>
+<text x="409.0" y="996.0" font-size="21" font-weight="900" fill="#FFFFFF" text-anchor="middle" >−5</text>
+<rect x="436" y="958" width="54" height="60" rx="0" fill="#EFBFCC"/>
+<line x1="436" y1="964" x2="436" y2="1012" stroke="#FFFFFF" stroke-width="2"/>
+<text x="463.0" y="996.0" font-size="21" font-weight="900" fill="#3A3550" text-anchor="middle" >−4</text>
+<rect x="490" y="958" width="54" height="60" rx="0" fill="#F2CAD5"/>
+<line x1="490" y1="964" x2="490" y2="1012" stroke="#FFFFFF" stroke-width="2"/>
+<text x="517.0" y="996.0" font-size="21" font-weight="900" fill="#3A3550" text-anchor="middle" >−3</text>
+<rect x="544" y="958" width="54" height="60" rx="0" fill="#F5D6DE"/>
+<line x1="544" y1="964" x2="544" y2="1012" stroke="#FFFFFF" stroke-width="2"/>
+<text x="571.0" y="996.0" font-size="21" font-weight="900" fill="#3A3550" text-anchor="middle" >−2</text>
+<rect x="598" y="958" width="54" height="60" rx="0" fill="#F7E1E7"/>
+<line x1="598" y1="964" x2="598" y2="1012" stroke="#FFFFFF" stroke-width="2"/>
+<text x="625.0" y="996.0" font-size="21" font-weight="900" fill="#3A3550" text-anchor="middle" >−1</text>
+<rect x="652" y="958" width="54" height="60" rx="0" fill="#FFFFFF"/>
+<line x1="652" y1="964" x2="652" y2="1012" stroke="#FFFFFF" stroke-width="2"/>
+<text x="679.0" y="996.0" font-size="26" font-weight="900" fill="#3A3550" text-anchor="middle" >0</text>
+<rect x="706" y="958" width="54" height="60" rx="0" fill="#DEEBF6"/>
+<line x1="706" y1="964" x2="706" y2="1012" stroke="#FFFFFF" stroke-width="2"/>
+<text x="733.0" y="996.0" font-size="21" font-weight="900" fill="#3A3550" text-anchor="middle" >+1</text>
+<rect x="760" y="958" width="54" height="60" rx="0" fill="#D1E3F3"/>
+<line x1="760" y1="964" x2="760" y2="1012" stroke="#FFFFFF" stroke-width="2"/>
+<text x="787.0" y="996.0" font-size="21" font-weight="900" fill="#3A3550" text-anchor="middle" >+2</text>
+<rect x="814" y="958" width="54" height="60" rx="0" fill="#C5DBF0"/>
+<line x1="814" y1="964" x2="814" y2="1012" stroke="#FFFFFF" stroke-width="2"/>
+<text x="841.0" y="996.0" font-size="21" font-weight="900" fill="#3A3550" text-anchor="middle" >+3</text>
+<rect x="868" y="958" width="54" height="60" rx="0" fill="#B8D3EC"/>
+<line x1="868" y1="964" x2="868" y2="1012" stroke="#FFFFFF" stroke-width="2"/>
+<text x="895.0" y="996.0" font-size="21" font-weight="900" fill="#3A3550" text-anchor="middle" >+4</text>
+<rect x="922" y="958" width="54" height="60" rx="0" fill="#ACCCE9"/>
+<line x1="922" y1="964" x2="922" y2="1012" stroke="#FFFFFF" stroke-width="2"/>
+<text x="949.0" y="996.0" font-size="21" font-weight="900" fill="#FFFFFF" text-anchor="middle" >+5</text>
+<rect x="976" y="958" width="54" height="60" rx="0" fill="#9FC4E6"/>
+<rect x="976" y="958" width="54" height="60" rx="0" fill="url(#stripeA)"/>
+<line x1="976" y1="964" x2="976" y2="1012" stroke="#FFFFFF" stroke-width="2"/>
+<text x="1003.0" y="996.0" font-size="21" font-weight="900" fill="#FFFFFF" text-anchor="middle" >+6</text>
+<rect x="1030" y="958" width="54" height="60" rx="0" fill="#93BCE2"/>
+<rect x="1030" y="958" width="54" height="60" rx="0" fill="url(#stripeA)"/>
+<line x1="1030" y1="964" x2="1030" y2="1012" stroke="#FFFFFF" stroke-width="2"/>
+<text x="1057.0" y="996.0" font-size="21" font-weight="900" fill="#FFFFFF" text-anchor="middle" >+7</text>
+<rect x="1084" y="958" width="54" height="60" rx="0" fill="#86B5DF"/>
+<rect x="1084" y="958" width="54" height="60" rx="0" fill="url(#stripeA)"/>
+<line x1="1084" y1="964" x2="1084" y2="1012" stroke="#FFFFFF" stroke-width="2"/>
+<text x="1111.0" y="996.0" font-size="21" font-weight="900" fill="#FFFFFF" text-anchor="middle" >+8</text>
+<rect x="1138" y="958" width="54" height="60" rx="0" fill="#7AADDC"/>
+<rect x="1138" y="958" width="54" height="60" rx="0" fill="url(#stripeA)"/>
+<line x1="1138" y1="964" x2="1138" y2="1012" stroke="#FFFFFF" stroke-width="2"/>
+<text x="1165.0" y="996.0" font-size="21" font-weight="900" fill="#FFFFFF" text-anchor="middle" >+9</text>
+<rect x="1192" y="958" width="54" height="60" rx="9" fill="#6DA5D8"/>
+<rect x="1192" y="958" width="54" height="60" rx="9" fill="url(#stripeA)"/>
+<line x1="1192" y1="964" x2="1192" y2="1012" stroke="#FFFFFF" stroke-width="2"/>
+<text x="1219.0" y="996.0" font-size="21" font-weight="900" fill="#FFFFFF" text-anchor="middle" >+10</text>
+<rect x="649" y="949" width="60" height="78" rx="10" fill="none" stroke="#3A3550" stroke-width="4"/>
+<path d="M112,944 L382,944" stroke="#2F7FC8" stroke-width="5" stroke-linecap="round"/>
+<text x="247.0" y="937.0" font-size="13" font-weight="900" fill="#2F7FC8" text-anchor="middle" >てんしのがんばれゾーン（数字+2）</text>
+<path d="M976,944 L1246,944" stroke="#D0436A" stroke-width="5" stroke-linecap="round"/>
+<text x="1111.0" y="937.0" font-size="13" font-weight="900" fill="#D0436A" text-anchor="middle" >あくまのがんばれゾーン（数字+2）</text>
+<g transform="translate(38.0,956.0) scale(1.0000)">
+<path d="M48 48 Q60 50 58 38" fill="none" stroke="#3A3550" stroke-width="3.2" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M58 38 L53 36 L59 31 L62 37 Z" fill="#7B3FA0" stroke="#3A3550" stroke-width="3.2" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M17 24 L12 7 L26 18 Z" fill="#7B3FA0" stroke="#3A3550" stroke-width="3.2" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M47 24 L52 7 L38 18 Z" fill="#7B3FA0" stroke="#3A3550" stroke-width="3.2" stroke-linejoin="round" stroke-linecap="round"/>
+<circle cx="32" cy="36" r="20" fill="#C9A3F0" stroke="#3A3550" stroke-width="3.2" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M14 30 Q20 18 32 18 Q44 18 50 30 Q42 25 32 27 Q22 25 14 30 Z" fill="#7B3FA0" stroke="#3A3550" stroke-width="3.2" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M20 33 L28 36 M44 33 L36 36" stroke="#3A3550" stroke-width="3.2" stroke-linejoin="round" stroke-linecap="round" fill="none"/>
+<circle cx="25" cy="39" r="2.4" fill="#3A3550"/><circle cx="39" cy="39" r="2.4" fill="#3A3550"/>
+<ellipse cx="19" cy="45" rx="3.4" ry="2.2" fill="#F48FB1"/><ellipse cx="45" cy="45" rx="3.4" ry="2.2" fill="#F48FB1"/>
+<path d="M25 46 Q32 52 39 46" fill="none" stroke="#3A3550" stroke-width="3.2" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M35 48 L36.5 52 L38 47.5" fill="#FFFFFF" stroke="#3A3550" stroke-width="1.6" stroke-linejoin="round"/></g>
+<g transform="translate(1253.0,953.0) scale(1.0938)">
+<path d="M15 30 Q6 22 1 26 Q0 34 4 38 Q2 44 8 46 Q9 51 16 48 Z" fill="#FFFFFF" stroke="#3A3550" stroke-width="3.2" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M5 33 Q9 35 13 34 M8 41 Q12 42 15 40" fill="none" stroke="#C9D6EA" stroke-width="2" stroke-linecap="round"/>
+<path d="M49 30 Q58 22 63 26 Q64 34 60 38 Q62 44 56 46 Q55 51 48 48 Z" fill="#FFFFFF" stroke="#3A3550" stroke-width="3.2" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M59 33 Q55 35 51 34 M56 41 Q52 42 49 40" fill="none" stroke="#C9D6EA" stroke-width="2" stroke-linecap="round"/>
+<ellipse cx="32" cy="9" rx="13" ry="4.2" fill="none" stroke="#F2C230" stroke-width="4"/>
+<ellipse cx="32" cy="9" rx="13" ry="4.2" fill="none" stroke="#FFF2B0" stroke-width="1.4"/>
+<circle cx="32" cy="36" r="20" fill="#FFE3CC" stroke="#3A3550" stroke-width="3.2" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M13 32 Q14 16 32 16 Q50 16 51 32 Q46 24 40 25 Q36 20 30 24 Q22 21 13 32 Z" fill="#FFD66B" stroke="#3A3550" stroke-width="3.2" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M22 37 Q25 34 28 37 M36 37 Q39 34 42 37" fill="none" stroke="#3A3550" stroke-width="3.2" stroke-linejoin="round" stroke-linecap="round"/>
+<ellipse cx="20" cy="43" rx="3.6" ry="2.4" fill="#FFAFC0"/><ellipse cx="44" cy="43" rx="3.6" ry="2.4" fill="#FFAFC0"/>
+<path d="M28 44 Q32 48 36 44" fill="none" stroke="#3A3550" stroke-width="3.2" stroke-linejoin="round" stroke-linecap="round"/></g>
+<text x="112.0" y="1052.0" font-size="17" font-weight="900" fill="#D0436A" text-anchor="start" >−1以下：あくまの勝ち</text>
+<text x="679.0" y="1052.0" font-size="14" font-weight="bold" fill="#77708C" text-anchor="middle" >0：気まぐれ判定（1d6 奇数てんし／偶数あくま）</text>
+<text x="1246.0" y="1052.0" font-size="17" font-weight="900" fill="#2F7FC8" text-anchor="end" >+1以上：てんしの勝ち</text>
+<g filter="url(#soft)"><rect x="1356" y="22" width="542" height="1036" rx="28" fill="#FFFDF8"/></g>
+<rect x="1356" y="22" width="542" height="1036" rx="28" fill="none" stroke="#E6D7B8" stroke-width="2"/>
+<text x="1384" y="72" font-size="26" font-weight="900" text-anchor="start" fill="#3A3550" stroke="#FFFFFF" stroke-width="0" stroke-linejoin="round" paint-order="stroke">カード置き場</text>
+<text x="1872.0" y="70.0" font-size="12" font-weight="normal" fill="#77708C" text-anchor="end" >※枠の大きさは目安</text>
+<rect x="1402.5" y="104" width="112" height="152" rx="8" fill="url(#cardback)" opacity="0.8"/>
+<rect x="1392.5" y="94" width="132" height="172" rx="12" fill="none" stroke="#3A3550" stroke-width="3" stroke-dasharray="10 7"/>
+<text x="1458.5" y="186.0" font-size="19" font-weight="900" fill="#3A3550" text-anchor="middle" >山札</text>
+<text x="1458.5" y="208.0" font-size="12" font-weight="bold" fill="#77708C" text-anchor="middle" >トランプのデッキ</text>
+<rect x="1561.0" y="94" width="132" height="172" rx="12" fill="none" stroke="#77708C" stroke-width="3" stroke-dasharray="10 7"/>
+<text x="1627.0" y="186.0" font-size="19" font-weight="900" fill="#77708C" text-anchor="middle" >捨て札</text>
+<text x="1627.0" y="208.0" font-size="12" font-weight="bold" fill="#77708C" text-anchor="middle" >表向きで置く</text>
+<rect x="1729.5" y="94" width="132" height="172" rx="12" fill="none" stroke="#77708C" stroke-width="3" stroke-dasharray="10 7"/>
+<text x="1795.5" y="186.0" font-size="19" font-weight="900" fill="#77708C" text-anchor="middle" >除外</text>
+<text x="1795.5" y="208.0" font-size="12" font-weight="bold" fill="#77708C" text-anchor="middle" >ジョーカー</text>
+<rect x="1372" y="294" width="510" height="290" rx="22" fill="#F3EEFB" stroke="#D9CCF2" stroke-width="2"/>
+<text x="1627.0" y="334" font-size="24" font-weight="900" text-anchor="middle" fill="#7A5CC6" stroke="#FFFFFF" stroke-width="0" stroke-linejoin="round" paint-order="stroke">勝負エリア</text>
+<text x="1627.0" y="358.0" font-size="13" font-weight="bold" fill="#77708C" text-anchor="middle" >裏向きで置いて「準備OK」→「せーの」で公開</text>
+<rect x="1402" y="376" width="152" height="190" rx="12" fill="none" stroke="#2F7FC8" stroke-width="3" stroke-dasharray="10 7"/>
+<text x="1478.0" y="477.0" font-size="19" font-weight="900" fill="#2F7FC8" text-anchor="middle" >てんし</text>
+<text x="1478.0" y="499.0" font-size="12" font-weight="bold" fill="#77708C" text-anchor="middle" >ペアなら2枚</text>
+<rect x="1700" y="376" width="152" height="190" rx="12" fill="none" stroke="#D0436A" stroke-width="3" stroke-dasharray="10 7"/>
+<text x="1776.0" y="477.0" font-size="19" font-weight="900" fill="#D0436A" text-anchor="middle" >あくま</text>
+<text x="1776.0" y="499.0" font-size="12" font-weight="bold" fill="#77708C" text-anchor="middle" >ペアなら2枚</text>
+<g transform="translate(1595.0,439.0) scale(1.0000)">
+<path d="M6 10 L58 10 L58 46 L36 46 L26 58 L26 46 L6 46 Z" fill="#9B7BE0" stroke="#3A3550" stroke-width="3.2" stroke-linejoin="round" stroke-linecap="round"/>
+<text x="32" y="38" text-anchor="middle" font-size="25" font-weight="900" fill="#FFFFFF" font-family="'Noto Sans CJK JP',sans-serif">VS</text></g>
+<g transform="translate(1397.0,357.0) scale(0.7188)">
+<ellipse cx="32" cy="9" rx="13" ry="4.2" fill="none" stroke="#F2C230" stroke-width="4"/>
+<ellipse cx="32" cy="9" rx="13" ry="4.2" fill="none" stroke="#FFF2B0" stroke-width="1.4"/>
+<circle cx="32" cy="36" r="20" fill="#FFE3CC" stroke="#3A3550" stroke-width="3.2" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M13 32 Q14 16 32 16 Q50 16 51 32 Q46 24 40 25 Q36 20 30 24 Q22 21 13 32 Z" fill="#FFD66B" stroke="#3A3550" stroke-width="3.2" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M22 37 Q25 34 28 37 M36 37 Q39 34 42 37" fill="none" stroke="#3A3550" stroke-width="3.2" stroke-linejoin="round" stroke-linecap="round"/>
+<ellipse cx="20" cy="43" rx="3.6" ry="2.4" fill="#FFAFC0"/><ellipse cx="44" cy="43" rx="3.6" ry="2.4" fill="#FFAFC0"/>
+<path d="M28 44 Q32 48 36 44" fill="none" stroke="#3A3550" stroke-width="3.2" stroke-linejoin="round" stroke-linecap="round"/></g>
+<g transform="translate(1811.0,357.0) scale(0.7188)">
+<path d="M17 24 L12 7 L26 18 Z" fill="#7B3FA0" stroke="#3A3550" stroke-width="3.2" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M47 24 L52 7 L38 18 Z" fill="#7B3FA0" stroke="#3A3550" stroke-width="3.2" stroke-linejoin="round" stroke-linecap="round"/>
+<circle cx="32" cy="36" r="20" fill="#C9A3F0" stroke="#3A3550" stroke-width="3.2" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M14 30 Q20 18 32 18 Q44 18 50 30 Q42 25 32 27 Q22 25 14 30 Z" fill="#7B3FA0" stroke="#3A3550" stroke-width="3.2" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M20 33 L28 36 M44 33 L36 36" stroke="#3A3550" stroke-width="3.2" stroke-linejoin="round" stroke-linecap="round" fill="none"/>
+<circle cx="25" cy="39" r="2.4" fill="#3A3550"/><circle cx="39" cy="39" r="2.4" fill="#3A3550"/>
+<ellipse cx="19" cy="45" rx="3.4" ry="2.2" fill="#F48FB1"/><ellipse cx="45" cy="45" rx="3.4" ry="2.2" fill="#F48FB1"/>
+<path d="M25 46 Q32 52 39 46" fill="none" stroke="#3A3550" stroke-width="3.2" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M35 48 L36.5 52 L38 47.5" fill="#FFFFFF" stroke="#3A3550" stroke-width="1.6" stroke-linejoin="round"/></g>
+<rect x="1372" y="608" width="510" height="200" rx="12" fill="none" stroke="#2F7FC8" stroke-width="3" stroke-dasharray="10 7"/>
+<text x="1627.0" y="714.0" font-size="19" font-weight="900" fill="#2F7FC8" text-anchor="middle" >てんし陣営の手札</text>
+<text x="1627.0" y="736.0" font-size="12" font-weight="bold" fill="#77708C" text-anchor="middle" >裏向きで置いて「自分だけ見る」</text>
+<g transform="translate(1384.0,620.0) scale(0.7500)">
+<ellipse cx="32" cy="9" rx="13" ry="4.2" fill="none" stroke="#F2C230" stroke-width="4"/>
+<ellipse cx="32" cy="9" rx="13" ry="4.2" fill="none" stroke="#FFF2B0" stroke-width="1.4"/>
+<circle cx="32" cy="36" r="20" fill="#FFE3CC" stroke="#3A3550" stroke-width="3.2" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M13 32 Q14 16 32 16 Q50 16 51 32 Q46 24 40 25 Q36 20 30 24 Q22 21 13 32 Z" fill="#FFD66B" stroke="#3A3550" stroke-width="3.2" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M22 37 Q25 34 28 37 M36 37 Q39 34 42 37" fill="none" stroke="#3A3550" stroke-width="3.2" stroke-linejoin="round" stroke-linecap="round"/>
+<ellipse cx="20" cy="43" rx="3.6" ry="2.4" fill="#FFAFC0"/><ellipse cx="44" cy="43" rx="3.6" ry="2.4" fill="#FFAFC0"/>
+<path d="M28 44 Q32 48 36 44" fill="none" stroke="#3A3550" stroke-width="3.2" stroke-linejoin="round" stroke-linecap="round"/></g>
+<rect x="1372" y="824" width="510" height="200" rx="12" fill="none" stroke="#D0436A" stroke-width="3" stroke-dasharray="10 7"/>
+<text x="1627.0" y="930.0" font-size="19" font-weight="900" fill="#D0436A" text-anchor="middle" >あくま陣営の手札</text>
+<text x="1627.0" y="952.0" font-size="12" font-weight="bold" fill="#77708C" text-anchor="middle" >裏向きで置いて「自分だけ見る」</text>
+<g transform="translate(1384.0,836.0) scale(0.7500)">
+<path d="M17 24 L12 7 L26 18 Z" fill="#7B3FA0" stroke="#3A3550" stroke-width="3.2" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M47 24 L52 7 L38 18 Z" fill="#7B3FA0" stroke="#3A3550" stroke-width="3.2" stroke-linejoin="round" stroke-linecap="round"/>
+<circle cx="32" cy="36" r="20" fill="#C9A3F0" stroke="#3A3550" stroke-width="3.2" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M14 30 Q20 18 32 18 Q44 18 50 30 Q42 25 32 27 Q22 25 14 30 Z" fill="#7B3FA0" stroke="#3A3550" stroke-width="3.2" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M20 33 L28 36 M44 33 L36 36" stroke="#3A3550" stroke-width="3.2" stroke-linejoin="round" stroke-linecap="round" fill="none"/>
+<circle cx="25" cy="39" r="2.4" fill="#3A3550"/><circle cx="39" cy="39" r="2.4" fill="#3A3550"/>
+<ellipse cx="19" cy="45" rx="3.4" ry="2.2" fill="#F48FB1"/><ellipse cx="45" cy="45" rx="3.4" ry="2.2" fill="#F48FB1"/>
+<path d="M25 46 Q32 52 39 46" fill="none" stroke="#3A3550" stroke-width="3.2" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M35 48 L36.5 52 L38 47.5" fill="#FFFFFF" stroke="#3A3550" stroke-width="1.6" stroke-linejoin="round"/></g>
 </svg>

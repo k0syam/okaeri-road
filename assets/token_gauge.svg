@@ -1,12 +1,16 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="200" height="200" viewBox="0 0 200 200" font-family="'Noto Sans CJK JP','Hiragino Sans','Yu Gothic','Meiryo',sans-serif">
 <defs>
-<radialGradient id="g" cx="0.35" cy="0.3" r="0.8">
+<radialGradient id="g" cx="0.35" cy="0.3" r="0.85">
   <stop offset="0" stop-color="#FFFFFF"/><stop offset="1" stop-color="#ECEAF2"/>
 </radialGradient>
 </defs>
-<circle cx="100" cy="100" r="92" fill="#3A3550"/>
-<circle cx="100" cy="100" r="80" fill="url(#g)"/>
-<text x="100" y="114" text-anchor="middle" font-size="76" font-family="'Noto Color Emoji',sans-serif">💗</text>
-<rect x="44" y="140" width="112" height="34" rx="17" fill="#3A3550"/>
-<text x="100" y="164" text-anchor="middle" font-size="20" font-weight="bold" fill="#FFFFFF">体調</text>
+<circle cx="100" cy="104" r="92" fill="#3A3550" opacity="0.18"/>
+<circle cx="100" cy="100" r="92" fill="#3A3550" stroke="#3A3550" stroke-width="5"/>
+<circle cx="100" cy="100" r="78" fill="url(#g)" stroke="#3A3550" stroke-width="3"/>
+<g transform="translate(48.0,36.0) scale(1.6250)">
+<path d="M32 56 C10 42 4 30 8 20 C12 10 26 8 32 19 C38 8 52 10 56 20 C60 30 54 42 32 56 Z" fill="#F25C82" stroke="#3A3550" stroke-width="3.2" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M12 33 L22 33 L26 25 L31 41 L35 29 L38 33 L52 33" fill="none" stroke="#FFFFFF" stroke-width="3.6" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M14 20 Q17 14 23 14" fill="none" stroke="#FFFFFF" stroke-width="2.8" stroke-linecap="round" opacity="0.7"/></g>
+<rect x="46" y="144" width="108" height="34" rx="17" fill="#3A3550" stroke="#3A3550" stroke-width="4"/>
+<text x="100" y="168" text-anchor="middle" font-size="20" font-weight="900" fill="#FFFFFF">体調</text>
 </svg>

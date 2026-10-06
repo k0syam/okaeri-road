@@ -4,10 +4,15 @@
     python3 tools/build_assets.py          # assets/*.svg を生成
     python3 tools/render_png.py            # SVG → PNG 書き出し（Playwright + Chromium）
 
-色・寸法はこのファイル冒頭の定数でまとめて管理する。
+色・寸法・文言はこのファイル、イラストは tools/art.py で管理する。
+絵文字フォントには依存しない（すべてオリジナルの SVG イラスト）。
 """
+import math
 from pathlib import Path
 from xml.sax.saxutils import escape
+
+import art
+from art import INK, place
 
 ROOT = Path(__file__).resolve().parent.parent
 ASSETS = ROOT / "assets"
@@ -15,25 +20,25 @@ ASSETS = ROOT / "assets"
 FONT = "'Noto Sans CJK JP','Hiragino Sans','Yu Gothic','Meiryo',sans-serif"
 
 # ---- パレット（てんし＝青、あくま＝ローズ で全素材を統一） ----
-INK = "#3A3550"
-INK_SOFT = "#7A7490"
-PAPER = "#FBF6EC"
-ROAD = "#E8DCC4"
+INK_SOFT = "#77708C"
+PAPER = "#FBF4E6"
 ANGEL = "#2F7FC8"
 ANGEL_TINT = "#E2EFFB"
 DEVIL = "#D0436A"
 DEVIL_TINT = "#FBE3EA"
+VIOLET = "#7A5CC6"
+GOLD = "#FFC531"
 
 TYPES = {
-    #        枠色       塗り       絵文字  ラベル
-    "start": ("#3FA66B", "#E3F4E9", "🚶", "スタート"),
-    "goal": ("#E07B1F", "#FDEBD6", "🏠", "ゴール"),
-    "health": (ANGEL, ANGEL_TINT, "😇", "健康"),
-    "temptation": (DEVIL, DEVIL_TINT, "😈", "誘惑"),
-    "either": ("#7A5CC6", "#EEE8FA", "❓", "どちらでも"),
-    "fork": (INK, "#ECEAF2", "🔀", "わかれ道"),
-    "happening": ("#D99A00", "#FFF3D2", "❗", "ハプニング"),
-    "plain": ("#A3A1AE", "#F2F1F4", "➖", "素通り"),
+    #            ヘッダー色  ヘッダー文字色  ラベル
+    "start": ("#3FA66B", "#FFFFFF", "スタート"),
+    "goal": ("#E9744A", "#FFFFFF", "ゴール"),
+    "health": (ANGEL, "#FFFFFF", "健康"),
+    "temptation": (DEVIL, "#FFFFFF", "誘惑"),
+    "either": (VIOLET, "#FFFFFF", "カード勝負"),
+    "fork": (INK, "#FFFFFF", "わかれ道"),
+    "happening": ("#F2B825", INK, "ハプニング"),
+    "plain": ("#A9A5B8", "#FFFFFF", "素通り"),
 }
 
 
@@ -42,15 +47,50 @@ def t(x, y, s, size, fill=INK, weight="normal", anchor="middle", extra=""):
             f'fill="{fill}" text-anchor="{anchor}" {extra}>{escape(s)}</text>')
 
 
+def outlined(x, y, s, size, fill, stroke=INK, sw=8, anchor="middle", weight="900"):
+    """ゲームロゴ風の縁取り文字"""
+    return (f'<text x="{x}" y="{y}" font-size="{size}" font-weight="{weight}" text-anchor="{anchor}" '
+            f'fill="{fill}" stroke="{stroke}" stroke-width="{sw}" stroke-linejoin="round" '
+            f'paint-order="stroke">{escape(s)}</text>')
+
+
+def mix(c1, c2, k):
+    a = [int(c1[i:i + 2], 16) for i in (1, 3, 5)]
+    b = [int(c2[i:i + 2], 16) for i in (1, 3, 5)]
+    return "#" + "".join(f"{round(x + (y - x) * k):02X}" for x, y in zip(a, b))
+
+
+DEFS = f"""<defs>
+<filter id="shadow" x="-20%" y="-20%" width="140%" height="150%">
+  <feDropShadow dx="0" dy="5" stdDeviation="3" flood-color="#5A4A2A" flood-opacity="0.22"/>
+</filter>
+<filter id="soft" x="-20%" y="-20%" width="140%" height="140%">
+  <feDropShadow dx="0" dy="3" stdDeviation="5" flood-color="#5A4A2A" flood-opacity="0.12"/>
+</filter>
+<pattern id="dots" width="26" height="26" patternUnits="userSpaceOnUse">
+  <circle cx="4" cy="4" r="1.5" fill="#EADFC8"/>
+</pattern>
+<pattern id="stripeA" width="12" height="12" patternUnits="userSpaceOnUse" patternTransform="rotate(45)">
+  <rect width="6" height="12" fill="#FFFFFF" opacity="0.35"/>
+</pattern>
+<pattern id="cardback" width="14" height="14" patternUnits="userSpaceOnUse" patternTransform="rotate(45)">
+  <rect width="14" height="14" fill="#EFE7F8"/><rect width="7" height="7" fill="#E3D8F2"/>
+</pattern>
+<linearGradient id="sky" x1="0" y1="0" x2="0" y2="1">
+  <stop offset="0" stop-color="#FDF7EC"/><stop offset="1" stop-color="#F7EEDC"/>
+</linearGradient>
+</defs>"""
+
+
 # =====================================================================
 # ボード（1920×1080、CCFOLIA の前景 80×45 マス用）
 # =====================================================================
 W, H = 1920, 1080
-TILE = 122
+TILE = 124
 COLP = 142          # 列ピッチ
 ROWP = 134          # 行ピッチ
-X0 = 50 + TILE / 2  # 列0の中心
-Y0 = 92 + TILE / 2  # 行0の中心
+X0 = 48 + TILE / 2  # 列0の中心
+Y0 = 90 + TILE / 2  # 行0の中心
 
 
 def cx(c):
@@ -64,42 +104,44 @@ def cy(r):
 # 行：0=わかれ道①健康レーン 1=序盤・中盤の本道 2=わかれ道①誘惑レーン
 #     3=わかれ道②健康レーン 4=終盤の本道 5=わかれ道②誘惑レーン
 SQUARES = [
-    # id, type, 列, 行, 名前（ラベル上書き）, 場所
-    ("1", "start", 0, 1, None, "おでかけ"),
-    ("2", "either", 1, 1, None, "コンビニ"),
-    ("3", "plain", 2, 1, None, "じゅうたくがい"),
-    ("4", "fork", 3, 1, "わかれ道①", "赤→健康／黒→誘惑"),
-    ("5A", "health", 4, 0, None, "こうえん"),
-    ("6A", "happening", 5, 0, None, "？？？"),
-    ("7A", "health", 6, 0, None, "ジム"),
-    ("5B", "temptation", 4, 2, None, "だがしや"),
-    ("6B", "happening", 5, 2, None, "？？？"),
-    ("7B", "temptation", 6, 2, None, "ラーメン屋"),
-    ("8", "either", 7, 1, "どちらでも", "じはんき（合流）"),
-    ("9", "plain", 8, 1, None, "じゅうたくがい"),
-    ("10", "fork", 8, 4, "わかれ道②", "赤→健康／黒→誘惑"),
-    ("11A", "health", 7, 3, None, "やおや"),
-    ("12A", "either", 6, 3, None, "こうえんのベンチ"),
-    ("13A", "happening", 5, 3, None, "？？？"),
-    ("11B", "temptation", 7, 5, None, "ファストフード"),
-    ("12B", "either", 6, 5, None, "屋台"),
-    ("13B", "happening", 5, 5, None, "？？？"),
-    ("14", "either", 4, 4, "どちらでも", "コンビニ（合流）"),
-    ("15", "temptation", 3, 4, None, "ケーキ屋"),
-    ("16", "health", 2, 4, None, "こうえん"),
-    ("17", "happening", 1, 4, None, "？？？"),
-    ("18", "goal", 0, 4, None, "おうち"),
+    # id, type, 列, 行, ラベル上書き, 場所, アイコン, お気に入りスート, 大勝負
+    ("1", "start", 0, 1, None, "おでかけ", "sneaker", None, False),
+    ("2", "either", 1, 1, None, "コンビニ", "store", None, False),
+    ("3", "plain", 2, 1, None, "じゅうたくがい", "houses", None, False),
+    ("4", "fork", 3, 1, "わかれ道①", "赤→健康 黒→誘惑", "signpost", None, False),
+    ("5A", "health", 4, 0, None, "こうえん", "tree", "♣", False),
+    ("6A", "happening", 5, 0, None, "？？？", "burst", None, False),
+    ("7A", "health", 6, 0, None, "ジム", "dumbbell", "♠", False),
+    ("5B", "temptation", 4, 2, None, "だがしや", "candy", "♦", False),
+    ("6B", "happening", 5, 2, None, "？？？", "burst", None, False),
+    ("7B", "temptation", 6, 2, None, "ラーメン屋", "ramen", "♠", False),
+    ("8", "either", 7, 1, "大勝負", "じはんき（合流）", "vending", None, True),
+    ("9", "plain", 8, 1, None, "じゅうたくがい", "houses", None, False),
+    ("10", "fork", 8, 4, "わかれ道②", "赤→健康 黒→誘惑", "signpost", None, False),
+    ("11A", "health", 7, 3, None, "やおや", "carrot", "♦", False),
+    ("12A", "either", 6, 3, None, "こうえんのベンチ", "bench", None, False),
+    ("13A", "happening", 5, 3, None, "？？？", "burst", None, False),
+    ("11B", "temptation", 7, 5, None, "ファストフード", "burger", "♣", False),
+    ("12B", "either", 6, 5, None, "屋台", "lantern", None, False),
+    ("13B", "happening", 5, 5, None, "？？？", "burst", None, False),
+    ("14", "either", 4, 4, "大勝負", "コンビニ（合流）", "store", None, True),
+    ("15", "temptation", 3, 4, None, "ケーキ屋", "cake", "♥", False),
+    ("16", "health", 2, 4, None, "こうえん", "tree", "♥", False),
+    ("17", "happening", 1, 4, None, "？？？", "burst", None, False),
+    ("18", "goal", 0, 4, None, "おうち", "home", None, False),
 ]
 POS = {s[0]: (cx(s[2]), cy(s[3])) for s in SQUARES}
 
+LANE_A = "#BFDCF6"
+LANE_B = "#F8C9D6"
+ROAD = "#EADBBE"
 ROUTES = [
-    # (経路, 道の色)
     (["1", "2", "3", "4"], ROAD),
-    (["4", "5A", "6A", "7A", "8"], "#C9DFF4"),
-    (["4", "5B", "6B", "7B", "8"], "#F5CDD8"),
+    (["4", "5A", "6A", "7A", "8"], LANE_A),
+    (["4", "5B", "6B", "7B", "8"], LANE_B),
     (["8", "9", "10"], ROAD),
-    (["10", "11A", "12A", "13A", "14"], "#C9DFF4"),
-    (["10", "11B", "12B", "13B", "14"], "#F5CDD8"),
+    (["10", "11A", "12A", "13A", "14"], LANE_A),
+    (["10", "11B", "12B", "13B", "14"], LANE_B),
     (["14", "15", "16", "17", "18"], ROAD),
 ]
 
@@ -108,301 +150,388 @@ def road_svg():
     out = []
     for path, color in ROUTES:
         pts = " ".join(f"{POS[p][0]:.1f},{POS[p][1]:.1f}" for p in path)
-        out.append(f'<polyline points="{pts}" fill="none" stroke="#D8C9AC" stroke-width="44" '
+        out.append(f'<polyline points="{pts}" fill="none" stroke="#D6C29C" stroke-width="50" '
                    f'stroke-linecap="round" stroke-linejoin="round"/>')
-        out.append(f'<polyline points="{pts}" fill="none" stroke="{color}" stroke-width="36" '
+        out.append(f'<polyline points="{pts}" fill="none" stroke="{color}" stroke-width="40" '
                    f'stroke-linecap="round" stroke-linejoin="round"/>')
-        out.append(f'<polyline points="{pts}" fill="none" stroke="#FFFFFF" stroke-width="3" '
-                   f'stroke-dasharray="10 12" stroke-linecap="round" opacity="0.9"/>')
-    # 進行方向の矢印（各区間の中点）
-    import math
+        out.append(f'<polyline points="{pts}" fill="none" stroke="#FFFFFF" stroke-width="4" '
+                   f'stroke-dasharray="12 12" stroke-linecap="round" opacity="0.9"/>')
     for path, _ in ROUTES:
         for a, b in zip(path, path[1:]):
             (x1, y1), (x2, y2) = POS[a], POS[b]
             mx, my = (x1 + x2) / 2, (y1 + y2) / 2
             ang = math.degrees(math.atan2(y2 - y1, x2 - x1))
-            out.append(f'<path d="M-7,-9 L6,0 L-7,9" transform="translate({mx:.1f},{my:.1f}) rotate({ang:.1f})" '
-                       f'fill="none" stroke="#9C8A68" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>')
+            out.append(f'<g transform="translate({mx:.1f},{my:.1f}) rotate({ang:.1f})">'
+                       f'<circle r="13" fill="#FFFFFF" stroke="#C9B38A" stroke-width="2.5"/>'
+                       f'<path d="M-4,-6 L4,0 L-4,6" fill="none" stroke="#9C8A68" stroke-width="3.5" '
+                       f'stroke-linecap="round" stroke-linejoin="round"/></g>')
     return "\n".join(out)
 
 
-def tile_svg(sid, typ, label, place):
-    stroke, fill, emoji, default_label = TYPES[typ]
+def header_path(x0, y0, w, h, r):
+    return (f"M{x0},{y0 + h} L{x0},{y0 + r} Q{x0},{y0} {x0 + r},{y0} L{x0 + w - r},{y0} "
+            f"Q{x0 + w},{y0} {x0 + w},{y0 + r} L{x0 + w},{y0 + h} Z")
+
+
+def tile_svg(sq):
+    sid, typ, _c, _r, label, place_name, icon, suit, big = sq
+    color, label_color, default_label = TYPES[typ]
     label = label or default_label
     x, y = POS[sid]
     x0, y0 = x - TILE / 2, y - TILE / 2
-    out = []
-    if typ == "fork":
-        fill_attr = "url(#forkFill)"
-    else:
-        fill_attr = fill
-    out.append(f'<rect x="{x0:.1f}" y="{y0:.1f}" width="{TILE}" height="{TILE}" rx="20" '
-               f'fill="{fill_attr}" stroke="{stroke}" stroke-width="4" filter="url(#shadow)"/>')
-    # 番号バッジ
-    bw = 30 if len(sid) == 1 else (38 if len(sid) == 2 else 46)
-    out.append(f'<rect x="{x0 + 8:.1f}" y="{y0 + 8:.1f}" width="{bw}" height="26" rx="13" fill="{stroke}"/>')
-    out.append(t(x0 + 8 + bw / 2, y0 + 27, sid, 17, "#FFFFFF", "bold"))
-    out.append(t(x + 10, y + 6, emoji, 40, extra="font-family=\"'Noto Color Emoji',sans-serif\""))
-    out.append(t(x, y + 34, label, 18 if len(label) <= 5 else 16, INK, "bold"))
-    out.append(t(x, y + 52, place, 12 if len(place) <= 8 else 11, INK_SOFT))
+    hh = 32
+    out = [f'<g filter="url(#shadow)">'
+           f'<rect x="{x0:.1f}" y="{y0:.1f}" width="{TILE}" height="{TILE}" rx="18" fill="#FFFDF8"/></g>',
+           f'<path d="{header_path(x0, y0, TILE, hh, 18)}" fill="{color}"/>']
+    if typ in ("health", "temptation"):
+        tint = ANGEL_TINT if typ == "health" else DEVIL_TINT
+        out.append(f'<rect x="{x0:.1f}" y="{y0 + hh:.1f}" width="{TILE}" height="{TILE - hh - 18}" fill="{tint}"/>')
+        out.append(f'<path d="M{x0},{y0 + TILE - 18} L{x0 + TILE},{y0 + TILE - 18} L{x0 + TILE},{y0 + TILE - 18} '
+                   f'Q{x0 + TILE},{y0 + TILE} {x0 + TILE - 18},{y0 + TILE} L{x0 + 18},{y0 + TILE} '
+                   f'Q{x0},{y0 + TILE} {x0},{y0 + TILE - 18} Z" fill="{tint}"/>')
+    out.append(f'<rect x="{x0:.1f}" y="{y0:.1f}" width="{TILE}" height="{TILE}" rx="18" fill="none" '
+               f'stroke="{color}" stroke-width="4"/>')
+    # 番号
+    nw = 26 if len(sid) == 1 else (34 if len(sid) == 2 else 42)
+    out.append(f'<rect x="{x0 + 6:.1f}" y="{y0 + 5:.1f}" width="{nw}" height="22" rx="11" fill="#FFFFFF"/>')
+    out.append(t(x0 + 6 + nw / 2, y0 + 22, sid, 16, color if typ != "happening" else INK, "900"))
+    # 種類ラベル
+    if typ in ("health", "temptation") or big:
+        out.append(t(x0 + nw + 12, y0 + 23, label, 16, label_color, "900", "start"))
+    if typ in ("health", "temptation"):
+        head = art.angel(wings=False) if typ == "health" else art.devil(tail=False)
+        out.append(place(head, x0 + TILE - 22, y0 + 14, 40))
+    elif not big:
+        out.append(t(x0 + TILE - 9, y0 + 22, label, 14 if len(label) <= 4 else 13, label_color, "900", "end"))
+    # イラスト
+    out.append(place(art.ICONS[icon](), x, y + 4, 58))
+    # 場所名
+    out.append(t(x, y0 + TILE - 10, place_name, 13 if len(place_name) <= 6 else 11, INK, "bold"))
+    if suit:
+        out.append(art.suit_chip(suit, x0 + TILE - 6, y0 + TILE - 8, 15))
+    if big:
+        out.append(art.star_badge(x0 + TILE - 4, y0 + 4, "×2", 26))
     return "\n".join(out)
 
 
-def slot(x, y, w, h, label, color, sub=None, dashed=True):
-    dash = 'stroke-dasharray="9 7"' if dashed else ""
-    out = [f'<rect x="{x}" y="{y}" width="{w}" height="{h}" rx="12" fill="#FFFFFF" fill-opacity="0.6" '
-           f'stroke="{color}" stroke-width="3" {dash}/>',
-           t(x + w / 2, y + h / 2 + 6, label, 18, color, "bold")]
-    if sub:
-        out.append(t(x + w / 2, y + h / 2 + 28, sub, 12, INK_SOFT))
+def pair_icon(x, y, k=1.0):
+    def card(dx, rot, suit, col):
+        return (f'<g transform="translate({x + dx * k:.1f},{y:.1f}) rotate({rot}) scale({k})">'
+                f'<rect x="-13" y="-18" width="26" height="36" rx="4" fill="#FFFFFF" stroke="{INK}" stroke-width="2.4"/>'
+                f'<text x="0" y="2" text-anchor="middle" font-size="15" font-weight="900" fill="{col}">7</text>'
+                f'<text x="0" y="14" text-anchor="middle" font-size="10" fill="{col}" font-family="\'DejaVu Sans\'">{suit}</text></g>')
+    return card(-7, -12, "♠", INK) + card(7, 10, "♥", "#E0344F")
+
+
+def cheer_icon(x, y, k=1.0):
+    return (f'<g transform="translate({x},{y}) scale({k})">'
+            f'<path d="M-8,18 L-8,-18" stroke="{INK}" stroke-width="3" stroke-linecap="round"/>'
+            f'<path d="M-8,-18 L16,-12 L-8,-4 Z" fill="#FF8A3D" stroke="{INK}" stroke-width="2.4" stroke-linejoin="round"/>'
+            f'<text x="10" y="16" text-anchor="middle" font-size="14" font-weight="900" fill="{INK}">+2</text></g>')
+
+
+def panel(x, y, w, h, title=None, color=INK):
+    out = [f'<g filter="url(#soft)"><rect x="{x}" y="{y}" width="{w}" height="{h}" rx="22" fill="#FFFFFF" fill-opacity="0.92"/></g>',
+           f'<rect x="{x}" y="{y}" width="{w}" height="{h}" rx="22" fill="none" stroke="#E6D7B8" stroke-width="2"/>']
+    if title:
+        out.append(f'<rect x="{x + 18}" y="{y - 14}" width="{len(title) * 20 + 30}" height="30" rx="15" fill="{color}"/>')
+        out.append(t(x + 33, y + 8, title, 18, "#FFFFFF", "900", "start"))
     return "\n".join(out)
 
 
-def card_area_svg():
-    px, py, pw, ph = 1352, 24, 544, 1032
-    out = [f'<rect x="{px}" y="{py}" width="{pw}" height="{ph}" rx="28" fill="#FFFFFF" fill-opacity="0.7" '
-           f'stroke="#E2D6BE" stroke-width="2"/>']
-    # 山札・捨て札・除外
-    out.append(t(px + 28, py + 46, "カード置き場", 22, INK, "bold", "start"))
-    out.append(t(px + pw - 28, py + 46, "※枠の大きさは目安", 13, INK_SOFT, anchor="end"))
-    cw, ch = 132, 176
-    gx = (pw - 3 * cw) / 4
-    y1 = py + 70
-    out.append(slot(px + gx, y1, cw, ch, "山札", INK, "トランプのデッキ", dashed=False))
-    out.append(slot(px + 2 * gx + cw, y1, cw, ch, "捨て札", INK_SOFT, "表向きで置く"))
-    out.append(slot(px + 3 * gx + 2 * cw, y1, cw, ch, "除外", INK_SOFT, "ジョーカー"))
-    # 勝負エリア
-    y2 = y1 + ch + 30
-    out.append(f'<rect x="{px + 16}" y="{y2}" width="{pw - 32}" height="276" rx="20" fill="#F6F2FB"/>')
-    out.append(t(px + pw / 2, y2 + 36, "勝負エリア", 22, "#7A5CC6", "bold"))
-    out.append(t(px + pw / 2, y2 + 60, "裏向きで置いて「せーの」で公開", 14, INK_SOFT))
-    bw, bh = 150, 186
-    out.append(slot(px + 56, y2 + 76, bw, bh, "てんし", ANGEL, "😇 健康マスでは主役"))
-    out.append(slot(px + pw - 56 - bw, y2 + 76, bw, bh, "あくま", DEVIL, "😈 誘惑マスでは主役"))
-    out.append(t(px + pw / 2, y2 + 76 + bh / 2 + 10, "VS", 30, "#7A5CC6", "bold"))
-    # 手札置き場
-    y3 = y2 + 276 + 26
-    hh = 214
-    out.append(slot(px + 16, y3, pw - 32, hh, "てんし陣営の手札", ANGEL, "裏向きで置き「自分だけ見る」"))
-    out.append(slot(px + 16, y3 + hh + 18, pw - 32, hh, "あくま陣営の手札", DEVIL, "裏向きで置き「自分だけ見る」"))
-    return "\n".join(out)
-
-
-def gauge_svg():
-    gx, gy, cwid, ch = 50, 950, 60, 66
-    out = [t(gx, gy - 16, "体調ゲージ", 22, INK, "bold", "start"),
-           t(gx + 130, gy - 16, "ゲームの開始時は 0。ゴールした瞬間の位置で勝敗が決まる", 14, INK_SOFT, anchor="start")]
-    for i, v in enumerate(range(-10, 11)):
-        x = gx + i * cwid
-        if v < 0:
-            k = (-v) / 10
-            fill = mix("#FFFFFF", DEVIL, 0.12 + 0.55 * k)
-        elif v > 0:
-            k = v / 10
-            fill = mix("#FFFFFF", ANGEL, 0.12 + 0.55 * k)
-        else:
-            fill = "#FFFFFF"
-        out.append(f'<rect x="{x}" y="{gy}" width="{cwid}" height="{ch}" fill="{fill}" stroke="#FFFFFF" stroke-width="3"/>')
-        label = f"+{v}" if v > 0 else str(v)
-        color = "#FFFFFF" if abs(v) >= 6 else INK
-        out.append(t(x + cwid / 2, gy + ch / 2 + 8, label, 22 if v else 26, color, "bold"))
-    out.append(f'<rect x="{gx}" y="{gy}" width="{21 * cwid}" height="{ch}" rx="6" fill="none" stroke="#D8C9AC" stroke-width="3"/>')
-    out.append(f'<rect x="{gx + 10 * cwid}" y="{gy - 4}" width="{cwid}" height="{ch + 8}" rx="6" fill="none" stroke="{INK}" stroke-width="4"/>')
-    out.append(t(gx, gy + ch + 26, "😈 −1以下：あくま陣営の勝ち", 17, DEVIL, "bold", "start"))
-    out.append(t(gx + 21 * cwid / 2, gy + ch + 26, "0：気まぐれ判定（1d6 奇数てんし／偶数あくま）", 15, INK_SOFT))
-    out.append(t(gx + 21 * cwid, gy + ch + 26, "てんし陣営の勝ち：+1以上 😇", 17, ANGEL, "bold", "end"))
-    return "\n".join(out)
-
-
-def legend_svg():
-    # 左側の空きスペース（列0〜3・行2〜3）に凡例
-    x, y = cx(0) - TILE / 2, cy(2) - TILE / 2 + 6
+def gimmick_svg():
+    # 左側の空きスペース（列0〜3・行2〜3）：ボードのしかけ
+    x, y = cx(0) - TILE / 2, cy(2) - TILE / 2 + 16
     w = 4 * COLP - (COLP - TILE)
-    h = 2 * ROWP - 24
-    out = [f'<rect x="{x}" y="{y}" width="{w}" height="{h}" rx="20" fill="#FFFFFF" fill-opacity="0.75" stroke="#E2D6BE" stroke-width="2"/>',
-           t(x + 22, y + 36, "マスの種類", 19, INK, "bold", "start")]
+    h = 2 * ROWP - 34
+    out = [panel(x, y, w, h, "ボードのしかけ", VIOLET)]
     items = [
-        ("health", "健康", "てんしが出す／あくまは横やり"),
-        ("temptation", "誘惑", "あくまが出す／てんしは横やり"),
-        ("either", "どちらでも", "両陣営でカード勝負"),
-        ("fork", "わかれ道", "カード勝負＋色でレーン決定"),
-        ("happening", "ハプニング", "1d6 でハプニング表"),
-        ("plain", "素通り", "何も起こらない"),
+        (lambda ix, iy: art.suit_chip("♥", ix, iy, 17), "お気に入りスート +3", "主役がお店の好きなスートで通すと+3"),
+        (lambda ix, iy: art.star_badge(ix, iy, "×2", 22), "大勝負マス ×2", "合流マスの勝負はゲージの動きが2倍"),
+        (lambda ix, iy: pair_icon(ix, iy, 0.95), "ペア出し", "同じ数字2枚を1組で出すと合計の数字"),
+        (lambda ix, iy: cheer_icon(ix, iy), "がんばれゾーン +2", "ゲージが相手側に6以上なら数字+2"),
     ]
-    for i, (typ, name, desc) in enumerate(items):
-        col, row = divmod(i, 3)
-        ix = x + 22 + col * (w / 2 - 6)
-        iy = y + 54 + row * 52
-        stroke, fill, emoji, _ = TYPES[typ]
-        f = "url(#forkFill)" if typ == "fork" else fill
-        out.append(f'<rect x="{ix}" y="{iy}" width="40" height="40" rx="10" fill="{f}" stroke="{stroke}" stroke-width="3"/>')
-        out.append(t(ix + 20, iy + 29, emoji, 22, extra="font-family=\"'Noto Color Emoji',sans-serif\""))
-        out.append(t(ix + 52, iy + 17, name, 15, INK, "bold", "start"))
-        out.append(t(ix + 52, iy + 36, desc, 12, INK_SOFT, anchor="start"))
-    # レーン凡例
-    ly = y + h - 22
-    out.append(f'<line x1="{x + 22}" y1="{ly}" x2="{x + 62}" y2="{ly}" stroke="#C9DFF4" stroke-width="14" stroke-linecap="round"/>')
-    out.append(t(x + 74, ly + 6, "健康レーン（赤 ♥♦ で勝つと）", 14, ANGEL, "bold", "start"))
-    lx = x + w / 2 + 16
-    out.append(f'<line x1="{lx}" y1="{ly}" x2="{lx + 40}" y2="{ly}" stroke="#F5CDD8" stroke-width="14" stroke-linecap="round"/>')
-    out.append(t(lx + 52, ly + 6, "誘惑レーン（黒 ♠♣ で勝つと）", 14, DEVIL, "bold", "start"))
+    for i, (draw, name, desc) in enumerate(items):
+        col, row = i % 2, i // 2
+        ix = x + 44 + col * (w / 2 - 4)
+        iy = y + 52 + row * 70
+        out.append(draw(ix, iy))
+        out.append(t(ix + 32, iy - 3, name, 16, INK, "900", "start"))
+        out.append(t(ix + 32, iy + 18, desc, 11.5, INK_SOFT, anchor="start"))
+    ly = y + h - 26
+    out.append(f'<line x1="{x + 26}" y1="{ly}" x2="{x + 62}" y2="{ly}" stroke="{LANE_A}" stroke-width="16" stroke-linecap="round"/>')
+    out.append(t(x + 74, ly + 5, "健康レーン：赤（♥♦）で勝つと", 13.5, ANGEL, "bold", "start"))
+    lx = x + w / 2 + 8
+    out.append(f'<line x1="{lx}" y1="{ly}" x2="{lx + 36}" y2="{ly}" stroke="{LANE_B}" stroke-width="16" stroke-linecap="round"/>')
+    out.append(t(lx + 48, ly + 5, "誘惑レーン：黒（♠♣）で勝つと", 13.5, DEVIL, "bold", "start"))
     return "\n".join(out)
 
 
 def flow_svg():
-    # 左下の空きスペース（列0〜4・行5）に手番の流れ
-    x, y = cx(0) - TILE / 2, cy(5) - TILE / 2 + 4
-    w = 5 * COLP - (COLP - TILE) - 12
-    h = TILE - 8
-    out = [f'<rect x="{x}" y="{y}" width="{w}" height="{h}" rx="20" fill="#FFFFFF" fill-opacity="0.75" stroke="#E2D6BE" stroke-width="2"/>',
-           t(x + 22, y + 34, "手番の流れ", 19, INK, "bold", "start")]
-    steps = ["① 1d6 で NPC を進める", "② 止まったマスを処理する", "③ 使ったカードを捨てて補充", "④ 相手陣営に手番を渡す"]
+    # 左下の空きスペース（列0〜4・行5）：手番の流れ
+    x, y = cx(0) - TILE / 2, cy(5) - TILE / 2 + 18
+    w = 5 * COLP - (COLP - TILE) - 14
+    h = TILE - 18
+    out = [panel(x, y, w, h, "手番の流れ", "#3FA66B")]
+    steps = ["① 1d6 で NPC を進める", "② 止まったマスでカードを出す",
+             "③ 裏向きで置いて「せーの」で公開", "④ 使った分を補充して交代"]
     for i, s in enumerate(steps):
-        col, row = divmod(i, 2)
-        out.append(t(x + 22 + col * (w / 2), y + 66 + row * 30, s, 15, INK, anchor="start"))
+        col, row = i % 2, i // 2
+        out.append(t(x + 26 + col * (w / 2 - 6), y + 44 + row * 32, s, 15, INK, "bold", "start"))
     return "\n".join(out)
 
 
-def mix(c1, c2, k):
-    a = [int(c1[i:i + 2], 16) for i in (1, 3, 5)]
-    b = [int(c2[i:i + 2], 16) for i in (1, 3, 5)]
-    return "#" + "".join(f"{round(x + (y - x) * k):02X}" for x, y in zip(a, b))
+def title_svg():
+    x, y = cx(0) - TILE / 2 + 2, cy(0) - 8
+    out = [outlined(x + 4, y + 5, "おかえりロード", 56, INK, INK, 7, "start"),
+           outlined(x, y, "おかえりロード", 56, "#FFFFFF", INK, 6, "start")]
+    # 「お」の上の光の輪・「ド」の角
+    out.append(f'<ellipse cx="{x + 30}" cy="{y - 52}" rx="20" ry="6" fill="none" stroke="#F2C230" stroke-width="5"/>')
+    # リボン
+    ry = y + 16
+    out.append(f'<path d="M{x + 4},{ry} L{x + 372},{ry} L{x + 360},{ry + 17} L{x + 372},{ry + 34} L{x + 4},{ry + 34} L{x + 16},{ry + 17} Z" '
+               f'fill="{VIOLET}" stroke="{INK}" stroke-width="3" stroke-linejoin="round"/>')
+    out.append(t(x + 188, ry + 24, "〜天使とあくまのさんぽ道〜", 18, "#FFFFFF", "900"))
+    out.append(place(art.angel(), x + 452, y - 6, 74))
+    out.append(place(art.devil(), x + 520, y + 8, 64))
+    return "\n".join(out)
 
 
-DEFS = f"""<defs>
-<filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
-  <feDropShadow dx="0" dy="4" stdDeviation="4" flood-color="#5A4A2A" flood-opacity="0.18"/>
-</filter>
-<linearGradient id="forkFill" x1="0" y1="0" x2="1" y2="1">
-  <stop offset="0" stop-color="{ANGEL_TINT}"/><stop offset="0.49" stop-color="{ANGEL_TINT}"/>
-  <stop offset="0.51" stop-color="{DEVIL_TINT}"/><stop offset="1" stop-color="{DEVIL_TINT}"/>
-</linearGradient>
-<pattern id="dots" width="28" height="28" patternUnits="userSpaceOnUse">
-  <circle cx="4" cy="4" r="1.6" fill="#E9DFCB"/>
-</pattern>
-</defs>"""
+def gauge_svg():
+    cwid, ch = 54, 60
+    gx = 112
+    gy = 958
+    total = 21 * cwid
+    out = [t(48, gy - 46, "体調ゲージ", 22, INK, "900", "start"),
+           t(170, gy - 46, "スタートは 0。ゴールした瞬間の位置で勝敗が決まる", 14, INK_SOFT, anchor="start")]
+    out.append(f'<rect x="{gx - 6}" y="{gy - 6}" width="{total + 12}" height="{ch + 12}" rx="14" fill="#FFFFFF" stroke="{INK}" stroke-width="3"/>')
+    for i, v in enumerate(range(-10, 11)):
+        x = gx + i * cwid
+        if v < 0:
+            fill = mix("#FFFFFF", DEVIL, 0.10 + 0.6 * (-v) / 10)
+        elif v > 0:
+            fill = mix("#FFFFFF", ANGEL, 0.10 + 0.6 * v / 10)
+        else:
+            fill = "#FFFFFF"
+        rx = 9 if v in (-10, 10) else 0
+        out.append(f'<rect x="{x}" y="{gy}" width="{cwid}" height="{ch}" rx="{rx}" fill="{fill}"/>')
+        if abs(v) >= 6:
+            out.append(f'<rect x="{x}" y="{gy}" width="{cwid}" height="{ch}" rx="{rx}" fill="url(#stripeA)"/>')
+        if i:
+            out.append(f'<line x1="{x}" y1="{gy + 6}" x2="{x}" y2="{gy + ch - 6}" stroke="#FFFFFF" stroke-width="2"/>')
+        label = f"+{v}" if v > 0 else ("−" + str(-v) if v < 0 else "0")
+        color = "#FFFFFF" if abs(v) >= 5 else INK
+        out.append(t(x + cwid / 2, gy + ch / 2 + 8, label, 21 if v else 26, color, "900"))
+    out.append(f'<rect x="{gx + 10 * cwid - 3}" y="{gy - 9}" width="{cwid + 6}" height="{ch + 18}" rx="10" fill="none" stroke="{INK}" stroke-width="4"/>')
+    # がんばれゾーン
+    zl = gx + 0 * cwid
+    zr = gx + 16 * cwid
+    out.append(f'<path d="M{zl},{gy - 14} L{zl + 5 * cwid},{gy - 14}" stroke="{ANGEL}" stroke-width="5" stroke-linecap="round"/>')
+    out.append(t(zl + 2.5 * cwid, gy - 21, "てんしのがんばれゾーン（数字+2）", 13, ANGEL, "900"))
+    out.append(f'<path d="M{zr},{gy - 14} L{zr + 5 * cwid},{gy - 14}" stroke="{DEVIL}" stroke-width="5" stroke-linecap="round"/>')
+    out.append(t(zr + 2.5 * cwid, gy - 21, "あくまのがんばれゾーン（数字+2）", 13, DEVIL, "900"))
+    # 両端のキャラクター
+    out.append(place(art.devil(), gx - 42, gy + ch / 2, 64))
+    out.append(place(art.angel(), gx + total + 42, gy + ch / 2, 70))
+    ty = gy + ch + 34
+    out.append(t(gx, ty, "−1以下：あくまの勝ち", 17, DEVIL, "900", "start"))
+    out.append(t(gx + total / 2, ty, "0：気まぐれ判定（1d6 奇数てんし／偶数あくま）", 14, INK_SOFT, "bold"))
+    out.append(t(gx + total, ty, "+1以上：てんしの勝ち", 17, ANGEL, "900", "end"))
+    return "\n".join(out)
+
+
+def slot(x, y, w, h, label, color, sub=None, back=False):
+    out = []
+    if back:
+        out.append(f'<rect x="{x + 10}" y="{y + 10}" width="{w - 20}" height="{h - 20}" rx="8" fill="url(#cardback)" opacity="0.8"/>')
+    out.append(f'<rect x="{x}" y="{y}" width="{w}" height="{h}" rx="12" fill="none" stroke="{color}" '
+               f'stroke-width="3" stroke-dasharray="10 7"/>')
+    out.append(t(x + w / 2, y + h / 2 + 6, label, 19, color, "900"))
+    if sub:
+        out.append(t(x + w / 2, y + h / 2 + 28, sub, 12, INK_SOFT, "bold"))
+    return "\n".join(out)
+
+
+def card_area_svg():
+    px, py, pw, ph = 1356, 22, 542, 1036
+    out = [f'<g filter="url(#soft)"><rect x="{px}" y="{py}" width="{pw}" height="{ph}" rx="28" fill="#FFFDF8"/></g>',
+           f'<rect x="{px}" y="{py}" width="{pw}" height="{ph}" rx="28" fill="none" stroke="#E6D7B8" stroke-width="2"/>',
+           outlined(px + 28, py + 50, "カード置き場", 26, INK, "#FFFFFF", 0, "start"),
+           t(px + pw - 26, py + 48, "※枠の大きさは目安", 12, INK_SOFT, anchor="end")]
+    cw, ch = 132, 172
+    gx = (pw - 3 * cw) / 4
+    y1 = py + 72
+    out.append(slot(px + gx, y1, cw, ch, "山札", INK, "トランプのデッキ", back=True))
+    out.append(slot(px + 2 * gx + cw, y1, cw, ch, "捨て札", INK_SOFT, "表向きで置く"))
+    out.append(slot(px + 3 * gx + 2 * cw, y1, cw, ch, "除外", INK_SOFT, "ジョーカー"))
+    # 勝負エリア
+    y2 = y1 + ch + 28
+    out.append(f'<rect x="{px + 16}" y="{y2}" width="{pw - 32}" height="290" rx="22" fill="#F3EEFB" stroke="#D9CCF2" stroke-width="2"/>')
+    out.append(outlined(px + pw / 2, y2 + 40, "勝負エリア", 24, VIOLET, "#FFFFFF", 0))
+    out.append(t(px + pw / 2, y2 + 64, "裏向きで置いて「準備OK」→「せーの」で公開", 13, INK_SOFT, "bold"))
+    bw, bh = 152, 190
+    lx, rx = px + 46, px + pw - 46 - bw
+    out.append(slot(lx, y2 + 82, bw, bh, "てんし", ANGEL, "ペアなら2枚"))
+    out.append(slot(rx, y2 + 82, bw, bh, "あくま", DEVIL, "ペアなら2枚"))
+    out.append(place(art.vs(), px + pw / 2, y2 + 82 + bh / 2, 64))
+    out.append(place(art.angel(wings=False), lx + 18, y2 + 86, 46))
+    out.append(place(art.devil(tail=False), rx + bw - 18, y2 + 86, 46))
+    # 手札置き場
+    y3 = y2 + 290 + 24
+    hh = 200
+    for i, (name, color, head) in enumerate([("てんし陣営の手札", ANGEL, art.angel(wings=False)),
+                                              ("あくま陣営の手札", DEVIL, art.devil(tail=False))]):
+        yy = y3 + i * (hh + 16)
+        out.append(slot(px + 16, yy, pw - 32, hh, name, color, "裏向きで置いて「自分だけ見る」"))
+        out.append(place(head, px + 52, yy + 36, 48))
+    return "\n".join(out)
+
+
+def scenery_svg():
+    """背景の小さな飾り（雲・草）"""
+    out = []
+    for (x, y, k) in [(940, 300, 1.0), (1080, 220, 0.7), (360, 640, 0.6)]:
+        out.append(f'<g transform="translate({x},{y}) scale({k})" opacity="0.9">'
+                   f'<path d="M-40,10 Q-40,-8 -22,-8 Q-16,-26 4,-22 Q20,-34 34,-16 Q52,-14 50,6 Q50,14 40,14 L-32,14 Q-40,14 -40,10 Z" '
+                   f'fill="#FFFFFF" stroke="#E6D7B8" stroke-width="3"/></g>')
+    for (x, y) in [(1000, 425), (870, 160), (1190, 860), (620, 905), (1300, 280)]:
+        out.append(f'<path d="M{x - 10},{y} Q{x - 8},{y - 12} {x - 4},{y} M{x},{y} Q{x + 2},{y - 16} {x + 5},{y} M{x + 7},{y} Q{x + 11},{y - 10} {x + 13},{y}" '
+                   f'fill="none" stroke="#9FCF8E" stroke-width="3" stroke-linecap="round"/>')
+    return "\n".join(out)
 
 
 def board():
     parts = [f'<svg xmlns="http://www.w3.org/2000/svg" width="{W}" height="{H}" viewBox="0 0 {W} {H}" font-family="{FONT}">',
              DEFS,
-             f'<rect width="{W}" height="{H}" fill="{PAPER}"/>',
-             f'<rect width="{W}" height="{H}" fill="url(#dots)"/>']
-    # タイトル（列0〜3・行0 の空きスペース）
-    tx, ty = cx(0) - TILE / 2, cy(0) - 18
-    parts.append(t(tx, ty, "おかえりロード", 46, INK, "900", "start"))
-    parts.append(t(tx + 4, ty + 38, "〜天使とあくまのさんぽ道〜", 22, INK_SOFT, "bold", "start"))
-    parts.append(t(tx + 4, ty + 66, "1d6 で進み、止まったマスでカードを出し合おう", 15, INK_SOFT, anchor="start"))
-    parts.append(road_svg())
-    for sid, typ, _c, _r, label, place in SQUARES:
-        parts.append(tile_svg(sid, typ, label, place))
-    parts.append(legend_svg())
-    parts.append(flow_svg())
-    parts.append(gauge_svg())
-    parts.append(card_area_svg())
-    parts.append("</svg>")
+             f'<rect width="{W}" height="{H}" fill="url(#sky)"/>',
+             f'<rect width="{W}" height="{H}" fill="url(#dots)"/>',
+             scenery_svg(),
+             road_svg()]
+    for sq in SQUARES:
+        parts.append(tile_svg(sq))
+    parts += [title_svg(), gimmick_svg(), flow_svg(), gauge_svg(), card_area_svg(), "</svg>"]
     return "\n".join(parts)
 
 
 # =====================================================================
 # コマ（200×200、600×600px で書き出し）
 # =====================================================================
-def token(emoji, label, color, tint):
+def token(body, label, color, tint, size=118, dy=-8):
     return f"""<svg xmlns="http://www.w3.org/2000/svg" width="200" height="200" viewBox="0 0 200 200" font-family="{FONT}">
 <defs>
-<radialGradient id="g" cx="0.35" cy="0.3" r="0.8">
+<radialGradient id="g" cx="0.35" cy="0.3" r="0.85">
   <stop offset="0" stop-color="#FFFFFF"/><stop offset="1" stop-color="{tint}"/>
 </radialGradient>
 </defs>
-<circle cx="100" cy="100" r="92" fill="{color}"/>
-<circle cx="100" cy="100" r="80" fill="url(#g)"/>
-<text x="100" y="114" text-anchor="middle" font-size="76" font-family="'Noto Color Emoji',sans-serif">{emoji}</text>
-<rect x="44" y="140" width="112" height="34" rx="17" fill="{color}"/>
-<text x="100" y="164" text-anchor="middle" font-size="20" font-weight="bold" fill="#FFFFFF">{escape(label)}</text>
+<circle cx="100" cy="104" r="92" fill="{INK}" opacity="0.18"/>
+<circle cx="100" cy="100" r="92" fill="{color}" stroke="{INK}" stroke-width="5"/>
+<circle cx="100" cy="100" r="78" fill="url(#g)" stroke="{INK}" stroke-width="3"/>
+{place(body, 100, 100 + dy, size)}
+<rect x="46" y="144" width="108" height="34" rx="17" fill="{color}" stroke="{INK}" stroke-width="4"/>
+<text x="100" y="168" text-anchor="middle" font-size="20" font-weight="900" fill="#FFFFFF">{escape(label)}</text>
 </svg>
 """
 
 
 # =====================================================================
-# 早見表（1080×1440、スクリーンパネル用）
+# 早見表（1080×1600、スクリーンパネル用）
 # =====================================================================
 def quick_reference():
-    QW, QH = 1080, 1440
+    QW, QH = 1080, 1600
     p = [f'<svg xmlns="http://www.w3.org/2000/svg" width="{QW}" height="{QH}" viewBox="0 0 {QW} {QH}" font-family="{FONT}">',
          DEFS,
-         f'<rect width="{QW}" height="{QH}" fill="{PAPER}"/>',
+         f'<rect width="{QW}" height="{QH}" fill="url(#sky)"/>',
          f'<rect width="{QW}" height="{QH}" fill="url(#dots)"/>',
-         t(60, 86, "おかえりロード 早見表", 44, INK, "900", "start"),
-         t(QW - 60, 86, "ルールブック v3", 18, INK_SOFT, anchor="end")]
+         outlined(62, 94, "おかえりロード 早見表", 48, INK, INK, 6, "start"),
+         outlined(60, 90, "おかえりロード 早見表", 48, "#FFFFFF", INK, 5, "start"),
+         place(art.angel(), QW - 170, 66, 80),
+         place(art.devil(), QW - 90, 72, 70)]
 
     def box(y, h, title, color):
-        p.append(f'<rect x="40" y="{y}" width="{QW - 80}" height="{h}" rx="24" fill="#FFFFFF" stroke="{color}" stroke-width="3"/>')
-        p.append(f'<rect x="40" y="{y}" width="12" height="{h}" rx="6" fill="{color}"/>')
-        p.append(t(76, y + 44, title, 26, color, "bold", "start"))
+        p.append(f'<g filter="url(#soft)"><rect x="40" y="{y}" width="{QW - 80}" height="{h}" rx="24" fill="#FFFFFF"/></g>')
+        p.append(f'<rect x="40" y="{y}" width="{QW - 80}" height="{h}" rx="24" fill="none" stroke="{color}" stroke-width="3"/>')
+        p.append(f'<rect x="64" y="{y - 18}" width="{len(title) * 25 + 36}" height="38" rx="19" fill="{color}" stroke="{INK}" stroke-width="3"/>')
+        p.append(t(82, y + 10, title, 22, "#FFFFFF", "900", "start"))
 
     # 1. 勝敗
-    y = 120
-    box(y, 150, "勝ち負け", INK)
-    p.append(t(76, y + 86, "NPC がゴール（マス18）に着いた瞬間の体調ゲージで決まる。", 20, INK, anchor="start"))
-    p.append(t(76, y + 122, "+1以上 → てんし陣営の勝ち　／　−1以下 → あくま陣営の勝ち　／　0 → 1d6（奇数てんし）", 18, INK_SOFT, anchor="start"))
+    y = 140
+    box(y, 120, "勝ち負け", INK)
+    p.append(t(76, y + 60, "NPC がゴール（マス18）に着いた瞬間の体調ゲージで決まる。", 20, INK, "bold", "start"))
+    p.append(t(76, y + 94, "+1以上 → てんしの勝ち　／　−1以下 → あくまの勝ち　／　0 → 1d6（奇数てんし）", 18, INK_SOFT, anchor="start"))
 
     # 2. カードの出し方
-    y = 290
-    box(y, 220, "カードの出し方（いつも同じ）", "#7A5CC6")
+    y = 300
+    box(y, 200, "カードの出し方（いつも同じ）", VIOLET)
     steps = ["① 出すカードを陣営で決めて勝負エリアに【裏向き】で置き、「準備OK」と言う（パスでも同じ）",
              "② そろったら手番プレイヤーの「せーの」で【全体に公開する】。置いていない陣営は「パス」",
-             "③ ゲージを動かし、勝った／通ったカードの J・Q・K 効果を処理",
-             "④ 使ったカードは捨て札へ。出した人はすぐ1枚補充する"]
+             "③ ゲージを動かし、勝った／通ったカードの J・Q・K 効果としかけを処理",
+             "④ 使ったカードは捨て札へ。出した人はすぐ使った枚数だけ補充する"]
     for i, s in enumerate(steps):
-        p.append(t(76, y + 88 + i * 36, s, 19, INK, anchor="start"))
+        p.append(t(76, y + 60 + i * 36, s, 18.5, INK, anchor="start"))
 
-    # 3. 場面ごとのゲージ
-    y = 530
-    box(y, 330, "マスごとのゲージの動き", "#D99A00")
+    # 3. マスごとのゲージ
+    y = 540
+    box(y, 320, "マスごとのゲージの動き", "#E0A100")
     rows = [
-        ("😇 健康マス", ANGEL, "てんしが主役・あくまは横やり（どちらもパス可）", "主役 − 横やり だけ ＋ へ（マイナスなら0）"),
-        ("😈 誘惑マス", DEVIL, "あくまが主役・てんしは横やり（どちらもパス可）", "主役 − 横やり だけ − へ（マイナスなら0）"),
-        ("❓ どちらでも", "#7A5CC6", "両陣営とも必ず1枚（手札0なら数字0）", "大きい方の陣営へ、差の分だけ動く"),
-        ("🔀 わかれ道", INK, "どちらでもマスと同じカード勝負", "勝ったカードが 赤♥♦→健康レーン／黒♠♣→誘惑レーン"),
+        (art.angel(wings=False), "健康マス", ANGEL, "てんしが主役・あくまは横やり（どちらもパス可）", "主役 − 横やり だけ ＋ へ（マイナスなら0）"),
+        (art.devil(tail=False), "誘惑マス", DEVIL, "あくまが主役・てんしは横やり（どちらもパス可）", "主役 − 横やり だけ − へ（マイナスなら0）"),
+        (art.vs(), "カード勝負", VIOLET, "どちらでもマス：両陣営とも必ず1枚（手札0なら数字0）", "大きい方の陣営へ、差の分だけ動く"),
+        (art.signpost(), "わかれ道", INK, "どちらでもマスと同じカード勝負", "勝ったカードが 赤♥♦→健康レーン／黒♠♣→誘惑レーン"),
     ]
-    for i, (name, col, who, move) in enumerate(rows):
-        ry = y + 80 + i * 62
-        p.append(t(76, ry + 8, name, 21, col, "bold", "start"))
-        p.append(t(270, ry - 4, who, 17, INK, anchor="start"))
-        p.append(t(270, ry + 22, move, 17, INK_SOFT, anchor="start"))
-    p.append(t(76, y + 316, "同数は引き分け（ゲージ動かず・効果なし。わかれ道は 1d2：奇数=健康）", 16, INK_SOFT, anchor="start"))
+    for i, (icon, name, col, who, move) in enumerate(rows):
+        ry = y + 62 + i * 60
+        p.append(place(icon, 92, ry + 4, 46))
+        p.append(t(126, ry + 11, name, 20, col, "900", "start"))
+        p.append(t(280, ry - 2, who, 16.5, INK, anchor="start"))
+        p.append(t(280, ry + 23, move, 16.5, INK_SOFT, anchor="start"))
+    p.append(t(76, y + 302, "同数は引き分け（ゲージ動かず・効果なし。わかれ道は 1d2：奇数=健康）", 15.5, INK_SOFT, anchor="start"))
 
-    # 4. カード
-    y = 880
-    box(y, 250, "カードの数字と効果（勝った／通ったときだけ）", ANGEL)
+    # 4. ボードのしかけ
+    y = 900
+    box(y, 250, "ボードのしかけ", "#3FA66B")
+    gim = [
+        (lambda ix, iy: art.suit_chip("♥", ix, iy, 18), "お気に入りスート +3", "健康／誘惑マスのお店の好きなスートで、主役が通すと +3"),
+        (lambda ix, iy: art.star_badge(ix, iy, "×2", 24), "大勝負マス ×2", "合流マス（8・14）のカード勝負は、ゲージの動きが2倍"),
+        (lambda ix, iy: pair_icon(ix, iy, 1.0), "ペア出し", "同じ数字2枚を1組で出すと、数字は2枚の合計（補充も2枚）"),
+        (lambda ix, iy: cheer_icon(ix, iy, 1.1), "がんばれゾーン +2", "ゲージが相手側に6以上傾いている陣営は、出す数字 +2"),
+    ]
+    for i, (draw, name, desc) in enumerate(gim):
+        ry = y + 58 + i * 48
+        p.append(draw(96, ry))
+        p.append(t(136, ry + 7, name, 19, INK, "900", "start"))
+        p.append(t(370, ry + 7, desc, 16, INK_SOFT, anchor="start"))
+
+    # 5. カード
+    y = 1190
+    box(y, 190, "カードの数字と効果（勝った／通ったときだけ）", ANGEL)
     cards = [("A〜10", "1〜10", "効果なし"),
              ("J", "11", "妨害：相手陣営が次に公開するカードを 数字0・効果なし に"),
              ("Q", "12", "先導：NPC をさらに1マス進める（先のマスも処理）"),
              ("K", "13", "大逆転：ゲージをさらに +3（自陣営側へ）")]
     for i, (c, n, e) in enumerate(cards):
-        ry = y + 92 + i * 40
-        p.append(t(76, ry, c, 22, INK, "bold", "start"))
-        p.append(t(190, ry, n, 20, INK_SOFT, anchor="start"))
-        p.append(t(270, ry, e, 18, INK, anchor="start"))
+        ry = y + 58 + i * 36
+        p.append(t(76, ry, c, 21, INK, "900", "start"))
+        p.append(t(190, ry, n, 19, INK_SOFT, "bold", "start"))
+        p.append(t(270, ry, e, 17.5, INK, anchor="start"))
 
-    # 5. ハプニング
-    y = 1150
-    box(y, 250, "ハプニング表（1d6）", DEVIL)
+    # 6. ハプニング
+    y = 1420
+    box(y, 150, "ハプニング表（1d6）", DEVIL)
     hap = ["1 忘れ物ニュース：何も起こらない", "2 てんし急接近：ゲージ +2", "3 あくまのささやき：ゲージ −2",
            "4 近道発見：1マス進む（先のマスも処理）", "5 寄り道：1マス戻る（処理しない）", "6 気分屋：手札1枚を捨てて1枚引く"]
     for i, s in enumerate(hap):
         col, row = divmod(i, 3)
-        p.append(t(76 + col * 490, y + 92 + row * 46, s, 19, INK, anchor="start"))
+        p.append(t(76 + col * 490, y + 52 + row * 34, s, 17.5, INK, anchor="start"))
     p.append("</svg>")
     return "\n".join(p)
 
 
 def main():
     (ASSETS / "board_route_gauge.svg").write_text(board(), encoding="utf-8")
-    (ASSETS / "token_npc.svg").write_text(token("🚶", "NPC", "#E07B1F", "#FDEBD6"), encoding="utf-8")
-    (ASSETS / "token_angel.svg").write_text(token("😇", "てんし", ANGEL, ANGEL_TINT), encoding="utf-8")
-    (ASSETS / "token_devil.svg").write_text(token("😈", "あくま", DEVIL, DEVIL_TINT), encoding="utf-8")
-    (ASSETS / "token_gauge.svg").write_text(token("💗", "体調", INK, "#ECEAF2"), encoding="utf-8")
+    (ASSETS / "token_npc.svg").write_text(token(art.walker(), "NPC", "#E9744A", "#FDEBD6", 120, -10), encoding="utf-8")
+    (ASSETS / "token_angel.svg").write_text(token(art.angel(), "てんし", ANGEL, ANGEL_TINT), encoding="utf-8")
+    (ASSETS / "token_devil.svg").write_text(token(art.devil(), "あくま", DEVIL, DEVIL_TINT), encoding="utf-8")
+    (ASSETS / "token_gauge.svg").write_text(token(art.heart_pulse(), "体調", INK, "#ECEAF2", 104, -12), encoding="utf-8")
     (ASSETS / "quick_reference.svg").write_text(quick_reference(), encoding="utf-8")
 
 
