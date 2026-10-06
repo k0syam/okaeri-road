@@ -683,7 +683,7 @@
 <text x="1627.0" y="208.0" font-size="12" font-weight="bold" fill="#77708C" text-anchor="middle" >表向きで置く</text>
 <rect x="1729.5" y="94" width="132" height="172" rx="12" fill="none" stroke="#77708C" stroke-width="3" stroke-dasharray="10 7"/>
 <text x="1795.5" y="186.0" font-size="19" font-weight="900" fill="#77708C" text-anchor="middle" >除外</text>
-<text x="1795.5" y="208.0" font-size="12" font-weight="bold" fill="#77708C" text-anchor="middle" >ジョーカー</text>
+<text x="1795.5" y="208.0" font-size="12" font-weight="bold" fill="#77708C" text-anchor="middle" >ジョーカー・使った切り札</text>
 <rect x="1372" y="294" width="510" height="290" rx="22" fill="#F3EEFB" stroke="#D9CCF2" stroke-width="2"/>
 <text x="1627.0" y="334" font-size="24" font-weight="900" text-anchor="middle" fill="#7A5CC6" stroke="#FFFFFF" stroke-width="0" stroke-linejoin="round" paint-order="stroke">勝負エリア</text>
 <text x="1627.0" y="358.0" font-size="13" font-weight="bold" fill="#77708C" text-anchor="middle" >裏向きで置いて「準備OK」→「せーの」で公開</text>
@@ -716,7 +716,7 @@
 <path d="M35 48 L36.5 52 L38 47.5" fill="#FFFFFF" stroke="#3A3550" stroke-width="1.6" stroke-linejoin="round"/></g>
 <rect x="1372" y="608" width="510" height="200" rx="12" fill="none" stroke="#2F7FC8" stroke-width="3" stroke-dasharray="10 7"/>
 <text x="1627.0" y="714.0" font-size="19" font-weight="900" fill="#2F7FC8" text-anchor="middle" >てんし陣営の手札</text>
-<text x="1627.0" y="736.0" font-size="12" font-weight="bold" fill="#77708C" text-anchor="middle" >裏向きで置いて「自分だけ見る」</text>
+<text x="1627.0" y="736.0" font-size="12" font-weight="bold" fill="#77708C" text-anchor="middle" >数字カードは「自分だけ見る」・切り札6枚は非公開</text>
 <g transform="translate(1384.0,620.0) scale(0.7500)">
 <ellipse cx="32" cy="9" rx="13" ry="4.2" fill="none" stroke="#F2C230" stroke-width="4"/>
 <ellipse cx="32" cy="9" rx="13" ry="4.2" fill="none" stroke="#FFF2B0" stroke-width="1.4"/>
@@ -727,7 +727,7 @@
 <path d="M28 44 Q32 48 36 44" fill="none" stroke="#3A3550" stroke-width="3.2" stroke-linejoin="round" stroke-linecap="round"/></g>
 <rect x="1372" y="824" width="510" height="200" rx="12" fill="none" stroke="#D0436A" stroke-width="3" stroke-dasharray="10 7"/>
 <text x="1627.0" y="930.0" font-size="19" font-weight="900" fill="#D0436A" text-anchor="middle" >あくま陣営の手札</text>
-<text x="1627.0" y="952.0" font-size="12" font-weight="bold" fill="#77708C" text-anchor="middle" >裏向きで置いて「自分だけ見る」</text>
+<text x="1627.0" y="952.0" font-size="12" font-weight="bold" fill="#77708C" text-anchor="middle" >数字カードは「自分だけ見る」・切り札6枚は非公開</text>
 <g transform="translate(1384.0,836.0) scale(0.7500)">
 <path d="M17 24 L12 7 L26 18 Z" fill="#7B3FA0" stroke="#3A3550" stroke-width="3.2" stroke-linejoin="round" stroke-linecap="round"/>
 <path d="M47 24 L52 7 L38 18 Z" fill="#7B3FA0" stroke="#3A3550" stroke-width="3.2" stroke-linejoin="round" stroke-linecap="round"/>

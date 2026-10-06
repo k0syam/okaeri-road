@@ -1,0 +1,51 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="400" height="600" viewBox="0 0 400 600" font-family="'Noto Sans CJK JP','Hiragino Sans','Yu Gothic','Meiryo',sans-serif">
+<defs>
+<filter id="shadow" x="-20%" y="-20%" width="140%" height="150%">
+  <feDropShadow dx="0" dy="5" stdDeviation="3" flood-color="#5A4A2A" flood-opacity="0.22"/>
+</filter>
+<filter id="soft" x="-20%" y="-20%" width="140%" height="140%">
+  <feDropShadow dx="0" dy="3" stdDeviation="5" flood-color="#5A4A2A" flood-opacity="0.12"/>
+</filter>
+<pattern id="dots" width="26" height="26" patternUnits="userSpaceOnUse">
+  <circle cx="4" cy="4" r="1.5" fill="#EADFC8"/>
+</pattern>
+<pattern id="stripeA" width="12" height="12" patternUnits="userSpaceOnUse" patternTransform="rotate(45)">
+  <rect width="6" height="12" fill="#FFFFFF" opacity="0.35"/>
+</pattern>
+<pattern id="cardback" width="14" height="14" patternUnits="userSpaceOnUse" patternTransform="rotate(45)">
+  <rect width="14" height="14" fill="#EFE7F8"/><rect width="7" height="7" fill="#E3D8F2"/>
+</pattern>
+<linearGradient id="sky" x1="0" y1="0" x2="0" y2="1">
+  <stop offset="0" stop-color="#FDF7EC"/><stop offset="1" stop-color="#F7EEDC"/>
+</linearGradient>
+</defs>
+<rect x="4" y="4" width="392" height="592" rx="30" fill="#D0436A" stroke="#3A3550" stroke-width="6"/>
+<rect x="20" y="20" width="360" height="560" rx="20" fill="#FFFDF8" stroke="#3A3550" stroke-width="3"/>
+<rect x="34" y="34" width="94" height="36" rx="18" fill="#D0436A" stroke="#3A3550" stroke-width="3"/>
+<text x="48.0" y="59.0" font-size="19" font-weight="900" fill="#FFFFFF" text-anchor="start" >そえる</text>
+<g transform="translate(311.0,25.0) scale(0.9062)">
+<path d="M17 24 L12 7 L26 18 Z" fill="#7B3FA0" stroke="#3A3550" stroke-width="3.2" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M47 24 L52 7 L38 18 Z" fill="#7B3FA0" stroke="#3A3550" stroke-width="3.2" stroke-linejoin="round" stroke-linecap="round"/>
+<circle cx="32" cy="36" r="20" fill="#C9A3F0" stroke="#3A3550" stroke-width="3.2" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M14 30 Q20 18 32 18 Q44 18 50 30 Q42 25 32 27 Q22 25 14 30 Z" fill="#7B3FA0" stroke="#3A3550" stroke-width="3.2" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M20 33 L28 36 M44 33 L36 36" stroke="#3A3550" stroke-width="3.2" stroke-linejoin="round" stroke-linecap="round" fill="none"/>
+<circle cx="25" cy="39" r="2.4" fill="#3A3550"/><circle cx="39" cy="39" r="2.4" fill="#3A3550"/>
+<ellipse cx="19" cy="45" rx="3.4" ry="2.2" fill="#F48FB1"/><ellipse cx="45" cy="45" rx="3.4" ry="2.2" fill="#F48FB1"/>
+<path d="M25 46 Q32 52 39 46" fill="none" stroke="#3A3550" stroke-width="3.2" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M35 48 L36.5 52 L38 47.5" fill="#FFFFFF" stroke="#3A3550" stroke-width="1.6" stroke-linejoin="round"/></g>
+<text x="200.0" y="118.0" font-size="40" font-weight="900" fill="#9C3E61" text-anchor="middle" >ねむけさそい</text>
+<circle cx="200" cy="262" r="112" fill="#FBE3EA" stroke="#3A3550" stroke-width="3"/>
+<circle cx="200" cy="262" r="112" fill="url(#stripeA)" opacity="0.5"/>
+<g transform="translate(116.0,178.0) scale(2.6250)">
+<path d="M10 40 Q12 26 28 26 Q40 26 44 36 Q52 36 54 44 Q56 54 44 56 L18 56 Q8 56 10 40 Z" fill="#E3D8F2" stroke="#3A3550" stroke-width="3.2" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M20 44 Q23 41 26 44 M32 44 Q35 41 38 44" fill="none" stroke="#3A3550" stroke-width="3.2" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M30 6 L40 6 L30 16 L40 16" fill="none" stroke="#7B3FA0" stroke-width="3.2" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M44 14 L51 14 L44 21 L51 21" fill="none" stroke="#7B3FA0" stroke-width="2.8" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M52 2 L57 2 L52 7 L57 7" fill="none" stroke="#7B3FA0" stroke-width="2.4" stroke-linejoin="round" stroke-linecap="round"/></g>
+<rect x="40" y="396" width="320" height="126" rx="16" fill="#FBE3EA" stroke="#D0436A" stroke-width="3"/>
+<text x="200.0" y="442.0" font-size="22" font-weight="bold" fill="#3A3550" text-anchor="middle" >相手陣営のカードの数字</text>
+<text x="200.0" y="484.0" font-size="40" font-weight="900" fill="#3A3550" text-anchor="middle" >−3</text>
+<text x="200.0" y="548.0" font-size="15" font-weight="bold" fill="#77708C" text-anchor="middle" >ふわぁ…ちょっとだけ休もうよ。</text>
+<path d="M110 566 L290 566" stroke="#D0436A" stroke-width="2" opacity="0.5"/>
+<text x="200.0" y="590.0" font-size="13" font-weight="900" fill="#FFFFFF" text-anchor="middle" >あくまの切り札・1回だけ</text>
+</svg>

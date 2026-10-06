@@ -363,7 +363,7 @@ def card_area_svg():
     y1 = py + 72
     out.append(slot(px + gx, y1, cw, ch, "山札", INK, "トランプのデッキ", back=True))
     out.append(slot(px + 2 * gx + cw, y1, cw, ch, "捨て札", INK_SOFT, "表向きで置く"))
-    out.append(slot(px + 3 * gx + 2 * cw, y1, cw, ch, "除外", INK_SOFT, "ジョーカー"))
+    out.append(slot(px + 3 * gx + 2 * cw, y1, cw, ch, "除外", INK_SOFT, "ジョーカー・使った切り札"))
     # 勝負エリア
     y2 = y1 + ch + 28
     out.append(f'<rect x="{px + 16}" y="{y2}" width="{pw - 32}" height="290" rx="22" fill="#F3EEFB" stroke="#D9CCF2" stroke-width="2"/>')
@@ -382,7 +382,7 @@ def card_area_svg():
     for i, (name, color, head) in enumerate([("てんし陣営の手札", ANGEL, art.angel(wings=False)),
                                               ("あくま陣営の手札", DEVIL, art.devil(tail=False))]):
         yy = y3 + i * (hh + 16)
-        out.append(slot(px + 16, yy, pw - 32, hh, name, color, "裏向きで置いて「自分だけ見る」"))
+        out.append(slot(px + 16, yy, pw - 32, hh, name, color, "数字カードは「自分だけ見る」・切り札6枚は非公開"))
         out.append(place(head, px + 52, yy + 36, 48))
     return "\n".join(out)
 
@@ -437,7 +437,7 @@ def token(body, label, color, tint, size=118, dy=-8):
 # 早見表（1080×1600、スクリーンパネル用）
 # =====================================================================
 def quick_reference():
-    QW, QH = 1080, 1600
+    QW, QH = 1080, 1880
     p = [f'<svg xmlns="http://www.w3.org/2000/svg" width="{QW}" height="{QH}" viewBox="0 0 {QW} {QH}" font-family="{FONT}">',
          DEFS,
          f'<rect width="{QW}" height="{QH}" fill="url(#sky)"/>',
@@ -516,12 +516,125 @@ def quick_reference():
 
     # 6. ハプニング
     y = 1420
+    box(y, 270, "切り札カード（各陣営6枚・1回だけ）", "#7B3FA0")
+    p.append(t(76, y + 52, "てんし", 17, ANGEL, "900", "start"))
+    p.append(t(230, y + 52, "あくま", 17, DEVIL, "900", "start"))
+    p.append(t(400, y + 52, "効果（そえる＝数字カードと一緒に裏向きで置く）", 15, INK_SOFT, "bold", "start"))
+    for i, (a, d) in enumerate(zip(TRUMPS["angel"], TRUMPS["devil"])):
+        ry = y + 86 + i * 30
+        eff = {"radio": "そえる：自陣営の数字 +3", "water": "そえる：相手陣営の数字 −3",
+               "omamori": "そえる：ゲージが相手側へ動くなら0に", "map": "そえる：わかれ道のレーンを自陣営の側に",
+               "cheer": "そえる：ゲージが自陣営側へ動くなら2倍", "early": "いつでも（自陣営の手番中）：2枚引く"}[a[0]]
+        p.append(t(76, ry, a[1], 17, INK, "bold", "start"))
+        p.append(t(230, ry, d[1], 17, INK, "bold", "start"))
+        p.append(t(400, ry, eff, 17, INK, anchor="start"))
+
+    y = 1720
     box(y, 150, "ハプニング表（1d6）", DEVIL)
     hap = ["1 忘れ物ニュース：何も起こらない", "2 てんし急接近：ゲージ +2", "3 あくまのささやき：ゲージ −2",
            "4 近道発見：1マス進む（先のマスも処理）", "5 寄り道：1マス戻る（処理しない）", "6 気分屋：手札1枚を捨てて1枚引く"]
     for i, s in enumerate(hap):
         col, row = divmod(i, 3)
         p.append(t(76 + col * 490, y + 52 + row * 34, s, 17.5, INK, anchor="start"))
+    p.append("</svg>")
+    return "\n".join(p)
+
+
+# =====================================================================
+# 切り札カード（400×600、800×1200px で書き出し）
+# =====================================================================
+TRUMPS = {
+    "angel": [
+        # id, 名前, アイコン, タイミング, 効果（行ごと）, ひとこと
+        ("radio", "ラジオたいそう", "dumbbell", "そえる", ["自陣営のカードの数字", "+3"], "いっちに、さんし！"),
+        ("water", "おみずをどうぞ", "bottle", "そえる", ["相手陣営のカードの数字", "−3"], "のどがかわいたら、まずお水。"),
+        ("omamori", "おまもり", "omamori", "そえる", ["この公開でゲージが", "あくま側へ動くなら", "その動きを0にする"], "わるい誘惑から守ってくれる。"),
+        ("map", "ちずアプリ", "phone_map", "そえる", ["わかれ道で、勝ち負けに", "関係なくレーンを", "健康レーンにする"], "こっちの道のほうが景色がいいよ。"),
+        ("cheer", "おうえん団", "megaphone", "そえる", ["この公開でゲージが", "てんし側へ動くなら", "その動きを2倍にする"], "フレー！フレー！"),
+        ("early", "はやおき", "alarm", "いつでも", ["自陣営の手番中に使う", "山札から2枚引いて", "陣営の手札に加える"], "早起きは三文の徳。"),
+    ],
+    "devil": [
+        ("oomori", "大盛りサービス", "burger", "そえる", ["自陣営のカードの数字", "+3"], "大盛り無料ですよ〜。"),
+        ("sleepy", "ねむけさそい", "zzz", "そえる", ["相手陣営のカードの数字", "−3"], "ふわぁ…ちょっとだけ休もうよ。"),
+        ("gorone", "ごろ寝", "pillow", "そえる", ["この公開でゲージが", "てんし側へ動くなら", "その動きを0にする"], "運動は明日からでいいって。"),
+        ("smell", "いいにおい", "steam_smell", "そえる", ["わかれ道で、勝ち負けに", "関係なくレーンを", "誘惑レーンにする"], "あっちから、おいしそうな香り…"),
+        ("reward", "ごほうびデー", "cake", "そえる", ["この公開でゲージが", "あくま側へ動くなら", "その動きを2倍にする"], "今日はがんばったから特別！"),
+        ("late", "よふかし", "moon", "いつでも", ["自陣営の手番中に使う", "山札から2枚引いて", "陣営の手札に加える"], "夜食の時間だね。"),
+    ],
+}
+
+
+def trump_card(side, card):
+    _id, name, icon, timing, lines, flavor = card
+    color = ANGEL if side == "angel" else DEVIL
+    tint = ANGEL_TINT if side == "angel" else DEVIL_TINT
+    dark = mix(color, INK, 0.35)
+    head = art.angel(wings=False) if side == "angel" else art.devil(tail=False)
+    team = "てんしの切り札" if side == "angel" else "あくまの切り札"
+    p = [f'<svg xmlns="http://www.w3.org/2000/svg" width="400" height="600" viewBox="0 0 400 600" font-family="{FONT}">',
+         DEFS,
+         f'<rect x="4" y="4" width="392" height="592" rx="30" fill="{color}" stroke="{INK}" stroke-width="6"/>',
+         f'<rect x="20" y="20" width="360" height="560" rx="20" fill="#FFFDF8" stroke="{INK}" stroke-width="3"/>',
+         # タイミング
+         f'<rect x="34" y="34" width="{len(timing) * 22 + 28}" height="36" rx="18" fill="{GOLD if timing == "いつでも" else color}" stroke="{INK}" stroke-width="3"/>',
+         t(48, 59, timing, 19, INK if timing == "いつでも" else "#FFFFFF", "900", "start"),
+         place(head, 340, 54, 58),
+         # 名前
+         t(200, 118, name, 40 if len(name) <= 6 else 34, dark, "900"),
+         # イラスト
+         f'<circle cx="200" cy="262" r="112" fill="{tint}" stroke="{INK}" stroke-width="3"/>',
+         f'<circle cx="200" cy="262" r="112" fill="url(#stripeA)" opacity="0.5"/>',
+         place(art.ICONS[icon](), 200, 262, 168),
+         # 効果
+         f'<rect x="40" y="396" width="320" height="126" rx="16" fill="{tint}" stroke="{color}" stroke-width="3"/>']
+    n = len(lines)
+    y0 = 459 - (n - 1) * 17
+    for i, line in enumerate(lines):
+        big = line in ("+3", "−3")
+        p.append(t(200, y0 + i * 34 + (8 if big else 0), line, 40 if big else 22, INK, "900" if big else "bold"))
+    p.append(t(200, 548, flavor, 15, INK_SOFT, "bold"))
+    p.append(f'<path d="M110 566 L290 566" stroke="{color}" stroke-width="2" opacity="0.5"/>')
+    p.append(t(200, 590, f"{team}・1回だけ", 13, "#FFFFFF", "900"))
+    p.append("</svg>")
+    return "\n".join(p)
+
+
+def trump_back(side):
+    color = ANGEL if side == "angel" else DEVIL
+    tint = ANGEL_TINT if side == "angel" else DEVIL_TINT
+    body = art.angel() if side == "angel" else art.devil()
+    team = "てんしの切り札" if side == "angel" else "あくまの切り札"
+    return "\n".join([
+        f'<svg xmlns="http://www.w3.org/2000/svg" width="400" height="600" viewBox="0 0 400 600" font-family="{FONT}">',
+        DEFS,
+        f'<rect x="4" y="4" width="392" height="592" rx="30" fill="{color}" stroke="{INK}" stroke-width="6"/>',
+        f'<rect x="20" y="20" width="360" height="560" rx="20" fill="{tint}" stroke="{INK}" stroke-width="3"/>',
+        f'<rect x="20" y="20" width="360" height="560" rx="20" fill="url(#stripeA)"/>',
+        f'<circle cx="200" cy="270" r="128" fill="#FFFFFF" stroke="{INK}" stroke-width="4"/>',
+        place(body, 200, 266, 200),
+        f'<rect x="70" y="440" width="260" height="56" rx="28" fill="{color}" stroke="{INK}" stroke-width="4"/>',
+        t(200, 478, team, 26, "#FFFFFF", "900"),
+        t(200, 540, "おかえりロード", 22, INK, "900"),
+        "</svg>"])
+
+
+def trump_sheet():
+    """README・早見用の一覧（6×2 枚＋裏面2枚）"""
+    k = 0.5
+    cw, ch, gap = 400 * k, 600 * k, 24
+    cols = 7
+    w = cols * cw + (cols + 1) * gap
+    h = 2 * ch + 3 * gap
+    p = [f'<svg xmlns="http://www.w3.org/2000/svg" width="{w:.0f}" height="{h:.0f}" viewBox="0 0 {w:.0f} {h:.0f}" font-family="{FONT}">',
+         f'<rect width="{w:.0f}" height="{h:.0f}" fill="{PAPER}"/>']
+    for r, side in enumerate(["angel", "devil"]):
+        items = [trump_back(side)] + [trump_card(side, c) for c in TRUMPS[side]]
+        for c, svg in enumerate(items):
+            x = gap + c * (cw + gap)
+            y = gap + r * (ch + gap)
+            inner = svg.replace('<svg xmlns="http://www.w3.org/2000/svg" width="400" height="600"',
+                                f'<svg x="{x:.0f}" y="{y:.0f}" width="{cw:.0f}" height="{ch:.0f}"', 1)
+            p.append(inner)
     p.append("</svg>")
     return "\n".join(p)
 
@@ -533,6 +646,13 @@ def main():
     (ASSETS / "token_devil.svg").write_text(token(art.devil(), "あくま", DEVIL, DEVIL_TINT), encoding="utf-8")
     (ASSETS / "token_gauge.svg").write_text(token(art.heart_pulse(), "体調", INK, "#ECEAF2", 104, -12), encoding="utf-8")
     (ASSETS / "quick_reference.svg").write_text(quick_reference(), encoding="utf-8")
+    cards = ASSETS / "cards"
+    cards.mkdir(exist_ok=True)
+    for side, items in TRUMPS.items():
+        (cards / f"{side}_back.svg").write_text(trump_back(side), encoding="utf-8")
+        for c in items:
+            (cards / f"{side}_{c[0]}.svg").write_text(trump_card(side, c), encoding="utf-8")
+    (ASSETS / "trump_cards_sheet.svg").write_text(trump_sheet(), encoding="utf-8")
 
 
 if __name__ == "__main__":
