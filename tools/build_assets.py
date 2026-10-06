@@ -478,7 +478,7 @@ def quick_reference():
         (art.angel(wings=False), "健康マス", ANGEL, "てんしが主役・あくまは横やり（どちらもパス可）", "主役 − 横やり だけ ＋ へ（マイナスなら0）"),
         (art.devil(tail=False), "誘惑マス", DEVIL, "あくまが主役・てんしは横やり（どちらもパス可）", "主役 − 横やり だけ − へ（マイナスなら0）"),
         (art.vs(), "カード勝負", VIOLET, "どちらでもマス：両陣営とも必ず1枚（手札0なら数字0）", "大きい方の陣営へ、差の分だけ動く"),
-        (art.signpost(), "わかれ道", INK, "どちらでもマスと同じカード勝負", "勝ったカードが 赤♥♦→健康レーン／黒♠♣→誘惑レーン"),
+        (art.signpost(), "わかれ道", INK, "止まっても【通過しても】、どちらでもマスと同じカード勝負", "勝ったカードが 赤♥♦→健康レーン／黒♠♣→誘惑レーン"),
     ]
     for i, (icon, name, col, who, move) in enumerate(rows):
         ry = y + 62 + i * 60
@@ -516,7 +516,7 @@ def quick_reference():
         p.append(t(190, ry, n, 19, INK_SOFT, "bold", "start"))
         p.append(t(270, ry, e, 17.5, INK, anchor="start"))
 
-    # 6. ハプニング
+    # 6. 切り札
     y = 1420
     box(y, 270, "切り札カード（各陣営6枚・1回だけ）", "#7B3FA0")
     p.append(t(76, y + 52, "てんし", 17, ANGEL, "900", "start"))
