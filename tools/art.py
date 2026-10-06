@@ -283,3 +283,92 @@ def star_badge(x, y, text, r=22, fill="#FFC531"):
     return (f'<polygon points="{" ".join(pts)}" fill="{fill}" stroke="{INK}" stroke-width="2.6" stroke-linejoin="round"/>'
             f'<text x="{x}" y="{y + 5.5:.1f}" text-anchor="middle" font-size="{r * 0.68:.0f}" font-weight="900" '
             f'fill="{INK}">{text}</text>')
+
+
+# ---------------------------------------------------------------- 切り札用イラスト
+def bottle():
+    return f"""
+<rect x="26" y="4" width="12" height="8" rx="2" fill="#4C79C8" {S}/>
+<path d="M24 12 L40 12 L42 20 Q48 24 48 32 L48 54 Q48 60 42 60 L22 60 Q16 60 16 54 L16 32 Q16 24 22 20 Z" fill="#CFEAFB" {S}/>
+<path d="M17 36 L47 36 L47 54 Q47 59 42 59 L22 59 Q17 59 17 54 Z" fill="#8CCBF2"/>
+<path d="M16 32 Q16 24 22 20 L24 12 L40 12 L42 20 Q48 24 48 32 L48 54 Q48 60 42 60 L22 60 Q16 60 16 54 Z" fill="none" {S}/>
+<path d="M23 40 L23 52" stroke="#FFFFFF" stroke-width="3" stroke-linecap="round"/>
+<path d="M30 46 Q32 42 34 46 Q34 49 32 49 Q30 49 30 46 Z" fill="#FFFFFF"/>"""
+
+
+def zzz():
+    return f"""
+<path d="M10 40 Q12 26 28 26 Q40 26 44 36 Q52 36 54 44 Q56 54 44 56 L18 56 Q8 56 10 40 Z" fill="#E3D8F2" {S}/>
+<path d="M20 44 Q23 41 26 44 M32 44 Q35 41 38 44" fill="none" {S}/>
+<path d="M30 6 L40 6 L30 16 L40 16" fill="none" stroke="#7B3FA0" stroke-width="3.2" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M44 14 L51 14 L44 21 L51 21" fill="none" stroke="#7B3FA0" stroke-width="2.8" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M52 2 L57 2 L52 7 L57 7" fill="none" stroke="#7B3FA0" stroke-width="2.4" stroke-linejoin="round" stroke-linecap="round"/>"""
+
+
+def omamori():
+    return f"""
+<path d="M32 4 Q24 4 26 12" fill="none" stroke="#F2C230" stroke-width="3" stroke-linecap="round"/>
+<path d="M32 4 Q40 4 38 12" fill="none" stroke="#F2C230" stroke-width="3" stroke-linecap="round"/>
+<path d="M18 16 L32 10 L46 16 L46 56 Q46 60 42 60 L22 60 Q18 60 18 56 Z" fill="#5B9BE0" {S}/>
+<rect x="24" y="22" width="16" height="30" rx="3" fill="#FFFFFF" {S}/>
+<path d="M32 30 C29 26 24 29 28 33 L32 37 L36 33 C40 29 35 26 32 30 Z" fill="#F25C82"/>
+<path d="M27 43 L37 43 M27 47 L35 47" stroke="#C9D6EA" stroke-width="2.4" stroke-linecap="round"/>"""
+
+
+def pillow():
+    return f"""
+<path d="M6 26 Q4 14 16 16 L48 14 Q60 13 58 26 Q62 36 58 46 Q60 58 48 56 L16 56 Q4 58 6 46 Q2 36 6 26 Z" fill="#F8C9D6" {S}/>
+<path d="M14 24 Q32 20 50 24" fill="none" stroke="#FFFFFF" stroke-width="3" stroke-linecap="round" opacity="0.8"/>
+<path d="M22 38 Q25 35 28 38 M36 38 Q39 35 42 38" fill="none" {S}/>
+<path d="M28 46 Q32 48 36 46" fill="none" {S}/>"""
+
+
+def phone_map():
+    return f"""
+<rect x="14" y="4" width="36" height="56" rx="7" fill="{INK}" {S}/>
+<rect x="18" y="11" width="28" height="42" rx="3" fill="#E3F4E9"/>
+<path d="M18 30 L46 24 M24 11 L30 53 M18 44 L46 40" stroke="#FFFFFF" stroke-width="3"/>
+<path d="M24 52 Q30 36 40 26" fill="none" stroke="#2F7FC8" stroke-width="3" stroke-dasharray="3 3" stroke-linecap="round"/>
+<path d="M40 14 Q34 14 34 20 Q34 25 40 31 Q46 25 46 20 Q46 14 40 14 Z" fill="#EF4E6A" stroke="{INK}" stroke-width="2.2"/>
+<circle cx="40" cy="20" r="2.4" fill="#FFFFFF"/>"""
+
+
+def megaphone():
+    return f"""
+<path d="M10 26 L22 26 L46 12 L46 52 L22 38 L10 38 Z" fill="#FFC531" {S}/>
+<rect x="18" y="38" width="8" height="14" rx="2" fill="#F0A35A" {S}/>
+<path d="M52 22 Q58 32 52 42 M56 16 Q64 32 56 48" fill="none" stroke="#F25C82" stroke-width="3.2" stroke-linecap="round"/>
+<path d="M26 28 L40 20" stroke="#FFFFFF" stroke-width="3" stroke-linecap="round" opacity="0.8"/>"""
+
+
+def alarm():
+    return f"""
+<path d="M14 18 Q12 8 22 8 M50 18 Q52 8 42 8" fill="none" {S}/>
+<path d="M20 56 L16 60 M44 56 L48 60" {S}/>
+<circle cx="32" cy="34" r="22" fill="#FFE07A" {S}/>
+<circle cx="32" cy="34" r="16" fill="#FFFFFF" {S}/>
+<path d="M32 24 L32 34 L39 38" fill="none" {S}/>
+<path d="M50 6 L52 2 M56 10 L60 8 M58 16 L62 16" stroke="#F0A35A" stroke-width="2.6" stroke-linecap="round"/>"""
+
+
+def moon():
+    return f"""
+<path d="M40 6 Q18 8 16 32 Q16 56 42 58 Q52 58 58 50 Q34 52 30 32 Q28 14 40 6 Z" fill="#FFD84E" {S}/>
+<circle cx="50" cy="16" r="2.4" fill="#FFD84E"/><circle cx="56" cy="30" r="1.8" fill="#FFD84E"/><circle cx="44" cy="28" r="1.4" fill="#FFD84E"/>
+<path d="M24 34 Q27 37 30 34" fill="none" {S}/>
+<ellipse cx="26" cy="42" rx="3" ry="2" fill="#F7A6C2"/>"""
+
+
+def steam_smell():
+    return f"""
+<path d="M14 58 Q8 46 20 40 L44 40 Q56 46 50 58 Z" fill="#F2B35B" {S}/>
+<ellipse cx="32" cy="40" rx="18" ry="5" fill="#8A4B33" {S}/>
+<path d="M20 32 Q14 24 22 18 Q28 12 22 4" fill="none" stroke="#C9A3F0" stroke-width="3.6" stroke-linecap="round"/>
+<path d="M32 32 Q26 24 34 18 Q40 12 34 4" fill="none" stroke="#C9A3F0" stroke-width="3.6" stroke-linecap="round"/>
+<path d="M44 32 Q38 24 46 18 Q52 12 46 4" fill="none" stroke="#C9A3F0" stroke-width="3.6" stroke-linecap="round"/>"""
+
+
+ICONS.update({
+    "bottle": bottle, "zzz": zzz, "omamori": omamori, "pillow": pillow, "phone_map": phone_map,
+    "megaphone": megaphone, "alarm": alarm, "moon": moon, "steam_smell": steam_smell,
+})
