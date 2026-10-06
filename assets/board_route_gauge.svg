@@ -683,7 +683,8 @@
 <text x="1627.0" y="208.0" font-size="12" font-weight="bold" fill="#77708C" text-anchor="middle" >表向きで置く</text>
 <rect x="1729.5" y="94" width="132" height="172" rx="12" fill="none" stroke="#77708C" stroke-width="3" stroke-dasharray="10 7"/>
 <text x="1795.5" y="186.0" font-size="19" font-weight="900" fill="#77708C" text-anchor="middle" >除外</text>
-<text x="1795.5" y="208.0" font-size="12" font-weight="bold" fill="#77708C" text-anchor="middle" >ジョーカー・使った切り札</text>
+<text x="1795.5" y="208.0" font-size="12" font-weight="bold" fill="#77708C" text-anchor="middle" >ジョーカー</text>
+<text x="1795.5" y="224.0" font-size="12" font-weight="bold" fill="#77708C" text-anchor="middle" >使った切り札</text>
 <rect x="1372" y="294" width="510" height="290" rx="22" fill="#F3EEFB" stroke="#D9CCF2" stroke-width="2"/>
 <text x="1627.0" y="334" font-size="24" font-weight="900" text-anchor="middle" fill="#7A5CC6" stroke="#FFFFFF" stroke-width="0" stroke-linejoin="round" paint-order="stroke">勝負エリア</text>
 <text x="1627.0" y="358.0" font-size="13" font-weight="bold" fill="#77708C" text-anchor="middle" >裏向きで置いて「準備OK」→「せーの」で公開</text>
