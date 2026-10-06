@@ -348,7 +348,9 @@ def slot(x, y, w, h, label, color, sub=None, back=False):
                f'stroke-width="3" stroke-dasharray="10 7"/>')
     out.append(t(x + w / 2, y + h / 2 + 6, label, 19, color, "900"))
     if sub:
-        out.append(t(x + w / 2, y + h / 2 + 28, sub, 12, INK_SOFT, "bold"))
+        # sub は文字列、または枠に収まらないときの複数行（リスト）
+        for i, line in enumerate([sub] if isinstance(sub, str) else sub):
+            out.append(t(x + w / 2, y + h / 2 + 28 + i * 16, line, 12, INK_SOFT, "bold"))
     return "\n".join(out)
 
 
@@ -363,7 +365,7 @@ def card_area_svg():
     y1 = py + 72
     out.append(slot(px + gx, y1, cw, ch, "山札", INK, "トランプのデッキ", back=True))
     out.append(slot(px + 2 * gx + cw, y1, cw, ch, "捨て札", INK_SOFT, "表向きで置く"))
-    out.append(slot(px + 3 * gx + 2 * cw, y1, cw, ch, "除外", INK_SOFT, "ジョーカー・使った切り札"))
+    out.append(slot(px + 3 * gx + 2 * cw, y1, cw, ch, "除外", INK_SOFT, ["ジョーカー", "使った切り札"]))
     # 勝負エリア
     y2 = y1 + ch + 28
     out.append(f'<rect x="{px + 16}" y="{y2}" width="{pw - 32}" height="290" rx="22" fill="#F3EEFB" stroke="#D9CCF2" stroke-width="2"/>')
@@ -434,7 +436,7 @@ def token(body, label, color, tint, size=118, dy=-8):
 
 
 # =====================================================================
-# 早見表（1080×1600、スクリーンパネル用）
+# 早見表（1080×1880、スクリーンパネル用）
 # =====================================================================
 def quick_reference():
     QW, QH = 1080, 1880
