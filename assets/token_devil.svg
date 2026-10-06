@@ -1,12 +1,24 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="200" height="200" viewBox="0 0 200 200" font-family="'Noto Sans CJK JP','Hiragino Sans','Yu Gothic','Meiryo',sans-serif">
 <defs>
-<radialGradient id="g" cx="0.35" cy="0.3" r="0.8">
+<radialGradient id="g" cx="0.35" cy="0.3" r="0.85">
   <stop offset="0" stop-color="#FFFFFF"/><stop offset="1" stop-color="#FBE3EA"/>
 </radialGradient>
 </defs>
-<circle cx="100" cy="100" r="92" fill="#D0436A"/>
-<circle cx="100" cy="100" r="80" fill="url(#g)"/>
-<text x="100" y="114" text-anchor="middle" font-size="76" font-family="'Noto Color Emoji',sans-serif">😈</text>
-<rect x="44" y="140" width="112" height="34" rx="17" fill="#D0436A"/>
-<text x="100" y="164" text-anchor="middle" font-size="20" font-weight="bold" fill="#FFFFFF">あくま</text>
+<circle cx="100" cy="104" r="92" fill="#3A3550" opacity="0.18"/>
+<circle cx="100" cy="100" r="92" fill="#D0436A" stroke="#3A3550" stroke-width="5"/>
+<circle cx="100" cy="100" r="78" fill="url(#g)" stroke="#3A3550" stroke-width="3"/>
+<g transform="translate(41.0,33.0) scale(1.8438)">
+<path d="M48 48 Q60 50 58 38" fill="none" stroke="#3A3550" stroke-width="3.2" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M58 38 L53 36 L59 31 L62 37 Z" fill="#7B3FA0" stroke="#3A3550" stroke-width="3.2" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M17 24 L12 7 L26 18 Z" fill="#7B3FA0" stroke="#3A3550" stroke-width="3.2" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M47 24 L52 7 L38 18 Z" fill="#7B3FA0" stroke="#3A3550" stroke-width="3.2" stroke-linejoin="round" stroke-linecap="round"/>
+<circle cx="32" cy="36" r="20" fill="#C9A3F0" stroke="#3A3550" stroke-width="3.2" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M14 30 Q20 18 32 18 Q44 18 50 30 Q42 25 32 27 Q22 25 14 30 Z" fill="#7B3FA0" stroke="#3A3550" stroke-width="3.2" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M20 33 L28 36 M44 33 L36 36" stroke="#3A3550" stroke-width="3.2" stroke-linejoin="round" stroke-linecap="round" fill="none"/>
+<circle cx="25" cy="39" r="2.4" fill="#3A3550"/><circle cx="39" cy="39" r="2.4" fill="#3A3550"/>
+<ellipse cx="19" cy="45" rx="3.4" ry="2.2" fill="#F48FB1"/><ellipse cx="45" cy="45" rx="3.4" ry="2.2" fill="#F48FB1"/>
+<path d="M25 46 Q32 52 39 46" fill="none" stroke="#3A3550" stroke-width="3.2" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M35 48 L36.5 52 L38 47.5" fill="#FFFFFF" stroke="#3A3550" stroke-width="1.6" stroke-linejoin="round"/></g>
+<rect x="46" y="144" width="108" height="34" rx="17" fill="#D0436A" stroke="#3A3550" stroke-width="4"/>
+<text x="100" y="168" text-anchor="middle" font-size="20" font-weight="900" fill="#FFFFFF">あくま</text>
 </svg>

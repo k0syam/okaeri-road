@@ -4,7 +4,7 @@
     pip install playwright && playwright install chromium   # 初回のみ
     python3 tools/render_png.py
 
-日本語は Noto Sans CJK JP、絵文字は Noto Color Emoji がインストールされている環境を想定。
+日本語は Noto Sans CJK JP がインストールされている環境を想定（イラストはSVGなので絵文字フォントは不要）。
 """
 import re
 from pathlib import Path

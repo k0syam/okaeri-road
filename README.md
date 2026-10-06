@@ -2,7 +2,7 @@
 
 CCFOLIA（[ccfolia.com](https://ccfolia.com/)）だけで完結する、トランプ＋ダイスすごろく形式のチーム対戦ボードゲームです。カードは CCFOLIA 標準の **「トランプのデッキ」** を使うので、現物のトランプもディーラー（進行役）も不要です。
 
-NPCを「太らせたいあくま陣営」と「痩せて健康にしたいてんし陣営」に分かれて、分岐すごろくのルートと体調ゲージを奪い合います。カードはいつも **裏向きで置いて「せーの」で公開**。相手のマスにも「横やり」を入れられるので、どのマスでも読み合いが起こります。
+NPCを「太らせたいあくま陣営」と「痩せて健康にしたいてんし陣営」に分かれて、分岐すごろくのルートと体調ゲージを奪い合います。カードはいつも **裏向きで置いて「せーの」で公開**。相手のマスにも「横やり」を入れられるので、どのマスでも読み合いが起こります。さらにボードには、お店ごとの「お気に入りスート（+3）」、合流マスの「大勝負（×2）」、同じ数字2枚の「ペア出し」、劣勢側の「がんばれゾーン（+2）」といったしかけが描かれていて、どのカードをどこまで温存するかが勝負の分かれ目になります。
 
 ![ボード](assets/board_route_gauge.png)
 
@@ -32,7 +32,7 @@ okaeri-road/
 ├── LICENSE                 ライセンス（CC0 1.0）
 ├── assets/                 CCFOLIA用の画像素材（*.svg は編集用ソース）
 │   ├── board_route_gauge.png   ボード＋体調ゲージ＋カード置き場（前景用 1920×1080）
-│   ├── quick_reference.png     インスト用早見表（スクリーンパネル用 1080×1440）
+│   ├── quick_reference.png     インスト用早見表（スクリーンパネル用 1080×1600）
 │   ├── token_npc.png           NPCコマ
 │   ├── token_angel.png         てんし陣営コマ
 │   ├── token_devil.png         あくま陣営コマ
@@ -42,10 +42,11 @@ okaeri-road/
 │   └── chat_palette.txt        チャットパレット用テキスト
 └── tools/                  素材の生成スクリプト
     ├── build_assets.py         SVGを生成（色・配置・文言はここで管理）
+    ├── art.py                  マスのイラスト・キャラクターのSVGパーツ
     └── render_png.py           SVG→PNG書き出し（Playwright + Chromium）
 ```
 
-素材を修正するときは `tools/build_assets.py` を編集し、`python3 tools/build_assets.py && python3 tools/render_png.py` で SVG と PNG を作り直してください（日本語フォント Noto Sans CJK JP と Noto Color Emoji が必要です）。
+素材を修正するときは `tools/build_assets.py` を編集し、`python3 tools/build_assets.py && python3 tools/render_png.py` で SVG と PNG を作り直してください（日本語フォント Noto Sans CJK JP が必要です。イラストはすべてSVGで描いているので絵文字フォントは不要です）。
 
 ## ライセンス
 
