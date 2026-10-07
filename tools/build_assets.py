@@ -260,10 +260,10 @@ def gimmick_svg():
         out.append(t(ix + 32, iy + 18, desc, 11.5, INK_SOFT, anchor="start"))
     ly = y + h - 26
     out.append(f'<line x1="{x + 26}" y1="{ly}" x2="{x + 62}" y2="{ly}" stroke="{LANE_A}" stroke-width="16" stroke-linecap="round"/>')
-    out.append(t(x + 74, ly + 5, "健康レーン：赤（♥♦）で勝つと", 13.5, ANGEL, "bold", "start"))
+    out.append(t(x + 74, ly + 5, "健康レーン（赤♥♦で勝ち）", 13.5, ANGEL, "bold", "start"))
     lx = x + w / 2 + 8
     out.append(f'<line x1="{lx}" y1="{ly}" x2="{lx + 36}" y2="{ly}" stroke="{LANE_B}" stroke-width="16" stroke-linecap="round"/>')
-    out.append(t(lx + 48, ly + 5, "誘惑レーン：黒（♠♣）で勝つと", 13.5, DEVIL, "bold", "start"))
+    out.append(t(lx + 48, ly + 5, "誘惑レーン（黒♠♣で勝ち）", 13.5, DEVIL, "bold", "start"))
     return "\n".join(out)
 
 
