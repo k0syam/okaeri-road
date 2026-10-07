@@ -18,6 +18,9 @@ ROOT = Path(__file__).resolve().parent.parent
 ASSETS = ROOT / "assets"
 
 FONT = "'Noto Sans CJK JP','Hiragino Sans','Yu Gothic','Meiryo',sans-serif"
+# フレーバーテキスト用（ポップな本文と対比させる明朝体）
+SERIF = "'Noto Serif CJK JP','Hiragino Mincho ProN','Yu Mincho',serif"
+FLAVOR = "#5B5468"
 
 # ---- パレット（てんし＝青、あくま＝ローズ で全素材を統一） ----
 INK_SOFT = "#77708C"
@@ -45,6 +48,11 @@ TYPES = {
 def t(x, y, s, size, fill=INK, weight="normal", anchor="middle", extra=""):
     return (f'<text x="{x:.1f}" y="{y:.1f}" font-size="{size}" font-weight="{weight}" '
             f'fill="{fill}" text-anchor="{anchor}" {extra}>{escape(s)}</text>')
+
+
+def ft(x, y, s, size, fill=FLAVOR, anchor="middle", weight="500"):
+    """フレーバーテキスト（明朝体）"""
+    return t(x, y, s, size, fill, weight, anchor, f'font-family="{SERIF}" letter-spacing="1"')
 
 
 def outlined(x, y, s, size, fill, stroke=INK, sw=8, anchor="middle", weight="900"):
@@ -402,13 +410,26 @@ def scenery_svg():
     return "\n".join(out)
 
 
+def flavor_svg():
+    """道のまんなかの空き地に置く、ひとことのフレーバー"""
+    out = []
+    # わかれ道①の内側（5A〜7A と 5B〜7B のあいだ）
+    out.append(ft(cx(5) - 6, cy(1) - 8, "――あのひとは今日も、", 15))
+    out.append(ft(cx(5) + 10, cy(1) + 18, "ひとりで帰ってくる。", 15))
+    # わかれ道②の内側（13A〜11A と 13B〜11B のあいだ）
+    out.append(ft(cx(6) - 2, cy(4) - 6, "おなかが空いたら、", 15))
+    out.append(ft(cx(6) + 14, cy(4) + 20, "おうちへ帰りましょう。", 15))
+    return "\n".join(out)
+
+
 def board():
     parts = [f'<svg xmlns="http://www.w3.org/2000/svg" width="{W}" height="{H}" viewBox="0 0 {W} {H}" font-family="{FONT}">',
              DEFS,
              f'<rect width="{W}" height="{H}" fill="url(#sky)"/>',
              f'<rect width="{W}" height="{H}" fill="url(#dots)"/>',
              scenery_svg(),
-             road_svg()]
+             road_svg(),
+             flavor_svg()]
     for sq in SQUARES:
         parts.append(tile_svg(sq))
     parts += [title_svg(), gimmick_svg(), flow_svg(), gauge_svg(), card_area_svg(), "</svg>"]
@@ -447,7 +468,9 @@ def quick_reference():
          outlined(62, 94, "おかえりロード 早見表", 48, INK, INK, 6, "start"),
          outlined(60, 90, "おかえりロード 早見表", 48, "#FFFFFF", INK, 5, "start"),
          place(art.angel(), QW - 170, 66, 80),
-         place(art.devil(), QW - 90, 72, 70)]
+         place(art.devil(), QW - 90, 72, 70),
+         ft(QW - 222, 58, "肩の上で、てんしとあくまが言い争う。", 14, anchor="end"),
+         ft(QW - 222, 86, "あのひとの好物を、だれも知らない。", 14, anchor="end")]
 
     def box(y, h, title, color):
         p.append(f'<g filter="url(#soft)"><rect x="40" y="{y}" width="{QW - 80}" height="{h}" rx="24" fill="#FFFFFF"/></g>')
@@ -548,20 +571,20 @@ def quick_reference():
 TRUMPS = {
     "angel": [
         # id, 名前, アイコン, タイミング, 効果（行ごと）, ひとこと
-        ("radio", "ラジオたいそう", "dumbbell", "そえる", ["自陣営のカードの数字", "+3"], "いっちに、さんし！"),
-        ("water", "おみずをどうぞ", "bottle", "そえる", ["相手陣営のカードの数字", "−3"], "のどがかわいたら、まずお水。"),
-        ("omamori", "おまもり", "omamori", "そえる", ["この公開でゲージが", "あくま側へ動くなら", "その動きを0にする"], "わるい誘惑から守ってくれる。"),
-        ("map", "ちずアプリ", "phone_map", "そえる", ["わかれ道で、勝ち負けに", "関係なくレーンを", "健康レーンにする"], "こっちの道のほうが景色がいいよ。"),
-        ("cheer", "おうえん団", "megaphone", "そえる", ["この公開でゲージが", "てんし側へ動くなら", "その動きを2倍にする"], "フレー！フレー！"),
-        ("early", "はやおき", "alarm", "いつでも", ["自陣営の手番中に使う", "山札から2枚引いて", "陣営の手札に加える"], "早起きは三文の徳。"),
+        ("radio", "ラジオたいそう", "dumbbell", "そえる", ["自陣営のカードの数字", "+3"], "体はいつも、動けるようにしておくこと。"),
+        ("water", "おみずをどうぞ", "bottle", "そえる", ["相手陣営のカードの数字", "−3"], "渇きは、空腹よりも先にやってくる。"),
+        ("omamori", "おまもり", "omamori", "そえる", ["この公開でゲージが", "あくま側へ動くなら", "その動きを0にする"], "守られているのは、どちらのほうだろう。"),
+        ("map", "ちずアプリ", "phone_map", "そえる", ["わかれ道で、勝ち負けに", "関係なくレーンを", "健康レーンにする"], "明るい道を選びなさい。人目のある道を。"),
+        ("cheer", "おうえん団", "megaphone", "そえる", ["この公開でゲージが", "てんし側へ動くなら", "その動きを2倍にする"], "声援がやむと、町はおそろしく静かだ。"),
+        ("early", "はやおき", "alarm", "いつでも", ["自陣営の手番中に使う", "山札から2枚引いて", "陣営の手札に加える"], "朝の道は、ひとりきりの人が多い。"),
     ],
     "devil": [
-        ("oomori", "大盛りサービス", "burger", "そえる", ["自陣営のカードの数字", "+3"], "大盛り無料ですよ〜。"),
-        ("sleepy", "ねむけさそい", "zzz", "そえる", ["相手陣営のカードの数字", "−3"], "ふわぁ…ちょっとだけ休もうよ。"),
-        ("gorone", "ごろ寝", "pillow", "そえる", ["この公開でゲージが", "てんし側へ動くなら", "その動きを0にする"], "運動は明日からでいいって。"),
-        ("smell", "いいにおい", "steam_smell", "そえる", ["わかれ道で、勝ち負けに", "関係なくレーンを", "誘惑レーンにする"], "あっちから、おいしそうな香り…"),
-        ("reward", "ごほうびデー", "cake", "そえる", ["この公開でゲージが", "あくま側へ動くなら", "その動きを2倍にする"], "今日はがんばったから特別！"),
-        ("late", "よふかし", "moon", "いつでも", ["自陣営の手番中に使う", "山札から2枚引いて", "陣営の手札に加える"], "夜食の時間だね。"),
+        ("oomori", "大盛りサービス", "burger", "そえる", ["自陣営のカードの数字", "+3"], "満腹のあいだは、だれも困らない。"),
+        ("sleepy", "ねむけさそい", "zzz", "そえる", ["相手陣営のカードの数字", "−3"], "眠っているあいだは、町が静かでいい。"),
+        ("gorone", "ごろ寝", "pillow", "そえる", ["この公開でゲージが", "てんし側へ動くなら", "その動きを0にする"], "動かないことも、ひとつのやさしさだ。"),
+        ("smell", "いいにおい", "steam_smell", "そえる", ["わかれ道で、勝ち負けに", "関係なくレーンを", "誘惑レーンにする"], "においの元は、いつも厨房の奥にある。"),
+        ("reward", "ごほうびデー", "cake", "そえる", ["この公開でゲージが", "あくま側へ動くなら", "その動きを2倍にする"], "今日の分は、もう食べたことにしよう。"),
+        ("late", "よふかし", "moon", "いつでも", ["自陣営の手番中に使う", "山札から2枚引いて", "陣営の手札に加える"], "夜は長い。おなかは、また空く。"),
     ],
 }
 
@@ -594,7 +617,7 @@ def trump_card(side, card):
     for i, line in enumerate(lines):
         big = line in ("+3", "−3")
         p.append(t(200, y0 + i * 34 + (8 if big else 0), line, 40 if big else 22, INK, "900" if big else "bold"))
-    p.append(t(200, 548, flavor, 15, INK_SOFT, "bold"))
+    p.append(ft(200, 548, flavor, 15 if len(flavor) <= 18 else 14))
     p.append(f'<path d="M110 566 L290 566" stroke="{color}" stroke-width="2" opacity="0.5"/>')
     p.append(t(200, 590, f"{team}・1回だけ", 13, "#FFFFFF", "900"))
     p.append("</svg>")
