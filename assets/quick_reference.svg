@@ -102,7 +102,7 @@
 <path d="M6 10 L58 10 L58 46 L36 46 L26 58 L26 46 L6 46 Z" fill="#9B7BE0" stroke="#3A3550" stroke-width="3.2" stroke-linejoin="round" stroke-linecap="round"/>
 <text x="32" y="38" text-anchor="middle" font-size="25" font-weight="900" fill="#FFFFFF" font-family="'Noto Sans CJK JP',sans-serif">VS</text></g>
 <text x="126.0" y="943.0" font-size="20" font-weight="900" fill="#7A5CC6" text-anchor="start" >カード勝負</text>
-<text x="280.0" y="930.0" font-size="16.5" font-weight="normal" fill="#3A3550" text-anchor="start" >どちらでもマス：両陣営とも必ず1枚（手札0なら数字0）</text>
+<text x="280.0" y="930.0" font-size="16.5" font-weight="normal" fill="#3A3550" text-anchor="start" >どちらでもマス：両陣営とも必ず1枚（またはペア）を出す。手札0なら数字0</text>
 <text x="280.0" y="955.0" font-size="16.5" font-weight="normal" fill="#77708C" text-anchor="start" >大きい方の陣営へ、差の分だけ動く</text>
 <g transform="translate(69.0,973.0) scale(0.7188)">
 <rect x="29" y="8" width="6" height="52" rx="2" fill="#A86E4A" stroke="#3A3550" stroke-width="3.2" stroke-linejoin="round" stroke-linecap="round"/>
