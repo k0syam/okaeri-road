@@ -45,7 +45,7 @@
 <text x="200.0" y="425.0" font-size="22" font-weight="bold" fill="#3A3550" text-anchor="middle" >この公開でゲージが</text>
 <text x="200.0" y="459.0" font-size="22" font-weight="bold" fill="#3A3550" text-anchor="middle" >てんし側へ動くなら</text>
 <text x="200.0" y="493.0" font-size="22" font-weight="bold" fill="#3A3550" text-anchor="middle" >その動きを0にする</text>
-<text x="200.0" y="548.0" font-size="15" font-weight="bold" fill="#77708C" text-anchor="middle" >運動は明日からでいいって。</text>
+<text x="200.0" y="548.0" font-size="15" font-weight="500" fill="#5B5468" text-anchor="middle" letter-spacing="1">動かないことも、ひとつのやさしさだ。</text>
 <path d="M110 566 L290 566" stroke="#D0436A" stroke-width="2" opacity="0.5"/>
 <text x="200.0" y="590.0" font-size="13" font-weight="900" fill="#FFFFFF" text-anchor="middle" >あくまの切り札・1回だけ</text>
 </svg>
