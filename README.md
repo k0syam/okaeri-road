@@ -55,7 +55,7 @@ okaeri-road/
     └── render_png.py           SVG→PNG書き出し（Playwright + Chromium）
 ```
 
-素材を修正するときは `tools/build_assets.py` を編集し、`python3 tools/build_assets.py && python3 tools/render_png.py` で SVG と PNG を作り直してください（日本語フォント Noto Sans CJK JP と、フレーバーテキスト用の Noto Serif CJK JP が必要です。イラストはすべてSVGで描いているので絵文字フォントは不要です）。
+素材を修正するときは `tools/build_assets.py` を編集し、`python3 tools/build_assets.py && python3 tools/render_png.py` で SVG と PNG を作り直してください（日本語フォント Noto Sans CJK JP が必要です。イラストはすべてSVGで描いているので絵文字フォントは不要です）。
 
 ## ライセンス
 

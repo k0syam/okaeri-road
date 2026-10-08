@@ -43,7 +43,7 @@
 <text x="200.0" y="425.0" font-size="22" font-weight="bold" fill="#3A3550" text-anchor="middle" >この公開でゲージが</text>
 <text x="200.0" y="459.0" font-size="22" font-weight="bold" fill="#3A3550" text-anchor="middle" >てんし側へ動くなら</text>
 <text x="200.0" y="493.0" font-size="22" font-weight="bold" fill="#3A3550" text-anchor="middle" >その動きを2倍にする</text>
-<text x="200.0" y="548.0" font-size="15" font-weight="500" fill="#5B5468" text-anchor="middle" font-family="'Noto Serif CJK JP','Hiragino Mincho ProN','Yu Mincho',serif" letter-spacing="1">声援がやむと、町はおそろしく静かだ。</text>
+<text x="200.0" y="548.0" font-size="15" font-weight="500" fill="#5B5468" text-anchor="middle" letter-spacing="1">声援がやむと、町はおそろしく静かだ。</text>
 <path d="M110 566 L290 566" stroke="#2F7FC8" stroke-width="2" opacity="0.5"/>
 <text x="200.0" y="590.0" font-size="13" font-weight="900" fill="#FFFFFF" text-anchor="middle" >てんしの切り札・1回だけ</text>
 </svg>

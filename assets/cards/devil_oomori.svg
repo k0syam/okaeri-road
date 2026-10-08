@@ -46,7 +46,7 @@
 <rect x="40" y="396" width="320" height="126" rx="16" fill="#FBE3EA" stroke="#D0436A" stroke-width="3"/>
 <text x="200.0" y="442.0" font-size="22" font-weight="bold" fill="#3A3550" text-anchor="middle" >自陣営のカードの数字</text>
 <text x="200.0" y="484.0" font-size="40" font-weight="900" fill="#3A3550" text-anchor="middle" >+3</text>
-<text x="200.0" y="548.0" font-size="15" font-weight="500" fill="#5B5468" text-anchor="middle" font-family="'Noto Serif CJK JP','Hiragino Mincho ProN','Yu Mincho',serif" letter-spacing="1">満腹のあいだは、だれも困らない。</text>
+<text x="200.0" y="548.0" font-size="15" font-weight="500" fill="#5B5468" text-anchor="middle" letter-spacing="1">満腹のあいだは、だれも困らない。</text>
 <path d="M110 566 L290 566" stroke="#D0436A" stroke-width="2" opacity="0.5"/>
 <text x="200.0" y="590.0" font-size="13" font-weight="900" fill="#FFFFFF" text-anchor="middle" >あくまの切り札・1回だけ</text>
 </svg>

@@ -88,7 +88,7 @@
 <rect x="40" y="396" width="320" height="126" rx="16" fill="#E2EFFB" stroke="#2F7FC8" stroke-width="3"/>
 <text x="200.0" y="442.0" font-size="22" font-weight="bold" fill="#3A3550" text-anchor="middle" >自陣営のカードの数字</text>
 <text x="200.0" y="484.0" font-size="40" font-weight="900" fill="#3A3550" text-anchor="middle" >+3</text>
-<text x="200.0" y="548.0" font-size="14" font-weight="500" fill="#5B5468" text-anchor="middle" font-family="'Noto Serif CJK JP','Hiragino Mincho ProN','Yu Mincho',serif" letter-spacing="1">体はいつも、動けるようにしておくこと。</text>
+<text x="200.0" y="548.0" font-size="14" font-weight="500" fill="#5B5468" text-anchor="middle" letter-spacing="1">体はいつも、動けるようにしておくこと。</text>
 <path d="M110 566 L290 566" stroke="#2F7FC8" stroke-width="2" opacity="0.5"/>
 <text x="200.0" y="590.0" font-size="13" font-weight="900" fill="#FFFFFF" text-anchor="middle" >てんしの切り札・1回だけ</text>
 </svg>
@@ -138,7 +138,7 @@
 <rect x="40" y="396" width="320" height="126" rx="16" fill="#E2EFFB" stroke="#2F7FC8" stroke-width="3"/>
 <text x="200.0" y="442.0" font-size="22" font-weight="bold" fill="#3A3550" text-anchor="middle" >相手陣営のカードの数字</text>
 <text x="200.0" y="484.0" font-size="40" font-weight="900" fill="#3A3550" text-anchor="middle" >−3</text>
-<text x="200.0" y="548.0" font-size="15" font-weight="500" fill="#5B5468" text-anchor="middle" font-family="'Noto Serif CJK JP','Hiragino Mincho ProN','Yu Mincho',serif" letter-spacing="1">渇きは、空腹よりも先にやってくる。</text>
+<text x="200.0" y="548.0" font-size="15" font-weight="500" fill="#5B5468" text-anchor="middle" letter-spacing="1">渇きは、空腹よりも先にやってくる。</text>
 <path d="M110 566 L290 566" stroke="#2F7FC8" stroke-width="2" opacity="0.5"/>
 <text x="200.0" y="590.0" font-size="13" font-weight="900" fill="#FFFFFF" text-anchor="middle" >てんしの切り札・1回だけ</text>
 </svg>
@@ -189,7 +189,7 @@
 <text x="200.0" y="425.0" font-size="22" font-weight="bold" fill="#3A3550" text-anchor="middle" >この公開でゲージが</text>
 <text x="200.0" y="459.0" font-size="22" font-weight="bold" fill="#3A3550" text-anchor="middle" >あくま側へ動くなら</text>
 <text x="200.0" y="493.0" font-size="22" font-weight="bold" fill="#3A3550" text-anchor="middle" >その動きを0にする</text>
-<text x="200.0" y="548.0" font-size="14" font-weight="500" fill="#5B5468" text-anchor="middle" font-family="'Noto Serif CJK JP','Hiragino Mincho ProN','Yu Mincho',serif" letter-spacing="1">守られているのは、どちらのほうだろう。</text>
+<text x="200.0" y="548.0" font-size="14" font-weight="500" fill="#5B5468" text-anchor="middle" letter-spacing="1">守られているのは、どちらのほうだろう。</text>
 <path d="M110 566 L290 566" stroke="#2F7FC8" stroke-width="2" opacity="0.5"/>
 <text x="200.0" y="590.0" font-size="13" font-weight="900" fill="#FFFFFF" text-anchor="middle" >てんしの切り札・1回だけ</text>
 </svg>
@@ -240,7 +240,7 @@
 <text x="200.0" y="425.0" font-size="22" font-weight="bold" fill="#3A3550" text-anchor="middle" >わかれ道で、勝ち負けに</text>
 <text x="200.0" y="459.0" font-size="22" font-weight="bold" fill="#3A3550" text-anchor="middle" >関係なくレーンを</text>
 <text x="200.0" y="493.0" font-size="22" font-weight="bold" fill="#3A3550" text-anchor="middle" >健康レーンにする</text>
-<text x="200.0" y="548.0" font-size="14" font-weight="500" fill="#5B5468" text-anchor="middle" font-family="'Noto Serif CJK JP','Hiragino Mincho ProN','Yu Mincho',serif" letter-spacing="1">明るい道を選びなさい。人目のある道を。</text>
+<text x="200.0" y="548.0" font-size="14" font-weight="500" fill="#5B5468" text-anchor="middle" letter-spacing="1">明るい道を選びなさい。人目のある道を。</text>
 <path d="M110 566 L290 566" stroke="#2F7FC8" stroke-width="2" opacity="0.5"/>
 <text x="200.0" y="590.0" font-size="13" font-weight="900" fill="#FFFFFF" text-anchor="middle" >てんしの切り札・1回だけ</text>
 </svg>
@@ -289,7 +289,7 @@
 <text x="200.0" y="425.0" font-size="22" font-weight="bold" fill="#3A3550" text-anchor="middle" >この公開でゲージが</text>
 <text x="200.0" y="459.0" font-size="22" font-weight="bold" fill="#3A3550" text-anchor="middle" >てんし側へ動くなら</text>
 <text x="200.0" y="493.0" font-size="22" font-weight="bold" fill="#3A3550" text-anchor="middle" >その動きを2倍にする</text>
-<text x="200.0" y="548.0" font-size="15" font-weight="500" fill="#5B5468" text-anchor="middle" font-family="'Noto Serif CJK JP','Hiragino Mincho ProN','Yu Mincho',serif" letter-spacing="1">声援がやむと、町はおそろしく静かだ。</text>
+<text x="200.0" y="548.0" font-size="15" font-weight="500" fill="#5B5468" text-anchor="middle" letter-spacing="1">声援がやむと、町はおそろしく静かだ。</text>
 <path d="M110 566 L290 566" stroke="#2F7FC8" stroke-width="2" opacity="0.5"/>
 <text x="200.0" y="590.0" font-size="13" font-weight="900" fill="#FFFFFF" text-anchor="middle" >てんしの切り札・1回だけ</text>
 </svg>
@@ -340,7 +340,7 @@
 <text x="200.0" y="425.0" font-size="22" font-weight="bold" fill="#3A3550" text-anchor="middle" >自陣営の手番中に使う</text>
 <text x="200.0" y="459.0" font-size="22" font-weight="bold" fill="#3A3550" text-anchor="middle" >山札から2枚引いて</text>
 <text x="200.0" y="493.0" font-size="22" font-weight="bold" fill="#3A3550" text-anchor="middle" >陣営の手札に加える</text>
-<text x="200.0" y="548.0" font-size="15" font-weight="500" fill="#5B5468" text-anchor="middle" font-family="'Noto Serif CJK JP','Hiragino Mincho ProN','Yu Mincho',serif" letter-spacing="1">朝の道は、ひとりきりの人が多い。</text>
+<text x="200.0" y="548.0" font-size="15" font-weight="500" fill="#5B5468" text-anchor="middle" letter-spacing="1">朝の道は、ひとりきりの人が多い。</text>
 <path d="M110 566 L290 566" stroke="#2F7FC8" stroke-width="2" opacity="0.5"/>
 <text x="200.0" y="590.0" font-size="13" font-weight="900" fill="#FFFFFF" text-anchor="middle" >てんしの切り札・1回だけ</text>
 </svg>
@@ -433,7 +433,7 @@
 <rect x="40" y="396" width="320" height="126" rx="16" fill="#FBE3EA" stroke="#D0436A" stroke-width="3"/>
 <text x="200.0" y="442.0" font-size="22" font-weight="bold" fill="#3A3550" text-anchor="middle" >自陣営のカードの数字</text>
 <text x="200.0" y="484.0" font-size="40" font-weight="900" fill="#3A3550" text-anchor="middle" >+3</text>
-<text x="200.0" y="548.0" font-size="15" font-weight="500" fill="#5B5468" text-anchor="middle" font-family="'Noto Serif CJK JP','Hiragino Mincho ProN','Yu Mincho',serif" letter-spacing="1">満腹のあいだは、だれも困らない。</text>
+<text x="200.0" y="548.0" font-size="15" font-weight="500" fill="#5B5468" text-anchor="middle" letter-spacing="1">満腹のあいだは、だれも困らない。</text>
 <path d="M110 566 L290 566" stroke="#D0436A" stroke-width="2" opacity="0.5"/>
 <text x="200.0" y="590.0" font-size="13" font-weight="900" fill="#FFFFFF" text-anchor="middle" >あくまの切り札・1回だけ</text>
 </svg>
@@ -484,7 +484,7 @@
 <rect x="40" y="396" width="320" height="126" rx="16" fill="#FBE3EA" stroke="#D0436A" stroke-width="3"/>
 <text x="200.0" y="442.0" font-size="22" font-weight="bold" fill="#3A3550" text-anchor="middle" >相手陣営のカードの数字</text>
 <text x="200.0" y="484.0" font-size="40" font-weight="900" fill="#3A3550" text-anchor="middle" >−3</text>
-<text x="200.0" y="548.0" font-size="15" font-weight="500" fill="#5B5468" text-anchor="middle" font-family="'Noto Serif CJK JP','Hiragino Mincho ProN','Yu Mincho',serif" letter-spacing="1">眠っているあいだは、町が静かでいい。</text>
+<text x="200.0" y="548.0" font-size="15" font-weight="500" fill="#5B5468" text-anchor="middle" letter-spacing="1">眠っているあいだは、町が静かでいい。</text>
 <path d="M110 566 L290 566" stroke="#D0436A" stroke-width="2" opacity="0.5"/>
 <text x="200.0" y="590.0" font-size="13" font-weight="900" fill="#FFFFFF" text-anchor="middle" >あくまの切り札・1回だけ</text>
 </svg>
@@ -535,7 +535,7 @@
 <text x="200.0" y="425.0" font-size="22" font-weight="bold" fill="#3A3550" text-anchor="middle" >この公開でゲージが</text>
 <text x="200.0" y="459.0" font-size="22" font-weight="bold" fill="#3A3550" text-anchor="middle" >てんし側へ動くなら</text>
 <text x="200.0" y="493.0" font-size="22" font-weight="bold" fill="#3A3550" text-anchor="middle" >その動きを0にする</text>
-<text x="200.0" y="548.0" font-size="15" font-weight="500" fill="#5B5468" text-anchor="middle" font-family="'Noto Serif CJK JP','Hiragino Mincho ProN','Yu Mincho',serif" letter-spacing="1">動かないことも、ひとつのやさしさだ。</text>
+<text x="200.0" y="548.0" font-size="15" font-weight="500" fill="#5B5468" text-anchor="middle" letter-spacing="1">動かないことも、ひとつのやさしさだ。</text>
 <path d="M110 566 L290 566" stroke="#D0436A" stroke-width="2" opacity="0.5"/>
 <text x="200.0" y="590.0" font-size="13" font-weight="900" fill="#FFFFFF" text-anchor="middle" >あくまの切り札・1回だけ</text>
 </svg>
@@ -587,7 +587,7 @@
 <text x="200.0" y="425.0" font-size="22" font-weight="bold" fill="#3A3550" text-anchor="middle" >わかれ道で、勝ち負けに</text>
 <text x="200.0" y="459.0" font-size="22" font-weight="bold" fill="#3A3550" text-anchor="middle" >関係なくレーンを</text>
 <text x="200.0" y="493.0" font-size="22" font-weight="bold" fill="#3A3550" text-anchor="middle" >誘惑レーンにする</text>
-<text x="200.0" y="548.0" font-size="15" font-weight="500" fill="#5B5468" text-anchor="middle" font-family="'Noto Serif CJK JP','Hiragino Mincho ProN','Yu Mincho',serif" letter-spacing="1">においの元は、いつも厨房の奥にある。</text>
+<text x="200.0" y="548.0" font-size="15" font-weight="500" fill="#5B5468" text-anchor="middle" letter-spacing="1">においの元は、いつも厨房の奥にある。</text>
 <path d="M110 566 L290 566" stroke="#D0436A" stroke-width="2" opacity="0.5"/>
 <text x="200.0" y="590.0" font-size="13" font-weight="900" fill="#FFFFFF" text-anchor="middle" >あくまの切り札・1回だけ</text>
 </svg>
@@ -642,7 +642,7 @@
 <text x="200.0" y="425.0" font-size="22" font-weight="bold" fill="#3A3550" text-anchor="middle" >この公開でゲージが</text>
 <text x="200.0" y="459.0" font-size="22" font-weight="bold" fill="#3A3550" text-anchor="middle" >あくま側へ動くなら</text>
 <text x="200.0" y="493.0" font-size="22" font-weight="bold" fill="#3A3550" text-anchor="middle" >その動きを2倍にする</text>
-<text x="200.0" y="548.0" font-size="15" font-weight="500" fill="#5B5468" text-anchor="middle" font-family="'Noto Serif CJK JP','Hiragino Mincho ProN','Yu Mincho',serif" letter-spacing="1">今日の分は、もう食べたことにしよう。</text>
+<text x="200.0" y="548.0" font-size="15" font-weight="500" fill="#5B5468" text-anchor="middle" letter-spacing="1">今日の分は、もう食べたことにしよう。</text>
 <path d="M110 566 L290 566" stroke="#D0436A" stroke-width="2" opacity="0.5"/>
 <text x="200.0" y="590.0" font-size="13" font-weight="900" fill="#FFFFFF" text-anchor="middle" >あくまの切り札・1回だけ</text>
 </svg>
@@ -693,7 +693,7 @@
 <text x="200.0" y="425.0" font-size="22" font-weight="bold" fill="#3A3550" text-anchor="middle" >自陣営の手番中に使う</text>
 <text x="200.0" y="459.0" font-size="22" font-weight="bold" fill="#3A3550" text-anchor="middle" >山札から2枚引いて</text>
 <text x="200.0" y="493.0" font-size="22" font-weight="bold" fill="#3A3550" text-anchor="middle" >陣営の手札に加える</text>
-<text x="200.0" y="548.0" font-size="15" font-weight="500" fill="#5B5468" text-anchor="middle" font-family="'Noto Serif CJK JP','Hiragino Mincho ProN','Yu Mincho',serif" letter-spacing="1">夜は長い。おなかは、また空く。</text>
+<text x="200.0" y="548.0" font-size="15" font-weight="500" fill="#5B5468" text-anchor="middle" letter-spacing="1">夜は長い。おなかは、また空く。</text>
 <path d="M110 566 L290 566" stroke="#D0436A" stroke-width="2" opacity="0.5"/>
 <text x="200.0" y="590.0" font-size="13" font-weight="900" fill="#FFFFFF" text-anchor="middle" >あくまの切り札・1回だけ</text>
 </svg>

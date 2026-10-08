@@ -18,8 +18,8 @@ ROOT = Path(__file__).resolve().parent.parent
 ASSETS = ROOT / "assets"
 
 FONT = "'Noto Sans CJK JP','Hiragino Sans','Yu Gothic','Meiryo',sans-serif"
-# フレーバーテキスト用（ポップな本文と対比させる明朝体）
-SERIF = "'Noto Serif CJK JP','Hiragino Mincho ProN','Yu Mincho',serif"
+# フレーバーテキスト用の色（フォントは本文と同じ丸みのあるゴシックのまま。
+# ポップな見た目のまま不穏な文が書かれているほうが不気味さが出るため）
 FLAVOR = "#5B5468"
 
 # ---- パレット（てんし＝青、あくま＝ローズ で全素材を統一） ----
@@ -51,8 +51,8 @@ def t(x, y, s, size, fill=INK, weight="normal", anchor="middle", extra=""):
 
 
 def ft(x, y, s, size, fill=FLAVOR, anchor="middle", weight="500"):
-    """フレーバーテキスト（明朝体）"""
-    return t(x, y, s, size, fill, weight, anchor, f'font-family="{SERIF}" letter-spacing="1"')
+    """フレーバーテキスト（本文と同じフォント）"""
+    return t(x, y, s, size, fill, weight, anchor, 'letter-spacing="1"')
 
 
 def outlined(x, y, s, size, fill, stroke=INK, sw=8, anchor="middle", weight="900"):
@@ -268,10 +268,10 @@ def gimmick_svg():
         out.append(t(ix + 32, iy + 18, desc, 11.5, INK_SOFT, anchor="start"))
     ly = y + h - 26
     out.append(f'<line x1="{x + 26}" y1="{ly}" x2="{x + 62}" y2="{ly}" stroke="{LANE_A}" stroke-width="16" stroke-linecap="round"/>')
-    out.append(t(x + 74, ly + 5, "健康レーン：赤（♥♦）で勝つと", 13.5, ANGEL, "bold", "start"))
+    out.append(t(x + 74, ly + 5, "健康レーン（赤♥♦で勝ち）", 13.5, ANGEL, "bold", "start"))
     lx = x + w / 2 + 8
     out.append(f'<line x1="{lx}" y1="{ly}" x2="{lx + 36}" y2="{ly}" stroke="{LANE_B}" stroke-width="16" stroke-linecap="round"/>')
-    out.append(t(lx + 48, ly + 5, "誘惑レーン：黒（♠♣）で勝つと", 13.5, DEVIL, "bold", "start"))
+    out.append(t(lx + 48, ly + 5, "誘惑レーン（黒♠♣で勝ち）", 13.5, DEVIL, "bold", "start"))
     return "\n".join(out)
 
 
