@@ -192,5 +192,5 @@
 <text x="76.0" y="2386.0" font-size="17.5" font-weight="normal" fill="#3A3550" text-anchor="start" >3 あくまのささやき：ゲージ −2</text>
 <text x="566.0" y="2318.0" font-size="17.5" font-weight="normal" fill="#3A3550" text-anchor="start" >4 近道発見：1マス進む（先のマスも処理）</text>
 <text x="566.0" y="2352.0" font-size="17.5" font-weight="normal" fill="#3A3550" text-anchor="start" >5 寄り道：1マス戻る（処理しない）</text>
-<text x="566.0" y="2386.0" font-size="17.5" font-weight="normal" fill="#3A3550" text-anchor="start" >6 気分屋：手札1枚を捨てて1枚引く</text>
+<text x="566.0" y="2386.0" font-size="17.5" font-weight="normal" fill="#3A3550" text-anchor="start" >6 気分屋：手札1枚を裏向きで捨てて1枚引く</text>
 </svg>
