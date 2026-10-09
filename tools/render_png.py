@@ -17,7 +17,7 @@ ASSETS = ROOT / "assets"
 # 出力サイズ（SVG の width に対する倍率）
 SCALE = {
     "board_route_gauge.svg": 1,   # 1920×1080
-    "quick_reference.svg": 1,     # 1080×2410
+    "quick_reference.svg": 1,     # 1080×2446
     "trump_cards_sheet.svg": 1,
 }
 CARD_SCALE = 2                    # 切り札カード：400×600 → 800×1200px
