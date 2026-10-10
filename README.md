@@ -40,7 +40,7 @@ okaeri-road/
 ├── LICENSE                 ライセンス（CC0 1.0）
 ├── assets/                 CCFOLIA用の画像素材（*.svg は編集用ソース）
 │   ├── board_route_gauge.png   ボード＋体調ゲージ＋カード置き場（前景用 1920×1080）
-│   ├── quick_reference.png     インスト用早見表（スクリーンパネル用 1080×2446）
+│   ├── quick_reference.png     インスト用早見表（スクリーンパネル用 1080×2480）
 │   ├── token_npc.png           NPCコマ
 │   ├── token_angel.png         てんし陣営コマ
 │   ├── token_devil.png         あくま陣営コマ
