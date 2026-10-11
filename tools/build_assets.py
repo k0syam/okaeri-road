@@ -522,7 +522,7 @@ def quick_reference():
         p.append(t(126, ry + 11, name, 20, col, "900", "start"))
         p.append(t(280, ry - 2, who, 16.5, INK, anchor="start"))
         p.append(t(280, ry + 23, move, 16.5, INK_SOFT, anchor="start"))
-    p.append(t(76, y + 302, "同数は引き分け（ゲージ動かず・効果なし。わかれ道は 1d2：奇数=健康）", 15.5, INK_SOFT, anchor="start"))
+    p.append(t(76, y + 302, "同数は引き分け（ゲージ動かず・効果なし）。わかれ道は 1d2：奇数=健康（ちずアプリ／いいにおいが片方だけなら振らずその側）", 15.5, INK_SOFT, anchor="start"))
 
     # 5. ボードのしかけ
     y = 1180
