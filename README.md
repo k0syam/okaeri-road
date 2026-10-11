@@ -25,7 +25,7 @@ NPCを「太らせたいあくま陣営」と「痩せて健康にしたいて�
 3. [`assets/token_npc.png`](assets/token_npc.png) をNPCコマとしてマス「1 スタート」に、[`assets/token_gauge.png`](assets/token_gauge.png) をゲージコマとして体調ゲージの「0」に置く（お好みで [`token_angel.png`](assets/token_angel.png) / [`token_devil.png`](assets/token_devil.png) も）。
 4. 盤面メニューの「カードデッキを追加」でトランプのデッキを追加し、ボード右上の「山札」の枠に置く。
 5. 陣営を分け、各陣営の手札が合計10枚になるように「裏向きのまま引く」→「自分だけ見る」で手札を配る（ジョーカーは除外して引き直す）。
-6. [`assets/cards/`](assets/cards/) の切り札カード（てんし・あくま各6枚。各陣営はそこから3枚を選んで使う）をスクリーンパネルとして置き、裏面に `*_back.png` を設定して、各陣営の手札置き場に非公開で並べる。
+6. 各陣営は [`assets/cards/`](assets/cards/) の自陣営の切り札カード6枚から、使う **3枚** を陣営チャットで相談して選ぶ（[はじめての1戦](RULES.md#はじめての1戦入門ルール)なら決められた3枚）。選んだ3枚だけをスクリーンパネルとして置き、裏面に `*_back.png` を設定して、自陣営の手札置き場に非公開で並べる。選ばなかった3枚は相手に見せずに片付ける（[セットアップ](RULES.md#セットアップ)の8）。
 7. [`ccfolia/chat_palette.txt`](ccfolia/chat_palette.txt) を各プレイヤーのチャットパレットにコピーする。お好みで [`assets/quick_reference.png`](assets/quick_reference.png)（早見表）をスクリーンパネルとして置き、陣営ごとのプライベートチャットタブも作る。
 8. [3分でわかる遊び方](RULES.md#3分でわかる遊び方インスト用まとめ) を読み上げて、プレイ開始。初めてなら [はじめての1戦（入門ルール）](RULES.md#はじめての1戦入門ルール) がおすすめです。
 
