@@ -265,7 +265,7 @@ def gimmick_svg():
     items = [
         (lambda ix, iy: ace_icon(ix, iy, 0.95), "番狂わせ A＝14", "相手が絵札（J・Q・K）なら A は14"),
         (lambda ix, iy: art.star_badge(ix, iy, "×2", 22), "大勝負マス ×2", "合流マスは勝負×2・10枚まで補給"),
-        (lambda ix, iy: art.suit_chip("♥", ix, iy, 17), "お気に入りスート", "拡張ルール：好きなスートで通すと+3"),
+        (lambda ix, iy: art.suit_chip("♥", ix, iy, 17), "お気に入りスート", "拡張：マス右下のスートで通すと+3"),
         (lambda ix, iy: cheer_icon(ix, iy), "がんばれゾーン +2／+4", "相手側に4以上で数字+2、8以上で+4"),
     ]
     for i, (draw, name, desc) in enumerate(items):
