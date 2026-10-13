@@ -551,7 +551,7 @@
 <text x="395.0" y="444.0" font-size="11.5" font-weight="normal" fill="#77708C" text-anchor="start" >合流マスは勝負×2・10枚まで補給</text>
 <circle cx="92.0" cy="496.0" r="17" fill="#FFFFFF" stroke="#3A3550" stroke-width="2.6"/><text x="92.0" y="503.1" text-anchor="middle" font-size="22" font-weight="bold" fill="#E0344F" font-family="'DejaVu Sans',sans-serif">♥</text>
 <text x="124.0" y="493.0" font-size="16" font-weight="900" fill="#3A3550" text-anchor="start" >お気に入りスート</text>
-<text x="124.0" y="514.0" font-size="11.5" font-weight="normal" fill="#77708C" text-anchor="start" >拡張ルール：好きなスートで通すと+3</text>
+<text x="124.0" y="514.0" font-size="11.5" font-weight="normal" fill="#77708C" text-anchor="start" >拡張：マス右下のスートで通すと+3</text>
 <g transform="translate(363.0,496.0) scale(1.0)"><path d="M-8,18 L-8,-18" stroke="#3A3550" stroke-width="3" stroke-linecap="round"/><path d="M-8,-18 L16,-12 L-8,-4 Z" fill="#FF8A3D" stroke="#3A3550" stroke-width="2.4" stroke-linejoin="round"/><text x="10" y="16" text-anchor="middle" font-size="14" font-weight="900" fill="#3A3550">+2</text></g>
 <text x="395.0" y="493.0" font-size="16" font-weight="900" fill="#3A3550" text-anchor="start" >がんばれゾーン +2／+4</text>
 <text x="395.0" y="514.0" font-size="11.5" font-weight="normal" fill="#77708C" text-anchor="start" >相手側に4以上で数字+2、8以上で+4</text>
