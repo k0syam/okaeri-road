@@ -1,11 +1,11 @@
 """おかえりロード テストプレイ用シミュレータ
 
-    python3 tools/simulate.py            # v4 と v5 の比較（各 4000 ゲーム）
+    python3 tools/simulate.py            # v4・v5・v6（基本／拡張すべて）の比較（各 4000 ゲーム）
     python3 tools/simulate.py 10000      # ゲーム数を指定
 
 ルールをほぼ実装したモンテカルロ・シミュレータ（上級ルールなし）。ペア・J・Q・K、
 お気に入りスート、大勝負、がんばれゾーン、切り札（簡略化）、歩幅カード、補給、
-手札上限、呼び込み、おかえり勝負を扱う。両陣営に方針（Policy）を持たせて対戦させ、
+手札上限、呼び込み、おかえり勝負、番狂わせ（A は相手が絵札なら14）を扱う。両陣営に方針（Policy）を持たせて対戦させ、
 ゲームの長さ・逆転のしやすさ・陣営差・「いつも同じ手が最善」になっていないか
 （支配戦略）を調べる。AI は単純なので、数値は傾向を見るための目安として使う。
 結果の読み方は DESIGN_NOTES.md を参照。
@@ -121,10 +121,15 @@ class Game:
             self.log["pinned"] += 1
 
     # -- 値 ----------------------------------------------------------
-    def value(self, t, cards, trump_self, trump_opp):
+    def value(self, t, cards, trump_self, trump_opp, opp_cards=()):
         if not cards:
             return 0
         v = sum(c[0] for c in cards)
+        # 番狂わせ：A1枚は、相手が絵札を出していれば14
+        if (self.cfg.get("upset") and len(cards) == 1 and cards[0][0] == 1
+                and any(c[0] >= 11 for c in opp_cards)):
+            v = 14
+            self.log["upset_try"] += 1
         if self.jam[t]:
             v = 0
         v += self.bonus(t)
@@ -152,7 +157,7 @@ class Game:
         vals = {}
         for t in (A, D):
             cards, tr = plays[t]
-            vals[t] = self.value(t, cards, tr, plays[OPP[t]][1])
+            vals[t] = self.value(t, cards, tr, plays[OPP[t]][1], plays[OPP[t]][0])
         # 消費
         jam_next = {A: False, D: False}
         for t in (A, D):
@@ -222,8 +227,8 @@ class Game:
             self.log["main_pass"] += 1
         if not yc:
             self.log["yoko_pass"] += 1
-        mv = self.value(t, mc, mtr, ytr)
-        yv = self.value(o, yc, ytr, mtr)
+        mv = self.value(t, mc, mtr, ytr, yc)
+        yv = self.value(o, yc, ytr, mtr, mc)
         for x, cards, tr in ((t, mc, mtr), (o, yc, ytr)):
             if cards:
                 self.jam[x] = False
@@ -357,10 +362,11 @@ class Game:
 
 # ---- 方針 ------------------------------------------------------------
 class Policy:
-    def __init__(self, yoko=True, stride=True, save=0.5, trump=True, draw2_at=4, greedy=False, mainpass=True, thrift=None, concede=0.0, lure_min=3):
+    def __init__(self, yoko=True, stride=True, save=0.5, trump=True, draw2_at=4, greedy=False, mainpass=True, thrift=None, concede=0.0, lure_min=3, ace_read=0.0):
         self.thrift = thrift
         self.concede = concede
         self.lure_min = lure_min
+        self.ace_read = ace_read
         self.use_yoko = yoko
         self.use_stride = stride
         self.save = save          # 0=出し惜しみなし 1=強く温存
@@ -387,7 +393,7 @@ class Policy:
             idx = min(len(h) - 1, int(q * len(h)))
         best = [h[idx]]
         # ペア：同じ数字があり、重要なら
-        if importance >= 0.8:
+        if importance >= 0.8 and g.cfg.get("pairs", True):
             cnt = Counter(c[0] for c in h)
             pairs = [r for r, n in cnt.items() if n >= 2 and r >= 5]
             if pairs:
@@ -411,7 +417,20 @@ class Policy:
                 return cand
         return None
 
+    def read_ace(self, g, t, ctx):
+        """番狂わせ狙い：大事な場面で相手の絵札を読んで A を出す"""
+        if not (self.ace_read and g.cfg.get("upset")):
+            return None
+        big = ctx.get("mult", 1) == 2 or ctx["kind"] == "fork" or g.pos >= 18
+        aces = [c for c in g.hand[t] if c[0] == 1]
+        if big and aces and random.random() < self.ace_read:
+            return [aces[0]]
+        return None
+
     def battle(self, g, t, ctx):
+        ra = self.read_ace(g, t, ctx)
+        if ra:
+            return ra, None
         imp = 0.9 if ctx.get("mult", 1) == 2 else (0.6 if ctx["kind"] == "fork" else 0.45)
         if ctx["kind"] == "fork":
             # 自陣営レーンの色を優先
@@ -438,6 +457,10 @@ class Policy:
     def yoko(self, g, t, ctx):
         if not self.use_yoko or not g.hand[t]:
             return [], None
+        if self.ace_read and g.cfg.get("upset"):
+            aces = [c for c in g.hand[t] if c[0] == 1]
+            if aces and random.random() < self.ace_read / 2:
+                return [aces[0]], None
         # 手札が少ないときは控える
         if len(g.hand[t]) <= 2 + 3 * self.save:
             return [], None
@@ -511,6 +534,11 @@ def run(n, pa=None, pd=None, cfg=None, seed=None):
 PRESETS = {
     "v4": {},
     "v5": {"lure": True, "lure_max": 13, "final_battle": True, "trump_n": 3},
+    # v6 基本ルール：拡張ルール（切り札・お気に入りスート・ペア出し・歩幅カード）なし、番狂わせあり
+    "v6基本": {"final_battle": True, "upset": True, "trumps": False, "fav": False,
+             "pairs": False, "stride": False, "lure": True, "lure_max": 13},
+    # v6 拡張ルールをすべて入れた場合
+    "v6全部": {"lure": True, "lure_max": 13, "final_battle": True, "trump_n": 3, "upset": True},
 }
 
 
@@ -532,6 +560,8 @@ def report(n):
         ("横やりする方針の勝率（vs しない）", lambda r, c: duel(n, Policy(), Policy(yoko=False), c)),
         ("いつも最大のカードを出す方針の勝率（vs 標準）", lambda r, c: duel(n, Policy(greedy=True), Policy(), c)),
         ("歩幅カードを使う方針の勝率（vs 使わない）", lambda r, c: duel(n, Policy(), Policy(stride=False), c)),
+        ("大事な場面でAを読む方針の勝率（vs 読まない）",
+         lambda r, c: duel(n, Policy(ace_read=0.5), Policy(), c)),
     ]
     res = {k: run(n, cfg=c, seed=1)[0] for k, c in PRESETS.items()}
     print(f"{'指標':<34}" + "".join(f"{k:>8}" for k in PRESETS))
