@@ -231,6 +231,15 @@ def pair_icon(x, y, k=1.0):
     return card(-7, -12, "♠", INK) + card(7, 10, "♥", "#E0344F")
 
 
+def ace_icon(x, y, k=1.0):
+    """番狂わせ：A のカードが絵札に勝つ"""
+    return (f'<g transform="translate({x:.1f},{y:.1f}) scale({k})">'
+            f'<g transform="translate(7,0) rotate(12)"><rect x="-13" y="-18" width="26" height="36" rx="4" fill="#F4E9FF" stroke="{INK}" stroke-width="2.4"/>'
+            f'<text x="0" y="6" text-anchor="middle" font-size="15" font-weight="900" fill="{INK_SOFT}">K</text></g>'
+            f'<g transform="translate(-7,0) rotate(-10)"><rect x="-13" y="-18" width="26" height="36" rx="4" fill="#FFFFFF" stroke="{INK}" stroke-width="2.4"/>'
+            f'<text x="0" y="6" text-anchor="middle" font-size="17" font-weight="900" fill="#E0344F">A</text></g></g>')
+
+
 def cheer_icon(x, y, k=1.0):
     return (f'<g transform="translate({x},{y}) scale({k})">'
             f'<path d="M-8,18 L-8,-18" stroke="{INK}" stroke-width="3" stroke-linecap="round"/>'
@@ -254,9 +263,9 @@ def gimmick_svg():
     h = 2 * ROWP - 34
     out = [panel(x, y, w, h, "ボードのしかけ", VIOLET)]
     items = [
-        (lambda ix, iy: art.suit_chip("♥", ix, iy, 17), "お気に入りスート +3", "主役がお店の好きなスートで通すと+3"),
+        (lambda ix, iy: ace_icon(ix, iy, 0.95), "番狂わせ A＝14", "相手が絵札（J・Q・K）なら A は14"),
         (lambda ix, iy: art.star_badge(ix, iy, "×2", 22), "大勝負マス ×2", "合流マスは勝負×2・10枚まで補給"),
-        (lambda ix, iy: pair_icon(ix, iy, 0.95), "ペア出し", "同じ数字2枚を1組で出すと合計の数字"),
+        (lambda ix, iy: art.suit_chip("♥", ix, iy, 17), "お気に入りスート", "拡張ルール：好きなスートで通すと+3"),
         (lambda ix, iy: cheer_icon(ix, iy), "がんばれゾーン +2／+4", "相手側に4以上で数字+2、8以上で+4"),
     ]
     for i, (draw, name, desc) in enumerate(items):
@@ -281,7 +290,7 @@ def flow_svg():
     w = 5 * COLP - (COLP - TILE) - 14
     h = TILE - 18
     out = [panel(x, y, w, h, "手番の流れ", "#3FA66B")]
-    steps = ["① 1d3+1 か 歩幅カード(A〜4)で進む", "② 通りすぎるお店は「呼び込み」できる",
+    steps = ["① 1d3+1 で進む（わかれ道は通過も勝負）", "② 通りすぎるお店は「呼び込み」できる",
              "③ 止まったマスで裏向き→「せーの」", "④ ゴールで「おかえり勝負」→ 判定"]
     for i, s in enumerate(steps):
         col, row = i % 2, i // 2
@@ -383,8 +392,8 @@ def card_area_svg():
     out.append(t(px + pw / 2, y2 + 64, "裏向きで置いて「準備OK」→「せーの」で公開", 13, INK_SOFT, "bold"))
     bw, bh = 152, 190
     lx, rx = px + 46, px + pw - 46 - bw
-    out.append(slot(lx, y2 + 82, bw, bh, "てんし", ANGEL, "ペアなら2枚"))
-    out.append(slot(rx, y2 + 82, bw, bh, "あくま", DEVIL, "ペアなら2枚"))
+    out.append(slot(lx, y2 + 82, bw, bh, "てんし", ANGEL, "数字カード1枚"))
+    out.append(slot(rx, y2 + 82, bw, bh, "あくま", DEVIL, "数字カード1枚"))
     out.append(place(art.vs(), px + pw / 2, y2 + 82 + bh / 2, 64))
     out.append(place(art.angel(wings=False), lx + 18, y2 + 86, 46))
     out.append(place(art.devil(tail=False), rx + bw - 18, y2 + 86, 46))
@@ -394,7 +403,7 @@ def card_area_svg():
     for i, (name, color, head) in enumerate([("てんし陣営の手札", ANGEL, art.angel(wings=False)),
                                               ("あくま陣営の手札", DEVIL, art.devil(tail=False))]):
         yy = y3 + i * (hh + 16)
-        out.append(slot(px + 16, yy, pw - 32, hh, name, color, "数字カードは「自分だけ見る」・陣営で合計12枚まで・切り札（選んだ3枚）は非公開"))
+        out.append(slot(px + 16, yy, pw - 32, hh, name, color, "数字カードは「自分だけ見る」・陣営で合計10枚から（拡張の切り札は非公開で）"))
         out.append(place(head, px + 52, yy + 36, 48))
     return "\n".join(out)
 
@@ -459,10 +468,10 @@ def token(body, label, color, tint, size=118, dy=-8):
 
 
 # =====================================================================
-# 早見表（1080×2480、スクリーンパネル用）
+# 早見表（1080×2510、スクリーンパネル用）
 # =====================================================================
 def quick_reference():
-    QW, QH = 1080, 2480
+    QW, QH = 1080, 2510
     p = [f'<svg xmlns="http://www.w3.org/2000/svg" width="{QW}" height="{QH}" viewBox="0 0 {QW} {QH}" font-family="{FONT}">',
          DEFS,
          f'<rect width="{QW}" height="{QH}" fill="url(#sky)"/>',
@@ -480,40 +489,38 @@ def quick_reference():
         p.append(f'<rect x="64" y="{y - 18}" width="{len(title) * 25 + 36}" height="38" rx="19" fill="{color}" stroke="{INK}" stroke-width="3"/>')
         p.append(t(82, y + 10, title, 22, "#FFFFFF", "900", "start"))
 
+    def lines(y, rows, size=17.5, gap=36, top=58):
+        for i, s_ in enumerate(rows):
+            p.append(t(76, y + top + i * gap, s_, size, INK, anchor="start"))
+
     # 1. 勝敗
     y = 140
-    box(y, 154, "勝ち負け", INK)
-    p.append(t(76, y + 58, "ゴール（マス18）で「おかえり勝負」（カード勝負1回）をした後のゲージで決まる。", 20, INK, "bold", "start"))
-    p.append(t(76, y + 92, "おかえり勝負：どちらでもマスと同じ（×1）。K の +3 は有効、J・Q とスート効果は無し", 17, INK, anchor="start"))
-    p.append(t(76, y + 126, "+1以上 → てんしの勝ち　／　−1以下 → あくまの勝ち　／　0 → 1d6（奇数てんし）", 18, INK_SOFT, anchor="start"))
+    box(y, 120, "勝ち負け", INK)
+    p.append(t(76, y + 58, "ゴール（マス18）で「おかえり勝負」（ふつうのカード勝負1回）をした後のゲージで決まる。", 19, INK, "bold", "start"))
+    p.append(t(76, y + 92, "+1以上 → てんしの勝ち　／　−1以下 → あくまの勝ち　／　0 → 1d6（奇数てんし）", 18, INK_SOFT, anchor="start"))
 
     # 2. 手番と手札
-    y = 334
-    box(y, 206, "手番と手札", "#3FA66B")
-    turn = ["移動：1d3+1（2〜4マス）。振る前なら、手札の A〜4 を1枚出してその数だけ進んでもよい（歩幅カード）",
-            "使ったカードは補充しない。合流マス（8・14）を通るか止まると、両陣営とも手札を合計10枚まで補給",
-            "陣営の手札は合計12枚まで（超えたらすぐ選んで捨てる）。手札0枚ならカード勝負は数字0",
-            "レーンのお店を通りすぎるとき、お店の陣営は「呼び込み」できる（通ればそこで止まる）"]
-    for i, s_ in enumerate(turn):
-        p.append(t(76, y + 60 + i * 36, s_, 17, INK, anchor="start"))
+    y = 300
+    box(y, 170, "手番と手札", "#3FA66B")
+    lines(y, ["移動：1d3+1（2〜4マス）。わかれ道は通りすぎるときも勝負、合流マス（8・14）では補給",
+              "呼び込み：レーンのお店を通りすぎるとき、お店の陣営が勝負を挑める（通ればそこで止まる）",
+              "手札は陣営で10枚。使っても補充せず、合流マスを通るか止まると10枚まで補給"])
 
     # 3. カードの出し方
-    y = 580
+    y = 510
     box(y, 200, "カードの出し方（いつも同じ）", VIOLET)
-    steps = ["① 出すカードを陣営で決めて勝負エリアに【裏向き】で置き、「準備OK」と言う（パスでも同じ）",
-             "② そろったら手番プレイヤーの「せーの」で【全体に公開する】。置いていない陣営は「パス」",
-             "③ ゲージを動かし、勝った／通ったカードの J・Q・K 効果としかけを処理",
-             "④ 使ったカードは捨て札へ（補充はしない）"]
-    for i, s in enumerate(steps):
-        p.append(t(76, y + 60 + i * 36, s, 18.5, INK, anchor="start"))
+    lines(y, ["① 出すカードを陣営で決めて勝負エリアに【裏向き】で置き、「準備OK」と言う（パスでも同じ）",
+              "② そろったら手番プレイヤーの「せーの」で【全体に公開する】。置いていない陣営は「パス」",
+              "③ ゲージを動かし、勝った／通ったカードの J・Q・K の効果を処理",
+              "④ 使ったカードは捨て札へ（補充はしない）。1回に出せる数字カードは1陣営1枚"], size=18)
 
     # 4. マスごとのゲージ
-    y = 820
+    y = 750
     box(y, 320, "マスごとのゲージの動き", "#E0A100")
     rows = [
         (art.angel(wings=False), "健康マス", ANGEL, "てんしが主役・あくまは横やり（どちらもパス可）", "主役 − 横やり だけ ＋ へ（マイナスなら0）"),
         (art.devil(tail=False), "誘惑マス", DEVIL, "あくまが主役・てんしは横やり（どちらもパス可）", "主役 − 横やり だけ − へ（マイナスなら0）"),
-        (art.vs(), "カード勝負", VIOLET, "どちらでもマス：両陣営とも必ず1枚（またはペア）を出す。手札0なら数字0", "大きい方の陣営へ、差の分だけ動く"),
+        (art.vs(), "カード勝負", VIOLET, "どちらでもマス：両陣営とも必ず1枚を出す（手札0なら数字0）", "大きい方の陣営へ、差の分だけ動く"),
         (art.signpost(), "わかれ道", INK, "止まっても【通過しても】、どちらでもマスと同じカード勝負", "勝ったカードが 赤♥♦→健康レーン／黒♠♣→誘惑レーン"),
     ]
     for i, (icon, name, col, who, move) in enumerate(rows):
@@ -522,15 +529,14 @@ def quick_reference():
         p.append(t(126, ry + 11, name, 20, col, "900", "start"))
         p.append(t(280, ry - 2, who, 16.5, INK, anchor="start"))
         p.append(t(280, ry + 23, move, 16.5, INK_SOFT, anchor="start"))
-    p.append(t(76, y + 302, "同数は引き分け（ゲージ動かず・効果なし）。わかれ道は 1d2：奇数=健康（ちずアプリ／いいにおいが片方だけなら振らずその側）", 15.5, INK_SOFT, anchor="start"))
+    p.append(t(76, y + 302, "同数は引き分け（ゲージは動かず、効果も無し）。わかれ道の引き分けは 1d2：奇数＝健康レーン", 15.5, INK_SOFT, anchor="start"))
 
     # 5. ボードのしかけ
-    y = 1180
-    box(y, 250, "ボードのしかけ", "#3FA66B")
+    y = 1110
+    box(y, 200, "ボードのしかけ", "#3FA66B")
     gim = [
-        (lambda ix, iy: art.suit_chip("♥", ix, iy, 18), "お気に入りスート +3", "健康／誘惑マスのお店の好きなスートで、主役が通すと +3"),
+        (lambda ix, iy: ace_icon(ix, iy, 1.0), "番狂わせ A＝14", "相手が絵札（J・Q・K）を出していれば、A は 14 として扱う"),
         (lambda ix, iy: art.star_badge(ix, iy, "×2", 24), "大勝負マス ×2", "合流マス（8・14）のカード勝負は、ゲージの動きが2倍（先に補給）"),
-        (lambda ix, iy: pair_icon(ix, iy, 1.0), "ペア出し", "同じ数字2枚を1組で出すと、数字は2枚の合計"),
         (lambda ix, iy: cheer_icon(ix, iy, 1.1), "がんばれ +2／+4", "ゲージが相手側に4以上傾いている陣営は数字 +2、8以上なら +4"),
     ]
     for i, (draw, name, desc) in enumerate(gim):
@@ -540,21 +546,16 @@ def quick_reference():
         p.append(t(370, ry + 7, desc, 16, INK_SOFT, anchor="start"))
 
     # 6. 計算の順番
-    y = 1470
-    box(y, 250, "計算の順番（迷ったら上から）", VIOLET)
-    calc = ["1 数字：カード（ペアは合計）→ 妨害なら0／♣半減 → がんばれ +2・+4 → 切り札 +3／−3",
-            "2 差：健康／誘惑マスは 主役 − 横やり（0未満は0）、カード勝負は 大きい方 − 小さい方",
-            "3 ボーナス（勝った／通ったカードだけ）：K の大逆転 +3、お気に入りスート +3",
-            "4 2倍：大勝負マス、または おうえん団／ごほうびデー（重なっても2倍まで）",
-            "5 おまもり／ごろ寝：その陣営に不利な向きの動きを0に",
-            "6 ゲージを動かす（−10〜+10 で止まる）"]
-    for i, s_ in enumerate(calc):
-        p.append(t(76, y + 56 + i * 32, s_, 16.5, INK, anchor="start"))
+    y = 1350
+    box(y, 160, "計算の順番（3つだけ）", VIOLET)
+    lines(y, ["1 数字：カードの数字（妨害なら0、番狂わせの A は14）＋ がんばれ +2・+4",
+              "2 差：健康／誘惑マスは 主役 − 横やり（0未満は0）、カード勝負は 大きい方 − 小さい方。勝ったのが K なら +3",
+              "3 大勝負マスなら ×2。ゲージは −10〜+10 で止まる"], size=16.5, gap=32, top=56)
 
     # 7. カード
-    y = 1760
+    y = 1550
     box(y, 190, "カードの数字と効果（勝った／通ったときだけ）", ANGEL)
-    cards = [("A〜10", "1〜10", "効果なし"),
+    cards = [("A〜10", "1〜10", "効果なし（A は相手が絵札なら14）"),
              ("J", "11", "妨害：相手陣営が次に公開するカードを 数字0・効果なし に"),
              ("Q", "12", "先導：NPC をさらに1マス進める（先のマスも処理）"),
              ("K", "13", "大逆転：ゲージをさらに +3（自陣営側へ）")]
@@ -564,9 +565,17 @@ def quick_reference():
         p.append(t(190, ry, n, 19, INK_SOFT, "bold", "start"))
         p.append(t(270, ry, e, 17.5, INK, anchor="start"))
 
-    # 8. 切り札
-    y = 1990
-    box(y, 270, "切り札カード（6枚から3枚選ぶ・1回だけ）", "#7B3FA0")
+    # 8. 拡張ルール
+    y = 1780
+    box(y, 200, "拡張ルール（慣れたら足す・EXPANSIONS.md）", "#7B3FA0")
+    lines(y, ["切り札カード：6枚から3枚選んで持ち、1回ずつ使える（下の表）",
+              "お気に入りスート：お店の右下のスートで主役が通すと +3",
+              "歩幅カード：振る前に手札の A〜4 を出して、その数だけ進める",
+              "ペア出し：同じ数字2枚を1組で出すと合計の数字　／　上級：スート効果"], size=17)
+
+    # 9. 切り札
+    y = 2020
+    box(y, 270, "拡張：切り札カード（6枚から3枚選ぶ・1回だけ）", "#7B3FA0")
     p.append(t(76, y + 52, "てんし", 17, ANGEL, "900", "start"))
     p.append(t(230, y + 52, "あくま", 17, DEVIL, "900", "start"))
     p.append(t(400, y + 52, "効果（そえる＝数字カードと一緒に裏向きで置く）", 15, INK_SOFT, "bold", "start"))
@@ -579,7 +588,7 @@ def quick_reference():
         p.append(t(230, ry, d[1], 17, INK, "bold", "start"))
         p.append(t(400, ry, eff, 17, INK, anchor="start"))
 
-    y = 2300
+    y = 2330
     box(y, 150, "ハプニング表（1d6）", DEVIL)
     hap = ["1 忘れ物ニュース：何も起こらない", "2 てんし急接近：ゲージ +2", "3 あくまのささやき：ゲージ −2",
            "4 近道発見：1マス進む（先のマスも処理）", "5 寄り道：1マス戻る（処理しない）", "6 気分屋：手札1枚を裏向きで捨てて1枚引く"]
