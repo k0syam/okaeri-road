@@ -144,7 +144,7 @@
 <text x="270.0" y="1608.0" font-size="17.5" font-weight="normal" fill="#3A3550" text-anchor="start" >効果なし（A は相手が絵札なら14）</text>
 <text x="76.0" y="1644.0" font-size="21" font-weight="900" fill="#3A3550" text-anchor="start" >J</text>
 <text x="190.0" y="1644.0" font-size="19" font-weight="bold" fill="#77708C" text-anchor="start" >11</text>
-<text x="270.0" y="1644.0" font-size="17.5" font-weight="normal" fill="#3A3550" text-anchor="start" >妨害：相手陣営が次に公開するカードを 数字0・効果なし に</text>
+<text x="270.0" y="1644.0" font-size="17.5" font-weight="normal" fill="#3A3550" text-anchor="start" >妨害：相手陣営が次に公開する数字カード1枚を 数字0・効果なし に</text>
 <text x="76.0" y="1680.0" font-size="21" font-weight="900" fill="#3A3550" text-anchor="start" >Q</text>
 <text x="190.0" y="1680.0" font-size="19" font-weight="bold" fill="#77708C" text-anchor="start" >12</text>
 <text x="270.0" y="1680.0" font-size="17.5" font-weight="normal" fill="#3A3550" text-anchor="start" >先導：NPC をさらに1マス進める（先のマスも処理）</text>
