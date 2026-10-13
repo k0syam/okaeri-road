@@ -54,7 +54,7 @@
 <rect x="64" y="122" width="136" height="38" rx="19" fill="#3A3550" stroke="#3A3550" stroke-width="3"/>
 <text x="82.0" y="150.0" font-size="22" font-weight="900" fill="#FFFFFF" text-anchor="start" >勝ち負け</text>
 <text x="76.0" y="198.0" font-size="20" font-weight="bold" fill="#3A3550" text-anchor="start" >ゴール（マス18）で「おかえり勝負」（カード勝負1回）をした後のゲージで決まる。</text>
-<text x="76.0" y="232.0" font-size="17" font-weight="normal" fill="#3A3550" text-anchor="start" >おかえり勝負：どちらでもマスと同じ（×1）。K の +3 は有効、J・Q とスート効果は無し</text>
+<text x="76.0" y="232.0" font-size="17" font-weight="normal" fill="#3A3550" text-anchor="start" >おかえり勝負：どちらでもマスと同じ（×1）。K の +3・それまでの妨害／半減は有効、J・Q とスート効果は無し</text>
 <text x="76.0" y="266.0" font-size="18" font-weight="normal" fill="#77708C" text-anchor="start" >+1以上 → てんしの勝ち　／　−1以下 → あくまの勝ち　／　0 → 1d6（奇数てんし）</text>
 <g filter="url(#soft)"><rect x="40" y="334" width="1000" height="206" rx="24" fill="#FFFFFF"/></g>
 <rect x="40" y="334" width="1000" height="206" rx="24" fill="none" stroke="#3FA66B" stroke-width="3"/>
