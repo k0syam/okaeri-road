@@ -97,7 +97,7 @@
 <rect x="190.0" y="224.0" width="124" height="124" rx="18" fill="none" stroke="#7A5CC6" stroke-width="4"/>
 <rect x="196.0" y="229.0" width="26" height="22" rx="11" fill="#FFFFFF"/>
 <text x="209.0" y="246.0" font-size="16" font-weight="900" fill="#7A5CC6" text-anchor="middle" >2</text>
-<text x="305.0" y="246.0" font-size="13" font-weight="900" fill="#FFFFFF" text-anchor="end" >カード勝負</text>
+<text x="305.0" y="246.0" font-size="13" font-weight="900" fill="#FFFFFF" text-anchor="end" >どちらでも</text>
 <g transform="translate(223.0,261.0) scale(0.9062)">
 <rect x="9" y="22" width="46" height="34" rx="3" fill="#FFFFFF" stroke="#3A3550" stroke-width="3.2" stroke-linejoin="round" stroke-linecap="round"/>
 <rect x="9" y="14" width="46" height="11" rx="3" fill="#56B07C" stroke="#3A3550" stroke-width="3.2" stroke-linejoin="round" stroke-linecap="round"/>
@@ -337,7 +337,7 @@
 <rect x="900.0" y="492.0" width="124" height="124" rx="18" fill="none" stroke="#7A5CC6" stroke-width="4"/>
 <rect x="906.0" y="497.0" width="42" height="22" rx="11" fill="#FFFFFF"/>
 <text x="927.0" y="514.0" font-size="16" font-weight="900" fill="#7A5CC6" text-anchor="middle" >12A</text>
-<text x="1015.0" y="514.0" font-size="13" font-weight="900" fill="#FFFFFF" text-anchor="end" >カード勝負</text>
+<text x="1015.0" y="514.0" font-size="13" font-weight="900" fill="#FFFFFF" text-anchor="end" >どちらでも</text>
 <g transform="translate(933.0,529.0) scale(0.9062)">
 <path d="M13 40 L13 54 M51 40 L51 54" stroke="#3A3550" stroke-width="3.2" stroke-linejoin="round" stroke-linecap="round" fill="none"/>
 <rect x="6" y="14" width="52" height="8" rx="3" fill="#C98A55" stroke="#3A3550" stroke-width="3.2" stroke-linejoin="round" stroke-linecap="round"/>
@@ -390,7 +390,7 @@
 <rect x="900.0" y="760.0" width="124" height="124" rx="18" fill="none" stroke="#7A5CC6" stroke-width="4"/>
 <rect x="906.0" y="765.0" width="42" height="22" rx="11" fill="#FFFFFF"/>
 <text x="927.0" y="782.0" font-size="16" font-weight="900" fill="#7A5CC6" text-anchor="middle" >12B</text>
-<text x="1015.0" y="782.0" font-size="13" font-weight="900" fill="#FFFFFF" text-anchor="end" >カード勝負</text>
+<text x="1015.0" y="782.0" font-size="13" font-weight="900" fill="#FFFFFF" text-anchor="end" >どちらでも</text>
 <g transform="translate(933.0,797.0) scale(0.9062)">
 <path d="M32 3 L32 9" stroke="#3A3550" stroke-width="3.2" stroke-linejoin="round" stroke-linecap="round"/>
 <rect x="21" y="8" width="22" height="6" rx="2" fill="#3A3550"/>
