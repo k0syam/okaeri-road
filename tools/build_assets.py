@@ -38,7 +38,7 @@ TYPES = {
     "goal": ("#E9744A", "#FFFFFF", "ゴール"),
     "health": (ANGEL, "#FFFFFF", "健康"),
     "temptation": (DEVIL, "#FFFFFF", "誘惑"),
-    "either": (VIOLET, "#FFFFFF", "カード勝負"),
+    "either": (VIOLET, "#FFFFFF", "どちらでも"),
     "fork": (INK, "#FFFFFF", "わかれ道"),
     "happening": ("#F2B825", INK, "ハプニング"),
     "plain": ("#A9A5B8", "#FFFFFF", "素通り"),
