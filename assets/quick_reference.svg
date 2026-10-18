@@ -133,7 +133,7 @@
 <rect x="64" y="1332" width="311" height="38" rx="19" fill="#7A5CC6" stroke="#3A3550" stroke-width="3"/>
 <text x="82.0" y="1360.0" font-size="22" font-weight="900" fill="#FFFFFF" text-anchor="start" >計算の順番（3つだけ）</text>
 <text x="76.0" y="1406.0" font-size="16.5" font-weight="normal" fill="#3A3550" text-anchor="start" >1 数字：カードの数字（妨害なら0、番狂わせの A は14）＋ がんばれ +2・+4</text>
-<text x="76.0" y="1438.0" font-size="16.5" font-weight="normal" fill="#3A3550" text-anchor="start" >2 差：健康／誘惑マスは 主役 − 横やり（0未満は0）、カード勝負は 大きい方 − 小さい方。勝ったのが K なら +3</text>
+<text x="76.0" y="1438.0" font-size="16.5" font-weight="normal" fill="#3A3550" text-anchor="start" >2 差：健康／誘惑マスは 主役 − 横やり（0未満は0）、カード勝負は 大きい方 − 小さい方。勝った／通ったのが K なら +3</text>
 <text x="76.0" y="1470.0" font-size="16.5" font-weight="normal" fill="#3A3550" text-anchor="start" >3 大勝負マスなら ×2。ゲージは −10〜+10 で止まる</text>
 <g filter="url(#soft)"><rect x="40" y="1550" width="1000" height="190" rx="24" fill="#FFFFFF"/></g>
 <rect x="40" y="1550" width="1000" height="190" rx="24" fill="none" stroke="#2F7FC8" stroke-width="3"/>
