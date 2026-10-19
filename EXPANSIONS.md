@@ -22,7 +22,7 @@
 
 ## 切り札カード
 
-てんし陣営とあくま陣営には、それぞれ専用の **切り札カード** が6枚ずつあります。ゲームの最初に、各陣営はそのうち **3枚を選んで** 持ちます。どれも1ゲームに **1回だけ** 使えます。攻めの「ラジオたいそう」「おうえん団」か、守りの「おまもり」か、レーンを取る「ちずアプリ」か、どれを選ぶかがゲーム前の作戦になります（画像：[assets/cards/](assets/cards/)、一覧：[trump_cards_sheet.png](assets/trump_cards_sheet.png)）。
+てんし陣営とあくま陣営には、それぞれ専用の **切り札カード** が6枚ずつあります。ゲームの最初に、各陣営はそのうち **3枚を選んで** 持ちます。どれも1ゲームに **1回だけ** 使えます（画像：[assets/cards/](assets/cards/)、一覧：[trump_cards_sheet.png](assets/trump_cards_sheet.png)）。
 
 ![切り札カード一覧](assets/trump_cards_sheet.png)
 
