@@ -383,7 +383,7 @@ def card_area_svg():
     gx = (pw - 3 * cw) / 4
     y1 = py + 72
     out.append(slot(px + gx, y1, cw, ch, "山札", INK, "トランプのデッキ", back=True))
-    out.append(slot(px + 2 * gx + cw, y1, cw, ch, "捨て札", INK_SOFT, "表向きで置く"))
+    out.append(slot(px + 2 * gx + cw, y1, cw, ch, "捨て札", INK_SOFT, "使ったカード"))
     out.append(slot(px + 3 * gx + 2 * cw, y1, cw, ch, "除外", INK_SOFT, ["ジョーカー", "使った切り札"]))
     # 勝負エリア
     y2 = y1 + ch + 28
