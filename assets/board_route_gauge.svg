@@ -563,7 +563,7 @@
 <rect x="48.0" y="778.0" width="678" height="106" rx="22" fill="none" stroke="#E6D7B8" stroke-width="2"/>
 <rect x="66.0" y="764.0" width="130" height="30" rx="15" fill="#3FA66B"/>
 <text x="81.0" y="786.0" font-size="18" font-weight="900" fill="#FFFFFF" text-anchor="start" >手番の流れ</text>
-<text x="74.0" y="822.0" font-size="15" font-weight="bold" fill="#3A3550" text-anchor="start" >① 1d3+1 で進む（わかれ道は通過も勝負）</text>
+<text x="74.0" y="822.0" font-size="15" font-weight="bold" fill="#3A3550" text-anchor="start" >① 1d3+1 進む（わかれ道は通りすぎても勝負）</text>
 <text x="407.0" y="822.0" font-size="15" font-weight="bold" fill="#3A3550" text-anchor="start" >② 通りすぎるレーンのお店で「呼び込み」</text>
 <text x="74.0" y="854.0" font-size="15" font-weight="bold" fill="#3A3550" text-anchor="start" >③ 止まったマスで裏向き→「せーの」</text>
 <text x="407.0" y="854.0" font-size="15" font-weight="bold" fill="#3A3550" text-anchor="start" >④ ゴールで「おかえり勝負」→ 判定</text>
