@@ -61,7 +61,7 @@
 <text x="82.0" y="310.0" font-size="22" font-weight="900" fill="#FFFFFF" text-anchor="start" >手番と手札</text>
 <text x="76.0" y="358.0" font-size="17.5" font-weight="normal" fill="#3A3550" text-anchor="start" >移動：1d3+1（2〜4マス）。わかれ道は通りすぎるときも勝負</text>
 <text x="76.0" y="394.0" font-size="17.5" font-weight="normal" fill="#3A3550" text-anchor="start" >呼び込み：レーンのお店を通りすぎるとき、お店の陣営が勝負を挑める（通ればそこで止まる）</text>
-<text x="76.0" y="430.0" font-size="17.5" font-weight="normal" fill="#3A3550" text-anchor="start" >手札は陣営で10枚。使っても補充せず、合流マス（8・14）を通るか止まると10枚まで補給</text>
+<text x="76.0" y="430.0" font-size="17.5" font-weight="normal" fill="#3A3550" text-anchor="start" >手札は陣営で10枚。使っても補充せず、合流マス（8・14）を通りすぎるか止まると10枚まで補給</text>
 <g filter="url(#soft)"><rect x="40" y="510" width="1000" height="200" rx="24" fill="#FFFFFF"/></g>
 <rect x="40" y="510" width="1000" height="200" rx="24" fill="none" stroke="#7A5CC6" stroke-width="3"/>
 <rect x="64" y="492" width="386" height="38" rx="19" fill="#7A5CC6" stroke="#3A3550" stroke-width="3"/>
